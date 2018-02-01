@@ -1,0 +1,100 @@
+.h1{
+    color: blue;
+    text-align: center;
+}
+.a1{
+    text-decoration: none;
+}
+.ol1{
+ color: green; font-size: 20px;
+}
+.ol li{
+        font-family: 'Marck Script', cursive;
+        margin-bottom: 5px;
+        padding: 5px;
+        margin-left: 60px;
+        border-bottom: 2px rgb(25, 103, 145);
+        border: 3px solid #CADFCF;
+        border-radius: 6px;
+        position: relative;
+        text-align: center;
+        width: 333px;
+        background-color: rgb(212, 199, 199);
+    }
+.body{
+background-color: beige;
+    }
+    .Age{
+        width: 70px;
+    }
+    .pokakulki{
+        color: brown;
+        text-align: center;
+        background-color: deepskyblue;
+    }
+    .ssilko{
+        text-decoration: none;
+    }
+    .g{
+    }
+    .g1{
+        text-align: center;
+        color: rgb(168, 24, 168);
+        background-color: rgb(255, 16, 16);
+        height: 120px;
+        margin-bottom: 0%;
+        line-height: 120px;
+    }
+    .g2{
+        text-align: center;
+        color: rgb(0, 102, 255);
+        background-color: orange;
+        height: 120px;
+        margin-top: -30px;
+        position: relative;
+    }
+    .g3{
+        text-align: center;
+        background-color: rgb(255, 251, 0);
+        color: rgb(9, 134, 57);
+        height: 120px;
+        margin-top: -30px;
+        position: relative;
+    }
+    .g4{
+        text-align: center;
+        background-color: rgb(9, 134, 57);
+        color: rgb(255, 251, 0);
+        height: 120px;
+        margin-top: -30px;
+        position: relative;
+    }
+    .g5{
+        text-align: center;
+        background-color: rgb(0, 102, 255);
+        color: orange;
+        height: 120px;
+        margin-top: -30px;
+        position: relative;
+    }
+    .g6{
+        text-align: center;
+        color: rgb(255, 16, 16);
+        background-color: rgb(168, 24, 168);
+        height: 120px;
+        margin-top: -30px;
+        position: relative;
+    }
+    .table{
+        width: 1100px;
+        height: 130px;
+        border-collapse: collapse;
+        align-content: center;
+    text-align: center;
+    }
+    .hhh{
+        background: rgb(5, 245, 61);
+    }
+    .td{
+        background: rgb(128, 134, 129);
+    }
