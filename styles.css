@@ -1,12 +1,15 @@
-.h1{
+.start{
     color: blue;
     text-align: center;
 }
-.a1{
+.cars{
+    font: 1.4em 'Times New Roman', bolder;
     text-decoration: none;
+    color: yellow;
 }
 .ol1{
- color: green; font-size: 20px;
+ color: green; 
+ font-size: 20px;
 }
 .ol li{
         font-family: 'Marck Script', cursive;
@@ -24,77 +27,78 @@
 .body{
 background-color: beige;
     }
-    .Age{
+.age{
         width: 70px;
     }
-    .pokakulki{
+.pokakulki{
         color: brown;
         text-align: center;
         background-color: deepskyblue;
     }
-    .ssilko{
+.ssilko{
         text-decoration: none;
     }
-    .g{
-    }
-    .g1{
-        text-align: center;
-        color: rgb(168, 24, 168);
-        background-color: rgb(255, 16, 16);
-        height: 120px;
-        margin-bottom: 0%;
-        line-height: 120px;
-    }
-    .g2{
-        text-align: center;
-        color: rgb(0, 102, 255);
-        background-color: orange;
-        height: 120px;
-        margin-top: -30px;
-        position: relative;
-    }
-    .g3{
-        text-align: center;
-        background-color: rgb(255, 251, 0);
-        color: rgb(9, 134, 57);
-        height: 120px;
-        margin-top: -30px;
-        position: relative;
-    }
-    .g4{
-        text-align: center;
-        background-color: rgb(9, 134, 57);
-        color: rgb(255, 251, 0);
-        height: 120px;
-        margin-top: -30px;
-        position: relative;
-    }
-    .g5{
-        text-align: center;
-        background-color: rgb(0, 102, 255);
-        color: orange;
-        height: 120px;
-        margin-top: -30px;
-        position: relative;
-    }
-    .g6{
-        text-align: center;
-        color: rgb(255, 16, 16);
-        background-color: rgb(168, 24, 168);
-        height: 120px;
-        margin-top: -30px;
-        position: relative;
-    }
-    .table{
-        width: 1100px;
-        height: 130px;
-        border-collapse: collapse;
-        align-content: center;
-    text-align: center;
-    }
-    .hhh{
+.table{
+    width: 100%;
+    height: 200px;
+    border-collapse: collapse;
+}
+.hhh{
         background: rgb(5, 245, 61);
     }
-    .td{
+.td{
         background: rgb(128, 134, 129);
     }
+.my-flex-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+}
+.my-flex-container2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+}
+.my-flex-block1{
+    flex-basis: 100%;
+    margin: auto;
+    background-color: blue;
+    color: rgb(64, 112, 52);
+}
+.my-flex-block2{
+    flex-basis: 100%;
+    margin: auto;
+    background-color: rgb(0, 247, 255);
+    color: chocolate;
+    }
+.my-flex-block3{
+    flex-basis: 100%;
+    margin: auto;
+    background-color: rgb(238, 255, 0);
+    color: rgb(235, 98, 98);
+}
+.my-flex-block4{
+    flex-basis: 100%;
+    margin: auto;
+    background-color: rgb(255, 0, 0);
+    color: rgb(31, 114, 103);
+    }
+.my-flex-block5{
+    flex-basis: 100%;
+    margin: auto;
+    background-color: rgb(255, 0, 170);
+    color: rgb(35, 20, 165);
+}
+.my-flex-block6{
+    flex-basis: 100%;
+    margin: auto;
+    background-color: rgb(0, 255, 42);
+    color: rgb(168, 30, 210);
+}
+.h1, h2, h3, h4, h5, h6{
+    text-align: center;}
+    
