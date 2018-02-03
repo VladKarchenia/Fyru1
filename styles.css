@@ -1,8 +1,17 @@
 .start {
     color: blue;
     text-align: center;
+    margin: 1em auto;
 }
 
+.check{
+    display: block;
+    margin: 10px;
+}
+
+.forms{
+    margin: 1em auto;
+}
 .cars {
     font: 1.4em 'Times New Roman', bolder;
     text-decoration: none;
@@ -44,12 +53,14 @@
 
 .ssilko {
     text-decoration: none;
+    display: block;
 }
 
 .table {
     width: 100%;
     height: 200px;
     border-collapse: collapse;
+    margin-bottom: 30px;
 }
 
 .hhh {
@@ -58,6 +69,14 @@
 
 .td {
     background: rgb(128, 134, 129);
+}
+
+.area{
+    height: 100px;
+    max-height: 100px;
+    width: 200px;
+    max-width: 500px;
+    min-width: 200px;
 }
 
 .my-flex-container {
@@ -78,7 +97,6 @@
 
 .my-flex-block1 {
     flex-basis: 100%;
-    margin: auto;
     background-color: blue;
     color: rgb(64, 112, 52);
 }
