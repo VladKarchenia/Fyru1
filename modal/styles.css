@@ -1,0 +1,256 @@
+* {
+    transition:all .5s;
+    box-sizing: border-box;
+}
+
+body {
+    font: 1em 'PT Sans', Arial, Helvetica, sans-serif;
+    background: rgb(190, 190, 190);
+    color: rgb(63, 63, 63);
+}
+
+.container {
+    width: 940px;
+    margin: 0 auto;
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+.row::after {
+    display: block;
+    content: ".";
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+[class*="span"] {
+    float: left;
+    display: inline;
+    margin-right: 20px;
+}
+
+[class*="span"]:last-child {
+    margin-right: 0;
+    float: right;
+}
+
+.span1 {width: 60px;}
+.span2 {width: 140px;}
+.span3 {width: 220px;}
+.span4 {width: 300px;}
+.span5 {width: 380px;}
+.span6 {width: 460px;}
+.span7 {width: 540px;}
+.span8 {width: 620px;}
+.span9 {width: 700px;}
+.span10 {width: 780px;}
+.span11 {width: 860px;}
+.span12 {width: 940px;}
+
+.offset1 {margin-left: 60px;}
+.offset2 {margin-left: 140px;}
+.offset3 {margin-left: 220px;}
+.offset4 {margin-left: 300px;}
+.offset5 {margin-left: 380px;}
+.offset6 {margin-left: 460px;}
+.offset7 {margin-left: 540px;}
+.offset8 {margin-left: 620px;}
+.offset9 {margin-left: 700px;}
+.offset10 {margin-left: 780px;}
+.offset11 {margin-left: 860px;}
+.offset12 {margin-left: 940px;}
+
+.header {
+    margin-top: 20px;
+}
+
+.header h1 {
+    font-weight: bold;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
+}
+
+.search {
+    margin-top: 40px;
+}
+
+.search input {
+    width: 100%;
+    height: 30px;
+}
+
+.nnav {
+float: left;
+}
+
+.slider {
+    height: 250px;
+    background: #888;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+}
+
+.thumb img {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+}
+
+.sidebar {
+    padding-top: 30px;
+}
+
+.sidebar nav ul {
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+    list-style: none;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #eee;
+    background: #bbb;
+    display: block;
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 1px;
+}
+
+.sidebar nav ul li a:hover {
+    background: #aaa;
+}
+
+.content {
+    padding: 0 20px;
+    margin-bottom: 10px;
+}
+
+.press {
+    text-align: center;
+    margin: 30px 390px;
+}
+
+a.click {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: .5em 2em;
+    outline: none;
+    border-width: 2px 0;
+    border-style: solid none;
+    border-color: #FDBE33 #000 #D77206;
+    border-radius: 6px;
+    background: linear-gradient(#F3AE0F, #E38916) #E38916;
+    transition: 0.2s;
+} 
+
+a.click:hover {
+    background: linear-gradient(#f5ae00, #f59500) #f5ae00;
+}
+
+a.click:active {
+    background: linear-gradient(#f59500, #f5ae00) #f59500;
+}
+
+footer {
+    display: inline-block;
+}
+
+.footer {
+    color: #444;
+    text-align: center;
+    border-top: 1px solid #888;
+    padding: 30px 0;
+    margin: 0 195px;
+}
+
+.alldno {
+    z-index: 1;
+    top: 40%;
+    left: 20%;
+    height: 250px;
+    width: 750px;
+    position: fixed;
+    border: 1px solid black;
+    background: repeating-linear-gradient(45deg,white 0px,white 16px,blue 16px,blue 32px,white 32px,white 48px,red 48px,red 64px);
+}
+
+.dnocontent {
+    margin: 10px;
+    position: absolute;
+    position: fixed;
+    height: 230px;
+    width: 730px;
+    background: #eee;
+}
+
+.dno-title {
+    font: 35px Arial;
+    margin: 25px 20px 15px;
+}
+
+.dno-content-top {
+    font: 20px Arial;
+    color: rgb(145, 145, 145);
+    margin: 20px;
+}
+
+.dno-content-bot {
+    font: 16px Arial;
+    color: rgb(90, 90, 90);
+    margin: 70px 30px;
+    display: inline-block;
+}
+
+.lock {
+    height: 20px;
+    width: 20px;
+    margin: -4px 10px;
+}
+
+.allbuttons {
+    display: inline-block;
+    position: absolute;
+    top: 130px;
+    left: 180px;
+    height: 50px;
+    width: 365px;
+    display: block;
+}
+
+.button {
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin: auto 5px;
+    justify-content: center;
+}
+
+.button:hover {
+    margin-top: -10px;
+}
+
+.exit {
+    z-index: 1;
+    font: 20px Arial;
+    height: 35px;
+    width: 35px;
+    background-color: rgb(0, 0, 0);
+    border: 2px solid rgb(146, 190, 255);
+    border-radius: 50%;
+    color: rgb(255, 255, 255);
+    line-height: 30px;
+    position: fixed;
+    justify-content: center;
+    top: 250px;
+    left: 1000px;
+    text-align: center;
+}
+
+.exit:hover {
+    border: 2px solid rgb(81, 185, 255);
+    transform: scale(1.1,1.1);
+    cursor: pointer;
+}
