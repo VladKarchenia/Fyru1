@@ -1,12 +1,11 @@
 * {
-    transition:all .5s;
     box-sizing: border-box;
 }
 
 body {
     font: 1em 'PT Sans', Arial, Helvetica, sans-serif;
-    background: rgb(190, 190, 190);
     color: rgb(63, 63, 63);
+    position: 
 }
 
 .container {
@@ -166,29 +165,75 @@ footer {
     margin: 0 195px;
 }
 
-.alldno {
-    z-index: 1;
-    top: 40%;
-    left: 20%;
-    height: 250px;
-    width: 750px;
+/* CSS for modal */
+
+.modal {
+    z-index: 5;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     position: fixed;
-    border: 1px solid black;
-    background: repeating-linear-gradient(45deg,white 0px,white 16px,blue 16px,blue 32px,white 32px,white 48px,red 48px,red 64px);
+    background-color: rgba(0, 0, 0, .8);
+    transition: background 0.5s;
 }
 
-.dnocontent {
-    margin: 10px;
+.modal-guts {
     position: absolute;
-    position: fixed;
-    height: 230px;
     width: 730px;
     background: #eee;
+    background: repeating-linear-gradient(45deg,white 0px,white 16px,blue 16px,blue 32px,white 32px,white 48px,red 48px,red 64px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+}
+
+.close {
+    z-index: 4;
+    height: 35px;
+    width: 35px;
+    background-color: rgb(0, 0, 0);
+    border: 2px solid rgb(146, 190, 255);
+    border-radius: 50%;
+    position: absolute;
+    top: -12px;
+    right: -12px;
+}
+
+.close:hover {
+    border: 2px solid rgb(81, 185, 255);
+    transform: scale(1.1,1.1);
+    cursor: pointer;
+}
+
+.close:before, .close:after {
+    position: absolute;
+    top: 8px;
+    left: 14px;
+    content: ' ';
+    height: 15px;
+    width: 3px;
+    background-color: rgb(255, 255, 255);
+}
+
+.close:before {
+    transform: rotate(45deg);
+}
+
+.close:after {
+    transform: rotate(-45deg);
+}
+
+.content-x {
+    background: #eee;
+    padding: 10px;
 }
 
 .dno-title {
     font: 35px Arial;
-    margin: 25px 20px 15px;
+    width: 450px;
+    margin: 0 auto;
 }
 
 .dno-content-top {
@@ -197,27 +242,10 @@ footer {
     margin: 20px;
 }
 
-.dno-content-bot {
-    font: 16px Arial;
-    color: rgb(90, 90, 90);
-    margin: 70px 30px;
-    display: inline-block;
-}
-
-.lock {
-    height: 20px;
-    width: 20px;
-    margin: -4px 10px;
-}
-
 .allbuttons {
-    display: inline-block;
-    position: absolute;
-    top: 130px;
-    left: 180px;
+    margin: 0 auto;
+    width: 360px;
     height: 50px;
-    width: 365px;
-    display: block;
 }
 
 .button {
@@ -232,25 +260,14 @@ footer {
     margin-top: -10px;
 }
 
-.exit {
-    z-index: 1;
-    font: 20px Arial;
-    height: 35px;
-    width: 35px;
-    background-color: rgb(0, 0, 0);
-    border: 2px solid rgb(146, 190, 255);
-    border-radius: 50%;
-    color: rgb(255, 255, 255);
-    line-height: 30px;
-    position: fixed;
-    justify-content: center;
-    top: 250px;
-    left: 1000px;
-    text-align: center;
+.lock {
+    height: 20px;
+    width: 20px;
+    margin: -4px 10px;
 }
 
-.exit:hover {
-    border: 2px solid rgb(81, 185, 255);
-    transform: scale(1.1,1.1);
-    cursor: pointer;
+.dno-content-bot {
+    font: 16px Arial;
+    color: rgb(90, 90, 90);
+    margin: 20px;
 }
