@@ -5,7 +5,6 @@
 body {
     font: 1em 'PT Sans', Arial, Helvetica, sans-serif;
     color: rgb(63, 63, 63);
-    position: 
 }
 
 .container {
@@ -181,7 +180,6 @@ footer {
 .modal-guts {
     position: absolute;
     width: 730px;
-    background: #eee;
     background: repeating-linear-gradient(45deg,white 0px,white 16px,blue 16px,blue 32px,white 32px,white 48px,red 48px,red 64px);
     top: 50%;
     left: 50%;
@@ -190,7 +188,6 @@ footer {
 }
 
 .close {
-    z-index: 4;
     height: 35px;
     width: 35px;
     background-color: rgb(0, 0, 0);
@@ -211,7 +208,7 @@ footer {
     position: absolute;
     top: 8px;
     left: 14px;
-    content: ' ';
+    content: '';
     height: 15px;
     width: 3px;
     background-color: rgb(255, 255, 255);
@@ -231,9 +228,9 @@ footer {
 }
 
 .dno-title {
-    font: 35px Arial;
-    width: 450px;
-    margin: 0 auto;
+    font: 30px Arial;
+    text-align: center;
+    margin: 20px;
 }
 
 .dno-content-top {
@@ -243,31 +240,78 @@ footer {
 }
 
 .allbuttons {
-    margin: 0 auto;
-    width: 360px;
-    height: 50px;
+    margin: 5px auto;
+    width: 430px;
+    height: 60px;
+}
+
+.sprite {
+    height: 60px;
+    width: 60px;
+    background-image: url('img/sprite.png');
+    background-repeat: no-repeat;
+}
+
+a.vk {
+    background-position: 0 0;
+}
+
+a.ok {
+    background-position: 20% 0;
+}
+
+a.facebook {
+    background-position: 40% 0;
+}
+
+a.twitter {
+    background-position: 60% 0;
+}
+
+a.gmail {
+    background-position: 79% 0;
+}
+
+a.mail {
+    background-position: 100% 0;
+}
+
+.button a {
+    display: block;
 }
 
 .button {
-    height: 50px;
-    width: 50px;
     float: left;
     margin: auto 5px;
-    justify-content: center;
 }
 
-.button:hover {
-    margin-top: -10px;
+.vk, .ok, .facebook {
+    opacity: 0.5;
+}
+
+.vk:hover, .ok:hover, .facebook:hover {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.twitter, .gmail, .mail {
+    filter: opacity(0.5);
+}
+
+.twitter:hover, .gmail:hover, .mail:hover {
+    filter: opacity(1);
+    transition: filter 0.5s;
 }
 
 .lock {
     height: 20px;
-    width: 20px;
-    margin: -4px 10px;
+    margin-right: 5px;
 }
 
 .dno-content-bot {
     font: 16px Arial;
     color: rgb(90, 90, 90);
-    margin: 20px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
 }
