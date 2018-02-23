@@ -247,7 +247,7 @@ footer {
 
 .sprite {
     height: 60px;
-    width: 60px;
+    width: 100%;
     background-image: url('img/sprite.png');
     background-repeat: no-repeat;
 }
@@ -256,24 +256,24 @@ a.vk {
     background-position: 0 0;
 }
 
-a.ok {
-    background-position: 20% 0;
+.button:nth-child(2) a {
+    background-position: -60px 0;
 }
 
 a.facebook {
-    background-position: 40% 0;
+    background-position: -119px 0;
 }
 
-a.twitter {
-    background-position: 60% 0;
+.button:nth-child(4) a {
+    background-position: -173px 0;
 }
 
 a.gmail {
-    background-position: 79% 0;
+    background-position: -230px 0;
 }
 
 a.mail {
-    background-position: 100% 0;
+    background-position: -290px 0;
 }
 
 .button a {
@@ -281,6 +281,8 @@ a.mail {
 }
 
 .button {
+    height: 60px;
+    width: 60px;
     float: left;
     margin: auto 5px;
 }
