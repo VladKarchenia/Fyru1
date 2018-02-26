@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+.loader {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.firstelement {
+    width: 20px;
+    height: 25px;
+    position: absolute;
+    top: 310px;
+    left: 600px;
+    background-color: rgb(50, 201, 70);
+    border-radius: 10px;
+    animation: move1 0.9s linear infinite alternate -1.05s;
+}
+
+.secondelement {
+    width: 20px;
+    height: 85px;
+    position: absolute;
+    top: 250px;
+    left: 630px;
+    background-color: rgb(241, 80, 80);
+    border-radius: 10px;
+    animation: move2 0.9s linear infinite alternate -0.75s;
+}
+
+.thirdelement {
+    width: 20px;
+    height: 136px;
+    position: absolute;
+    top: 210px;
+    left: 660px;
+    background-color: rgb(69, 250, 235);
+    border-radius: 10px;
+    animation: move3 0.9s linear infinite alternate;
+}
+
+.fourthelement {
+    width: 20px;
+    height: 126px;
+    position: absolute;
+    top: 200px;
+    left: 690px;
+    background-color: rgb(66, 141, 252);
+    border-radius: 10px;
+    animation: move4 0.9s linear infinite alternate -0.35s;
+}
+
+@keyframes move1 {
+    from {top: 310px;}
+    50% {top: 320px;}
+    to {top: 330px;}
+}
+
+@keyframes move2 {
+    from {top: 250px;}
+    50% {top: 260px;}
+    to {top: 270px;}
+}
+
+@keyframes move3 {
+    from {top: 222px;}
+    50% {top: 233px;}
+    to {top: 244px;}
+}
+
+@keyframes move4 {
+    from {top: 205px;}
+    50% {top: 215px;}
+    to {top: 225px;}
+}
