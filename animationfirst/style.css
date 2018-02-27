@@ -2,80 +2,88 @@
     box-sizing: border-box;
 }
 
-.loader {
-    width: 100%;
+.box {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
+    width: 300px;
+    height: 300px;
+    top: 0; 
+    left: 0; 
+    bottom: 0; 
     right: 0;
     margin: auto;
+    background-color: rgb(221, 221, 221);
 }
 
-.firstelement {
+.loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     width: 20px;
+    border-radius: 10px;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+.first {
     height: 25px;
-    position: absolute;
-    top: 310px;
-    left: 600px;
+    margin-left: -45px;
     background-color: rgb(50, 201, 70);
-    border-radius: 10px;
-    animation: move1 0.9s linear infinite alternate -1.05s;
+    animation-name: move1;
+    animation-delay: -1.05s;
 }
 
-.secondelement {
-    width: 20px;
+.second {
     height: 85px;
-    position: absolute;
-    top: 250px;
-    left: 630px;
+    margin-left: -15px;
     background-color: rgb(241, 80, 80);
-    border-radius: 10px;
-    animation: move2 0.9s linear infinite alternate -0.75s;
+    animation-name: move2;
+    animation-delay: -0.75s;
 }
 
-.thirdelement {
-    width: 20px;
+.third {
     height: 136px;
-    position: absolute;
-    top: 210px;
-    left: 660px;
+    margin-left: 15px;
     background-color: rgb(69, 250, 235);
-    border-radius: 10px;
-    animation: move3 0.9s linear infinite alternate;
+    animation-name: move3;
 }
 
-.fourthelement {
-    width: 20px;
+.fourth {
     height: 126px;
-    position: absolute;
-    top: 200px;
-    left: 690px;
+    margin-left: 45px;
     background-color: rgb(66, 141, 252);
-    border-radius: 10px;
-    animation: move4 0.9s linear infinite alternate -0.35s;
+    animation-name: move4;
+    animation-delay: -0.35s;
 }
 
 @keyframes move1 {
-    from {top: 310px;}
-    50% {top: 320px;}
-    to {top: 330px;}
+    from {top: 180px;}
+    50% {top: 190px;}
+    to {top: 200px;}
 }
 
 @keyframes move2 {
-    from {top: 250px;}
-    50% {top: 260px;}
-    to {top: 270px;}
+    from {top: 150px;}
+    50% {top: 160px;}
+    to {top: 170px;}
 }
 
 @keyframes move3 {
-    from {top: 222px;}
-    50% {top: 233px;}
-    to {top: 244px;}
+    from {top: 145px;}
+    50% {top: 155px;}
+    to {top: 165px;}
 }
 
 @keyframes move4 {
-    from {top: 205px;}
-    50% {top: 215px;}
-    to {top: 225px;}
+    from {top: 125px;}
+    50% {top: 135px;}
+    to {top: 145px;}
 }
