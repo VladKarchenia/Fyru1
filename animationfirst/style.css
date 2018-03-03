@@ -4,20 +4,20 @@
 
 .box {
     position: absolute;
-    width: 300px;
-    height: 300px;
     top: 0; 
     left: 0; 
     bottom: 0; 
     right: 0;
     margin: auto;
-    background-color: rgb(221, 221, 221);
 }
 
 .loader {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .element {
@@ -65,25 +65,21 @@
 }
 
 @keyframes move1 {
-    from {top: 180px;}
-    50% {top: 190px;}
-    to {top: 200px;}
+    0% {top: 180px;}
+    100% {top: 200px;}
 }
 
 @keyframes move2 {
-    from {top: 150px;}
-    50% {top: 160px;}
-    to {top: 170px;}
+    0% {top: 150px;}
+    100% {top: 170px;}
 }
 
 @keyframes move3 {
-    from {top: 145px;}
-    50% {top: 155px;}
-    to {top: 165px;}
+    0% {top: 145px;}
+    100% {top: 165px;}
 }
 
 @keyframes move4 {
-    from {top: 125px;}
-    50% {top: 135px;}
-    to {top: 145px;}
+    0% {top: 125px;}
+    100% {top: 145px;}
 }
