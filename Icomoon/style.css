@@ -11,9 +11,9 @@ main {
     display: flex;
     height: 470px;
     width: 730px;
-    content: "";
     left: 330px;
     background-color: rgb(245, 233, 255);
+    user-select: none;
 }
 
 .box {
@@ -84,10 +84,7 @@ input[type="radio"]:checked + label span {
 }
 
 input[type="radio"]:checked + label span.icon-drupal {
-    border: 1px solid #b1b1b1;
-    border-top: 2px solid #ffc13d;
-    border-bottom: 1px solid rgb(245, 233, 255);
-    padding: 15px 39px 15px 26px;
+    padding-right: 39px;
 }
 
 .boxtitle {

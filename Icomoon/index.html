@@ -7,42 +7,6 @@
     <link rel="stylesheet" href="fontstyle.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-<script type=text/javascript>
-$(document).ready(function(){
-    var myText1 = $('.text_p');
-    var myText2 = $('.text_r');
-    var myText3 = $('.text_s');
-    var myText4 = $('.text_t');
-    myText1.show();
-    myText2.hide();
-    myText3.hide();
-    myText4.hide();
-    $('#button-one').click(function(){
-    myText1.show();
-    myText2.hide();
-    myText3.hide();
-    myText4.hide();
-    });
-    $('#button-two').click(function(){
-    myText1.hide();
-    myText2.show();
-    myText3.hide();
-    myText4.hide();
-    });
-    $('#button-three').click(function(){
-    myText1.hide();
-    myText2.hide();
-    myText3.show();
-    myText4.hide();
-    });
-    $('#button-four').click(function(){
-    myText1.hide();
-    myText2.hide();
-    myText3.hide();
-    myText4.show();
-    });
-    });
-</script>
 <body>
     <main>
         <div class="container">
@@ -74,5 +38,41 @@ $(document).ready(function(){
             </div>
         </div>
     </main>
+    <script type=text/javascript>
+        $(document).ready(function(){
+            var myText1 = $('.text_p');
+            var myText2 = $('.text_r');
+            var myText3 = $('.text_s');
+            var myText4 = $('.text_t');
+            myText1.show();
+            myText2.hide();
+            myText3.hide();
+            myText4.hide();
+            $('#button-one').click(function(){
+            myText1.show();
+            myText2.hide();
+            myText3.hide();
+            myText4.hide();
+            });
+            $('#button-two').click(function(){
+            myText1.hide();
+            myText2.show();
+            myText3.hide();
+            myText4.hide();
+            });
+            $('#button-three').click(function(){
+            myText1.hide();
+            myText2.hide();
+            myText3.show();
+            myText4.hide();
+            });
+            $('#button-four').click(function(){
+            myText1.hide();
+            myText2.hide();
+            myText3.hide();
+            myText4.show();
+            });
+            });
+    </script>
 </body>
 </html>
