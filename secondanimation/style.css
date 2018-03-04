@@ -23,9 +23,12 @@
 }
 
 .element {
+    position: absolute;
+    top: 50px;
+    left: 0;
     background: url(run.jpg) 0 -25px;
     background-repeat: no-repeat;
-    animation: run 0.8s steps(7) infinite alternate, nigga 4s infinite linear alternate;
+    animation: runn 8s infinite alternate linear, flip 8s infinite linear, run 0.8s steps(7) infinite alternate;
     height: 150px;
     width: 120px;
 }
@@ -35,7 +38,12 @@
     100% {background-position-x: -800px; }
 }
 
-@keyframes nigga {
-0% {transform: translateX(0px); }
-100% {transform: translateX(560px); }
+@keyframes flip {
+    0%, 49.9%, 100% {transform: scaleX(1); }
+    50%, 99.9% {transform: scaleX(-1); }
+}
+
+@keyframes runn {
+    0%, 100% {left: 0px; }
+    50% {left: 560px; }
 }
