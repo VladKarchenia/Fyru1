@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact_Usss</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <div class="list">
+        <div id="container" onclick="showForm()">Contact us</div>
+        <div id="box">
+            <form action="post" class="form">
+                <label for="yourname" class="text">Your Name</label>
+                <input type="text" id="yourname" name="yourname" required />
+                <label for="email" class="text">Email</label>
+                <input type="email" id="email" name="email" required />
+                <span>Phone Number</span>
+                <div class="country_code">
+                    <label for="country_code" class="phone">Country Code</label>
+                    <input type="tel" id="country_code" name="country_code" pattern="^[ 0-9]+$" />
+                </div>
+                <div class="country_area">
+                    <label for="area_city" class="phone">Area / City</label>
+                    <input type="tel" id="area_city" name="area_city" pattern="^[ 0-9]+$" />
+                </div>
+                <div class="phone_number">
+                    <label for="number" class="phone">Number</label>
+                    <input type="tel" id="number" name="number" pattern="^[ 0-9]+$" />
+                </div>
+                <label for="topic" class="text">Select Topic</label>
+                <select id="topic" name="topic">
+                  <option value="sign" selected>Sing in / Sign up</option>
+                  <option value="account">Account activation / deactivation</option>
+                  <option value="ratings_reviews">Ratings and Reviews</option>
+                  <option value="search">Search</option>
+                  <option value="advertising">Advertising</option>
+                  <option value="other">Other issue</option>
+                </select>
+                <label for="yourmessage" class="text">Your Message</label>
+                <textarea id="yourmessage" name="yourmessage" style="width:240px; height:80px" required></textarea>
+                <input type="submit" value="send" />
+            </form>
+        </div>
+    </div>
+</body>
+</html>
