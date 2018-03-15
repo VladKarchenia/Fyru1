@@ -30,7 +30,7 @@ body {
     flex-basis: 100px;
     background-image: url('iconset.png');
     cursor: pointer;
-    transition: all 0.3s linear;
+    transition: all 0.2s linear;
 }
 
 .webdev_icon {
@@ -60,27 +60,27 @@ a {
 
 .submenu {
     position: absolute;
-    top: 101px;
+    top: 100px;
     margin: 0;
     padding-left: 0;
-    visibility: hidden;
+    display: none;
     opacity: 0;
     list-style: none;
-    transition: all 0.3s linear;
+    transition: all 0.2s linear;
 }
 
 .item:hover > .submenu {
-    visibility: visible;
+    display: block;
     opacity: 1;
 }
 
 .subsubmenu {
     margin: 0;
     padding-left: 0;
-    visibility: hidden;
+    display: none;
     opacity: 0;
     list-style: none;
-    transition: opacity 0.3s linear;
+    transition: all 0.2s linear;
 }
 
 .submenu li:hover {
@@ -88,9 +88,15 @@ a {
 }
 
 .submenu li:hover > .subsubmenu {
-    transform: translate(131px, -50px);
-    visibility: visible;
+    position: absolute;
+    top: 0px;
+    left: 100%;
+    display: block;
     opacity: 1;
+}
+
+.submenu li:nth-child(3) {
+    position: relative;
 }
 
 .submenu li {
