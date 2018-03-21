@@ -341,7 +341,7 @@ nav ul li:nth-child(2)::after {
     min-width: 70px;
     background-image: url('services.png');
     background-repeat: no-repeat;
-    margin: 0 10px;
+    margin: 10px;
     margin-right: 240px;
 }
 
@@ -485,7 +485,7 @@ footer ul {
     justify-content: flex-end;
     position: relative;
     padding: 5px;
-    min-width: 450px;
+    max-width: 450px;
 }
 
 footer span {
