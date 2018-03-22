@@ -150,6 +150,7 @@ nav ul li:nth-child(2)::after {
 
 .mission_text {
     position: absolute;
+    z-index: 1;
     margin: 0 auto;
     top: 55%;
     margin-bottom: 5%;
