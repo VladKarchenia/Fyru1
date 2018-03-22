@@ -125,9 +125,26 @@ nav ul li:nth-child(2)::after {
 
 .mission {
     position: relative;
-    width: 100%;
     min-height: 600px;
-    background: url('mission.png') repeat-x;
+    width: 100%;
+}
+
+.mission img {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.box_shadow {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.6);
 }
 
