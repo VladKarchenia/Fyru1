@@ -117,27 +117,29 @@ nav ul li:nth-child(2)::after {
 }
 
 .mission_text {
-    margin-top: 280px;
+    margin-top: 245px;
     text-align: center;
     color: #f7fdfe;
 }
+
 .mission_text h2 {
     position: relative;
+    display: inline-block;
 }
 
 .stars::before, .stars::after {
     position: absolute;
     content: "\2605";
     font-size: 1.1rem;
-    top: 15px;
+    top: 13px;
 }
 
 .stars::before {
-    left: 360px;
+    left: -30px;
 }
 
 .stars::after {
-    right: 360px;
+    right: -30px;
 }
 
 /* div3 about */
