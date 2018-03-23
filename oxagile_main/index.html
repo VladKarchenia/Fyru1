@@ -1,68 +1,64 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>main</title>
     <link rel="stylesheet" href="styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="media.css" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
-    <header class="menu">
-        <div class="logo">
-            <a href="https://www.oxagile.com"></a>
-                <img src="logo.png" alt="logo">
-        </div>
-        <div class="header_menu">
-            <nav>
-                <ul>
-                    <li><a href="#">home</a></li>
-                    <li><a href="#">services</a></li>
-                    <li><a href="#">about</a></li>
-                </ul>
-            </nav>
-            <div class="sign_in"> <a href="#">sign in</a></div>
-        </div>
+    <header class="menu wrapper_content">
+        <a href="https://www.oxagile.com" class="logo"></a>
+        <nav>
+            <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">services</a></li>
+                <li><a href="#">about</a></li>
+            </ul>
+            <a href="#" class="sign_in">sign in</a>
+        </nav>
     </header>
     <div class="mission">
-        <div class="box_shadow"></div>
-        <img src="mission.png" alt="background" />
-        <div class="mission_text">
-            <header><span>Our Mission</span></header>
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis explicabo earum tempora cumque, minima nam veniam ullam repudiandae tempore dolores totam aut eius accusantium! Error deserunt veritatis unde nesciunt esse!</span>
+        <div class="wrapper_content">
+            <div class="mission_text">
+                <h2><span class="stars">Our Mission</span></h2>
+                <div class="subtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis explicabo earum tempora cumque, minima nam veniam ullam repudiandae tempore dolores totam aut eius accusantium! Error deserunt veritatis unde nesciunt esse!</div>
+            </div>
         </div>
     </div>
-    <div class="about">
-        <header>About</header>
-        <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At quas iure dolores fugiat dignissimos placeat, illum fugit labore accusantium debitis modi quod repellat! Non quisquam quis vel eius corrupti laudantium.</span>
+    <div class="about wrapper_content">
+        <h2>About</h2>
+        <div class="subtext">Lorem ipsum dolor, sit amet consectetur adipisicing elit. At quas iure dolores fugiat dignissimos placeat, illum fugit labore accusantium debitis modi quod repellat! Non quisquam quis vel eius corrupti laudantium.</div>
     </div>
     <div class="team">
-        <header>Team</header>
-        <div class="team_persons">
-        <div class="person first_person"><a href="#"></a><span>Vlad Karchenia</span><span>Founder&CEO</span></div> 
-        <div class="person second_person"><a href="#"></a><<span>Mikhail Larchenko</span><span>Front-End Developer</span></div>
-        <div class="person third_person"><a href="#"></a><<span>Anton Raby</span><span>Front-End Developer</span></div>
-        </div>
-        <div class="workwithus">
+        <div class="wrapper_content">
+            <h2>Team</h2>
+            <div class="team_persons">
+                <div class="person_box"><div class="person first_person"></div><div class="name">Vlad Karchenia</div><div class="position">Founder&CEO</div></div> 
+                <div class="person_box"><div class="person second_person"></div><div class="name">Mikhail Larchenko</div><div class="position">Front-End Developer</div></div>
+                <div class="person_box"><div class="person third_person"></div><div class="name">Anton Raby</div><div class="position">Front-End Developer</div></div>
+            </div>
             <a href="#" class="work">work with us</a>
         </div>
     </div>
-    <div class="services">
-        <header>Our Services</header>
-        <span class="services_title_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorem in iste eligendi iusto ipsa eaque molestiae, error maxime dolorum exercitationem illo! Cumque ipsam quae soluta quam sit eum laboriosam?</span>
+    <div class="services wrapper_content">
+        <h2>Our Services</h2>
+        <div class="subtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorem in iste eligendi iusto ipsa eaque molestiae, error maxime dolorum exercitationem illo! Cumque ipsam quae soluta quam sit eum laboriosam?</div>
         <div class="container">
-            <div class="box design"><span class="services_title">Custom Design</span><span class="services_text">Quisque consequat tortor in enim ultrices fringilla. Sed lobortis et ex nec ultrices.</span></div>
-            <div class="box ideas"><span class="services_title">Inovative Ideas</span><span class="services_text">Donec convallis varius metus. Integer a leo lorem. Ut est sem, posuere in porta vel.</span></div>
-            <div class="box answer"><span class="services_title">Love Is The Answer</span><span class="services_text">Suspendisse auctor, nunc eu pulvinar fringilla, sem metus vehicula tellus, dapibus.</span></div>
-            <div class="box layout"><span class="services_title">Resporsive Layout</span><span class="services_text">Pellentesque accumsan sit amet turpis eget dapibus. Maecenas feugiat eleifend.</span></div>
-            <div class="box support"><span class="services_title">24 / 7 Support</span><span class="services_text">Etiam nec semper nisl. Maecenas eu mauris interdum, auctor nisi in, accumsan nisl. </span></div>
-            <div class="box star"><span class="services_title">Feel Like A Star</span><span class="services_text">Nunc finibus erat at pretium porta. Integer at enim est. Quisque feugiat urna tellus.</span></div>
+            <div class="box design"><div class="services_title">Custom Design</div><div class="services_text">Quisque consequat tortor in enim ultrices fringilla. Sed lobortis et ex nec ultrices.</div></div>
+            <div class="box ideas"><div class="services_title">Inovative Ideas</div><div class="services_text">Donec convallis varius metus. Integer a leo lorem. Ut est sem, posuere in porta vel.</div></div>
+            <div class="box answer"><div class="services_title">Love Is The Answer</div><div class="services_text">Suspendisse auctor, nunc eu pulvinar fringilla, sem metus vehicula tellus, dapibus.</div></div>
+            <div class="box layout"><div class="services_title">Resporsive Layout</div><div class="services_text">Pellentesque accumsan sit amet turpis eget dapibus. Maecenas feugiat eleifend.</div></div>
+            <div class="box support"><div class="services_title">24 / 7 Support</div><div class="services_text">Etiam nec semper nisl. Maecenas eu mauris interdum, auctor nisi in, accumsan nisl. </div></div>
+            <div class="box star"><div class="services_title">Feel Like A Star</div><div class="services_text">Nunc finibus erat at pretium porta. Integer at enim est. Quisque feugiat urna tellus.</div></div>
         </div>
     </div>
     <div class="map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7911.74343759328!2d27.497113274621892!3d53.875309684611246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x77bcefc243189551!2sOxagile!5e0!3m2!1sru!2sby!4v1521491101550" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
     <footer>
-        <div class="footer_content">
+        <div class="wrapper_content">
             <div class="footer_top">
                 <ul>
                     <li><a href="#">about</a></li>
@@ -70,15 +66,15 @@
                     <li><a href="#">work with us</a></li>
                 </ul>
                 <div class="link">
-                        <div class="mail"><a href="https://mail.ru/"></a></div>
-                        <div class="fb"><a href="https://www.facebook.com/"></a></div>
-                        <div class="tw"><a href="https://twitter.com/"></a></div>
-                    </div>
+                    <a href="https://mail.ru/" class="mail"></a>
+                    <a href="https://www.facebook.com/" class="fb"></a>
+                    <a href="https://twitter.com/" class="tw"></a>
+                </div>
             </div>
             <div class="footer_bottomtext">
-                <span>Privacy Policy</span>
-                <span>Terms and Conditions</span>
-                <span>© Oxagile LLC 2014</span>
+                <div class="delimiter">Privacy Policy</div>
+                <div class="delimiter">Terms and Conditions</div>
+                <div class="delimiter">&copy Oxagile LLC 2014</div>
             </div>
         </div>
     </footer>
