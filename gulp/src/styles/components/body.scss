@@ -1,0 +1,31 @@
+$FF: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$FW: 400;
+$FS: 1rem;
+$BGCOLOR: rgb(14, 191, 221);
+$LIGHTCOLOR: rgb(247, 253, 254);
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: $FF;
+    font-size: $FS;
+    font-weight: $FW;
+}
+
+.wrapper_content {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: $LIGHTCOLOR;
+}
+
+h2 {
+    font-size: $FS + 1.2;
+    font-weight: $FW + 100;
+    color: $LIGHTCOLOR;
+}

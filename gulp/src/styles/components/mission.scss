@@ -1,0 +1,33 @@
+.mission {
+    width: 100%;
+    height: 500px;
+    background-image: url('mission.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.6);
+}
+
+.mission_text {
+    margin-top: 245px;
+    text-align: center;
+    color: $LIGHTCOLOR;
+    h2 {
+        position: relative;
+        display: inline-block;
+    }
+}
+
+.stars::before, .stars::after {
+    position: absolute;
+    content: "\2605";
+    font-size: $FS + 0.1;
+    top: 13px;
+}
+
+.stars::before {
+    left: -30px;
+}
+
+.stars::after {
+    right: -30px;
+}

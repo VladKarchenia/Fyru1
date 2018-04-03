@@ -1,0 +1,64 @@
+footer {
+    width: 100%;
+    background-color: #45494d;
+    ul {
+        display: flex;
+        justify-content: space-between;
+        width: 250px;
+        list-style: none;
+        color: $LIGHTCOLOR;
+        text-transform: uppercase;
+        font-weight: $FW + 100;
+        padding-left: 0;
+    }
+}
+
+.footer_top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 2px solid #82868f;
+}
+
+.link {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+        height: 40px;
+        width: 40px;
+        background-image: url('link.png');
+        cursor: pointer;
+    }
+}
+
+.mail {
+    background-position: -24px -13px;
+}
+
+.fb {
+    background-position: -95px -12px;;
+}
+
+.tw {
+    background-position: -168px -12px;;
+}
+
+.footer_bottomtext {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    color: $DARKCOLOR;
+    font-size: $FS - 0.2;
+    padding: 5px 0;
+}
+
+.delimiter::after {
+    content: '\2758';
+    padding: 0 15px;
+}
+
+div.delimiter:last-child::after {
+    display: none;
+}
