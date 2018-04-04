@@ -17,7 +17,8 @@
     }
 }
 
-.stars::before, .stars::after {
+.stars::before, 
+.stars::after {
     position: absolute;
     content: "\2605";
     font-size: $FS + 0.1;
