@@ -4,6 +4,7 @@ const prefix = require('gulp-autoprefixer');
 const rename = require('gulp-rename');
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
+const del = require('del');
 
 gulp.task('styles', function() {
     return gulp.src('src/styles/main.scss')
@@ -29,8 +30,15 @@ gulp.task('watcher', function() {
     gulp.watch('src/styles/**/*.scss', ['styles']);
 });
 
-gulp.task('default', ['watcher', 'browserSync']);
+gulp.task('clean', function() {
+    del.sync('dist');
+});
 
+gulp.task('build', ['clean', 'styles'], function() {
+    gulp.src(['src/index.html'])
+    .pipe(gulp.dest('dist'));
+    gulp.src(['src/img/*.png'])
+    .pipe(gulp.dest('dist/img'));
+});
 
-
-
+gulp.task('default', ['build', 'watcher', 'browserSync',]);

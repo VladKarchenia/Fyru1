@@ -1,7 +1,3 @@
-
-$DARKCOLOR: rgb(130, 134, 143);
-$BORDERRAD : 20px;
-
 .menu {
     display: flex;
     justify-content: space-between;
@@ -12,7 +8,7 @@ $BORDERRAD : 20px;
 .logo {
     width: 140px;
     height: 65px;
-    background-image: url('logo.png');
+    background-image: url('img/logo.png');
     cursor: pointer;
 }
 
