@@ -1,0 +1,29 @@
+.landscape {
+    width: 100%;
+    height: 550px;
+    margin-top: 60px;
+    background-image: url('img/mila_game.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    .wrapper_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .button {
+            @include yellow_button;
+        }
+    }
+}
+
+.logo {
+    height: 81px;
+    width: 215px;
+    background-image: url('img/mila_logo.png');
+    background-repeat: no-repeat;
+    margin: 15px 0;
+}
+
+.subtext {
+    font-size: $FS_SUB + 0.2;
+}

@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 1600px;
+    font-family: $FF_LIGHT;
+    font-size: $FS;
+    font-weight: $FW;
+    color: $LIGHT_COLOR;
+}
+
+.wrapper_content {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: $LIGHT_COLOR;
+    cursor: pointer;
+}
+
+h1 {
+    max-width: 550px;
+    font-family: $FF_REGULAR;
+    font-size: $FS + 1.4;
+    font-weight: $FW;
+    color: $LIGHT_COLOR;
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+h2 {
+    font-family: $FF_REGULAR;
+    font-size: $FS + 1.2;
+    font-weight: $FW + 100;
+    color: $DARK_COLOR;
+}
+
+.button {
+    border-radius: 20px;
+    font-weight: $FW + 100;
+    line-height: 40px;
+}

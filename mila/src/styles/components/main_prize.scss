@@ -1,0 +1,22 @@
+.main_prize {
+    width: 100%;
+    height: 500px;
+    background-image: url('img/mila-prizes.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.prize_text {
+    max-width: 490px;
+    margin: 100px 0 0 50%;
+    color: $DARK_COLOR;
+    h2 {
+        margin: 0;
+        text-align: left;
+    }
+    .subtext {
+        margin-top: 30px;
+        text-align: left;
+    }
+}

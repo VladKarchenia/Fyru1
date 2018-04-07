@@ -1,0 +1,27 @@
+@mixin yellow_button {
+    width: 244px;
+    padding: 0 30px;
+    margin-top: 70px;
+    background-color: #ecdd08;
+    color: darken($DARK_COLOR, 20%);
+    border: 1px solid darken(#ecdd08, 10%);
+    transition: box-shadow 0.6s linear;
+    &:hover {
+        animation: jolting 0.6s cubic-bezier(.8,1.5,.2,-1);
+        border: 1px solid darken($LIGHT_COLOR, 15%);
+        box-shadow: 0px 0px 10px 2px darken($LIGHT_COLOR, 15%), inset 0px 0px 10px 2px darken($LIGHT_COLOR, 15%);
+        @keyframes jolting {
+            0% {transform: translate(2px, 1px) rotate(0deg);}
+            10% {transform: translate(-1px, -2px) rotate(-1deg);}
+            20% {transform: translate(-3px, 0px) rotate(1deg);}
+            30% {transform: translate(0px, 2px) rotate(0deg);}
+            40% {transform: translate(1px, -1px) rotate(1deg);}
+            50% {transform: translate(-1px, 2px) rotate(-1deg);}
+            60% {transform: translate(-3px, 1px) rotate(0deg);}
+            70% {transform: translate(2px, 1px) rotate(-1deg);}
+            80% {transform: translate(-1px, -1px) rotate(1deg);}
+            90% {transform: translate(2px, 2px) rotate(0deg);}
+            100% {transform: translate(1px, -2px) rotate(-1deg);}
+        }
+    }
+}

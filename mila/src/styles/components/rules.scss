@@ -1,0 +1,42 @@
+.rules {
+    margin: 60px 0;
+    .wrapper_content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        .rules_content {
+            display: flex;
+            flex-direction: column;
+            max-width: 490px;
+            text-align: left;
+        }
+        .cleanic_photo {
+            height: 180px;
+            width: 282px;
+            background-image: url('img/mila_products.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+}
+
+.midtext {
+    margin: 0 10px 30px 0;
+    color: $DARK_COLOR;
+}
+
+.anketa {
+    width: 198px;
+    padding: 0 15px;
+    background-color: $BLUE_COLOR;
+    border: 1px solid darken($BLUE_COLOR, 15%);
+    text-align: center;
+    color: $LIGHT_COLOR;
+    transition: background-color 0.3s linear;
+    &:hover {
+        background-color: darken($BLUE_COLOR, 10%);
+        border: 1px solid darken($BLUE_COLOR, 25%);
+        }
+}
