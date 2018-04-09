@@ -1,22 +1,32 @@
 .main_prize {
     width: 100%;
-    height: 500px;
-    background-image: url('img/mila-prizes.jpg');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
+    height: 400px;
 }
 
 .prize_text {
-    max-width: 490px;
-    margin: 100px 0 0 50%;
-    color: $DARK_COLOR;
+    max-width: 500px;
+    padding-top: 160px;
+    margin-left: 50%;
     h2 {
         margin: 0;
         text-align: left;
+        color: $DARK_COLOR;
     }
     .subtext {
         margin-top: 30px;
         text-align: left;
+        color: $DARK_COLOR;
+        font-size: $FS;
     }
+}
+
+.bg {
+    position: absolute;
+    z-index: -1;
+    top: 1060px;
+    width: 100%;
+    height: 500px;
+    background-image: url('img/mila-prizes.jpg');
+    background-size: cover;
+    background-position-x: 32%;
 }

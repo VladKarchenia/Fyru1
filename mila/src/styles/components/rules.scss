@@ -1,15 +1,18 @@
 .rules {
-    margin: 60px 0;
+    margin: 50px 0 80px 0;
     .wrapper_content {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         .rules_content {
             display: flex;
             flex-direction: column;
-            max-width: 490px;
+            max-width: 471px;
             text-align: left;
+            h2 {
+                margin: 0 0 5px 0;
+            }
         }
         .cleanic_photo {
             height: 180px;
@@ -23,18 +26,18 @@
 }
 
 .midtext {
-    margin: 0 10px 30px 0;
     color: $DARK_COLOR;
+    font-size: $FS;
 }
 
 .anketa {
     width: 198px;
-    padding: 0 15px;
     background-color: $BLUE_COLOR;
     border: 1px solid darken($BLUE_COLOR, 15%);
     text-align: center;
     color: $LIGHT_COLOR;
     transition: background-color 0.3s linear;
+    margin-top: 20px;
     &:hover {
         background-color: darken($BLUE_COLOR, 10%);
         border: 1px solid darken($BLUE_COLOR, 25%);

@@ -9,6 +9,7 @@
     "gulp-autoprefixer": "^5.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.2.1",
+    "jquery": "^3.3.1",
     "npm": "^5.8.0"
   },
   "devDependencies": {

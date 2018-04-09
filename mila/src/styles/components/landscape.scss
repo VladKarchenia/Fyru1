@@ -1,15 +1,11 @@
 .landscape {
     width: 100%;
-    height: 550px;
-    margin-top: 60px;
-    background-image: url('img/mila_game.jpg');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
+    height: 700px;
     .wrapper_content {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-top: 60px;
         .button {
             @include yellow_button;
         }
@@ -25,5 +21,17 @@
 }
 
 .subtext {
-    font-size: $FS_SUB + 0.2;
+    color: $LIGHT_COLOR;
+    font-size: $FS;
+}
+
+.main_bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    width: 100%;
+    height: 700px;
+    background-image: url('img/mila_game.jpg');
+    background-position-x: 73%;
+    background-size: cover;
 }

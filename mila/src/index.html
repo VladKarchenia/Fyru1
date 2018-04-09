@@ -5,85 +5,98 @@
     <title>mila main</title>
     <link rel="stylesheet" href="styles.css" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <script>
-    window.onscroll = function(){
-        document.body.style.msPerspectiveOrigin =
-        document.body.style.mozPerspectiveOrigin =
-        document.body.style.webkitPerspectiveOrigin =
-        window.scrollX + "px " + 
-        window.scrollY + "px";
-      }
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-    <header class="menu">
+    <script>
+        $(window).bind('scroll',function(e){
+            parallaxScroll();
+        });
+        function parallaxScroll(){
+            var scrolled = $(window).scrollTop();
+            $('.main_bg').css('top',(0-(scrolled*.20))+'px');
+            var scrolled = $(window).scrollTop();
+            $('.bg').css('top',(1340-(scrolled*.30))+'px');
+        }
+    </script>
+    <header>
         <div class="wrapper_content">
-        <nav>
-            <ul>
-                <li><a href="#">Правила участия</a></li>
-                <li><a href="#">Призы</a></li>
-                <li><a href="#">Информация от организатора</a></li>
-            </ul>
-            <a href="#" class="join">Принять участие</a>
-        </nav>
+            <nav>
+                <ul class="hidden_menu">
+                    <li class="hidden_item"><a href="#">Правила участия</a></li>
+                    <li class="hidden_item"><a href="#">Призы</a></li>
+                    <li class="hidden_item"><a href="#">Информация от организатора</a></li>
+                </ul>
+                <ul class="menu">
+                    <li class="item"><a href="#">Правила участия</a></li>
+                    <li class="item"><a href="#">Призы</a></li>
+                    <li class="item"><a href="#">Информация от организатора</a></li>
+                </ul>
+                <a href="#" class="join">Принять участие</a>
+            </nav>
         </div>
     </header>
-    <div class="landscape">
-        <div class="wrapper_content">
-            <a href="https://www.mila.by" class="logo"></a>
-            <div>
-                <h1>Выйграй тур на двоих или один из сотни призов!</h1>
-                <div class="subtext">С 1 декабря 2014 по 15 января 2015 прими участие в рекламной игре Возраждение богини и выигрывай призы!</div>
-            </div>
-            <a href="#" class="button">Учавствовать в игре!</a>
-        </div>
-    </div>
-    <div class="rules">
-        <div class="wrapper_content">
-            <div class="rules_content">
-                <h2>Правила участия</h2>
-                <div class="midtext">Совершите покупку продукции CLEANIC в любом магазине "Мила" на сумму более 30 000 рублей в одном чеке. Сфотографируйте чек и заполните анкету участника и ожидайте розыгрыша!</div>
-                <a href="#" class="button anketa">Заполнить анкету!</a>
-            </div>
-            <div class="cleanic_photo"></div>
-        </div>
-    </div>
-    <div class="main_prize">
-        <div class="wrapper_content">
-            <div class="prize_text">
-                <h2>Главный приз &#8212</h2>
-                <h2>тур на двоих в Ларнаку</h2>
-                <div class="subtext">Тур в Ларнаку - это семь дней отличного совместного отдыха, масса впечатлений и отличный повод побыть вдвоём!</div>
-            </div>
-        </div>
-    </div>
-    <div class="additional_prizes">
-        <div class="wrapper_content">
-            <h2>Дополнительные призы</h2>
-            <div class="prizes">
-                <div class="prize_box">
-                    <div class="prize_photo first_prize"></div>
-                    <div class="addtextbox">
-                        <div class="quantity">3</div>
-                        <div class="addprize_text">Роскошных ожерелья из белого жемчуга</div>
-                    </div>
-                </div> 
-                <div class="prize_box">
-                    <div class="prize_photo second_prize"></div>
-                    <div class="addtextbox">
-                        <div class="quantity">10</div>
-                        <div class="addprize_text">Комплектов постельного белья</div>
-                    </div>
+    <div class="content">
+        <div class="main_bg"></div>
+        <div class="landscape">
+            <div class="wrapper_content">
+                <a href="https://www.mila.by" class="logo"></a>
+                <div>
+                    <h1>Выйграй тур на двоих или один из сотни призов!</h1>
+                    <div class="subtext">С 1 декабря 2014 по 15 января 2015 прими участие в рекламной игре Возраждение богини и выигрывай призы!</div>
                 </div>
-                <div class="prize_box">
-                    <div class="prize_photo third_prize"></div>
-                    <div class="addtextbox">
-                        <div class="quantity">100</div>
-                        <div class="addprize_text">Наборов косметики CLEANIC</div>
-                    </div>
+                <a href="#" class="button">Учавствовать в игре!</a>
+            </div>
+        </div>
+        <div class="rules">
+            <div class="wrapper_content">
+                <div class="rules_content">
+                    <h2>Правила участия</h2>
+                    <div class="midtext">Совершите покупку продукции CLEANIC в любом магазине "Мила" на сумму более 30 000 рублей в одном чеке. Сфотографируйте чек и заполните анкету участника и ожидайте розыгрыша!</div>
+                    <a href="#" class="button anketa">Заполнить анкету!</a>
+                </div>
+                <div class="cleanic_photo"></div>
+            </div>
+        </div>
+        <div class="bg"></div>
+        <div class="main_prize">
+            <div class="wrapper_content">
+                <div class="prize_text">
+                    <h2>Главный приз &#8212</h2>
+                    <h2>тур на двоих в Ларнаку</h2>
+                    <div class="subtext">Тур в Ларнаку - это семь дней отличного совместного отдыха, масса впечатлений и отличный повод побыть вдвоём!</div>
                 </div>
             </div>
-            <a href="#" class="button">Учавствовать в игре!</a>
+            </div>
+        </div>
+        <div class="additional_prizes">
+            <div class="wrapper_content">
+                <h2>Дополнительные призы</h2>
+                <div class="prizes">
+                    <div class="prize_box">
+                        <div class="prize_photo first_prize"></div>
+                        <div class="addtextbox">
+                            <div class="quantity">3</div>
+                            <div class="addprize_text">Роскошных ожерелья из белого жемчуга</div>
+                        </div>
+                    </div> 
+                    <div class="prize_box">
+                        <div class="prize_photo second_prize"></div>
+                        <div class="addtextbox">
+                            <div class="quantity">10</div>
+                            <div class="addprize_text">Комплектов постельного белья</div>
+                        </div>
+                    </div>
+                    <div class="prize_box">
+                        <div class="prize_photo third_prize"></div>
+                        <div class="addtextbox">
+                            <div class="quantity">100</div>
+                            <div class="addprize_text">Наборов косметики CLEANIC</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="button">Учавствовать в игре!</a>
+            </div>
         </div>
     </div>
     <footer>

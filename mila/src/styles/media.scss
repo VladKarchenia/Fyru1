@@ -1,0 +1,88 @@
+@media screen and (max-width: 850px) {
+    .footer_info {
+        display: none;
+    }
+    .prize_text {
+        margin-left: 40%;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    h1 {
+        font-size: $FS + 0.6;
+    }
+    h2 {
+        font-size: $FS + 0.4;
+    }
+    .prize_text {
+        padding-top: 140px;
+    }
+    .subtext, .midtext, .prize_text .subtext {
+        font-size: $FS_SUB;
+        margin: 0 5px;
+    }
+    .prize_text .subtext {
+        margin-top: 15px;
+    }
+    nav {
+        padding: 5px 5px 0 5px;
+        margin-bottom: 5px;
+    }
+    .hidden_menu {
+        display: block !important;
+    }
+    .menu {
+        display: none !important;
+    }
+    .midtext {
+        text-align: center;
+    }
+    .rules_content, .prize_box {
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .rules {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    h1 {
+        font-size: $FS + 0.4;
+    }
+    h2 {
+        font-size: $FS + 0.2;
+    }
+    .landscape{ 
+        .wrapper_content { 
+            .button {
+        margin-top: 30px;
+            }
+        }
+    }
+    .prize_text {
+        margin-left: 0;
+        h2, .subtext {
+            text-align: center;
+        }
+    }
+    .prize_box {
+        margin-bottom: 30px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .hidden_item {
+        transform: translate(-86px, 45px) !important;
+    }
+    nav{
+        .hidden_menu {
+        height: 45px;
+        width: 135px;
+        }
+    }
+    .join {
+        line-height: 45px;
+        padding: 0 10px;
+    }
+}

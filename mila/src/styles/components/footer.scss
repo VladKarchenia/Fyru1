@@ -1,5 +1,7 @@
 footer {
+    max-width: 1600px;
     width: 100%;
+    margin: 0 auto;
     background-color: #dc007c;
     .wrapper_content {
         display: flex;
@@ -14,6 +16,7 @@ footer {
     width: 142px;
     background-image: url('img/footer_logo.png');
     background-repeat: no-repeat;
+    margin: 20px 0;
 }
 
 .footer_info {
@@ -31,4 +34,5 @@ footer {
     width: 111px;
     background-image: url('img/lovata.png');
     background-repeat: no-repeat;
+    margin: 20px 0;
 }
