@@ -10,22 +10,28 @@ function sortArray(arr) {
         return (a - b);
     }
     arr.sort(letSort);
-    alert(arr);
+    console.log(arr);
 }
 sortArray([42, 5, 0, 23, 9, -4]);
 
+// лучше, по ECMA6
+const sortArray = arr => arr.sort((a, b) => a - b);
+sortArray([42, 5, 0, 23, 9, -4]);
+
 // Task 2
-function sortDifArrays(arr) {
-    function letSort(a, b) { // Сортировка массива от min к max.
-        return (a - b);
-    }
+function flattenArray(arr) {
    const newArr = arr.reduce(function(a, b) {
        return a.concat(b.filter(i => a.indexOf(i) === -1)); // Конкатениция с дедупликацией массива.
    });
-   newArr.sort(letSort);
-   alert(newArr);
+   newArr.sort((a,b) => a - b);
+   console.log(newArr);
 }
 sortDifArrays([[3,4], [7,8], [1,2], [5,6], [1,7]]);
+
+//лучше, по ECMA6
+const flattenArray = arr => arr.reduce((acc, array) => acc.concat(array);
+flattenArray([[3,4], [7,8], [1,2], [5,6], [1,7]]);
+
 
 // Task 3
 function getPositive(arr) {
@@ -54,6 +60,7 @@ function sayHi(name) {
     let count = makeCount();
     let reset = resetCount();
 }
+sayHi.count();
 sayHi('Vlad');
 sayHi.count();
 sayHi('Vasya');
