@@ -1,10 +1,12 @@
-"use strict"
+'use strict'
 
 const sequence = (start = 0, step = 1) => {
     function* gen(start, step) {
         while(true) {
             yield start;
-            start += step;}}
+            start += step;
+        }
+    }
     var generator = gen(start, step);
     return function() {
         return generator.next().value;

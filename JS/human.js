@@ -1,4 +1,4 @@
-"use strict"
+'use strict'
 
 class Human {
     constructor(name = 'John', age = 0, height = 200) {
@@ -13,6 +13,7 @@ class Human {
         return `${this.name}`;
     }
 }
+
 let human = new Human();
 let human1 = new Human("Коля", "23", "180");
 let human2 = new Human("Даша", "19", "170");
@@ -28,10 +29,10 @@ let human10 = new Human("Женя", "25", "175");
 let humans = [
     human, human1, human2, human3, human4, human5, human6, human7, human8, human9, human10
 ];
+
 console.log(humans);
 console.log(human1.getFirstName)
 console.log(human1.getInfo())
-
 
 // использую функцию-конструктор и методы поместил в прототип
 
@@ -39,15 +40,17 @@ function Human(name = 'John', age = 0, height = 200) {
     this.name = name;
     this.age = age;
     this.height = height;
-    this.getInfo = function() {
-        return `${this.name} , ${this.age} , ${this.height}`;
-    }
 }
+
 Object.defineProperties(Human.prototype, {
     getFirstName: {
         get: function() {return `${this.name}`;}
     }
 })
+
+Human.prototype.getInfo = function() {
+    return `${this.name} , ${this.age} , ${this.height}`;
+}
 
 let human = new Human();
 let human1 = new Human("Коля", "23", "180");

@@ -1,4 +1,4 @@
-"use strict"
+'use strict'
 
 // стандартный расширил
 Number.isOdd = num => num % 2 === 1;

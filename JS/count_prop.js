@@ -1,7 +1,7 @@
-"use strict"
+'use strict'
 
 const count = object => Object.keys(object).length;
-var a = { a: 1, b: 2 };
+var a = {a: 1, b: 2};
 console.log(count(a));
 var b = function () {};
 console.log(count(b));
@@ -15,14 +15,14 @@ console.log(count(d));
 
 function count(object) {
     var length = 0;
-    for( var key in object ) {
-        if( object.hasOwnProperty(key) ) {
+    for (var key in object) {
+        if (object.hasOwnProperty(key)) {
             ++length;
         }
     }
     return length;
 };
-var a = { a: 1, b: 2 };
+var a = {a: 1,b: 2};
 console.log(count(a));
 var b = function () {};
 console.log(count(b));
