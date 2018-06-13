@@ -12,19 +12,31 @@ var input = document.getElementById("input"),
     oldNum = "",
     memory = "",
     resultNum,
+    hasPoint = false,
     operation;
 
 var setNum = function() {
+    const value = this.dataset.val
+    const isPoint = value === '.'
+
+    if (isPoint) {
+        if (hasPoint) {
+            return
+        }
+        hasPoint = true
+    }
+
     if (resultNum) {
-        theNum = this.getAttribute("data-val");
+        theNum = value;
         resultNum = "";
     } else {
-        theNum += this.getAttribute("data-val");
+        theNum += value;
     }
     input.innerHTML = theNum;
 }
 
 var moveNum = function() {
+    hasPoint = false
     oldNum = theNum;
     theNum = "";
     operation = this.getAttribute("data-ops");
@@ -32,6 +44,7 @@ var moveNum = function() {
 }
 
 var displayNum = function() {
+    hasPoint = false
     oldNum = parseFloat(oldNum);
     theNum = parseFloat(theNum);
     switch (operation) {
@@ -54,6 +67,7 @@ var displayNum = function() {
         default:
         resultNum = theNum;
     }
+    resultNum = +resultNum.toFixed(9)
     input.innerHTML = resultNum;
     equals.setAttribute("data-result", resultNum);
     oldNum = 0;
