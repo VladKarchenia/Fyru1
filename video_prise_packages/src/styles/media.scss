@@ -1,0 +1,169 @@
+@media screen and (max-width: 846px) {
+    .for_multiple_acc .wrapper_content {
+        div {
+            text-align: center;
+            &:first-child {
+                text-align: center;
+            }
+        }
+        a {
+            margin: 0 auto 20px;
+        }
+    }
+    .package_head .price {
+        font-size: 2.8em !important;
+    }
+    .package_head ul {
+        li:first-child {
+            font-size: 1.2em !important;
+        }
+        li:last-child {
+            font-size: 1.2em !important;
+        }
+    }
+    .get_started {
+        font-size: 1.2em !important;
+    }
+    .package_body {
+        font-size: 1em !important;
+    }
+}
+
+@media screen and (max-width: 673px) {
+    footer .wrapper_content div {
+        margin: 0 auto;
+        ul li {
+            margin: 10px 10px;
+            font-size: $FS_SUB;
+        }
+    }
+    .package_head .price {
+        font-size: 2.3em !important;
+    }
+}
+
+@media screen and (max-width: 573px) {
+    footer .wrapper_content div ul li {
+        font-size: $FS_SUB - 0.1;
+    }
+}
+
+@media screen and (max-width: 559px) {
+    .logo {
+        transform: scale(0.9);
+    }
+    .menu {
+        font-size: $FS - 0.2;
+    }
+    .item {
+        padding: 0 10px !important;
+    }
+    nav .menu .register {
+        height: 25px;
+        width: 100px;
+        line-height: 22px;
+    }
+    .package_head {
+        & .price {
+        font-size: 1.7em !important;
+        }
+        & ul {
+            li:first-child {
+                font-size: 0.8em !important;
+            }
+            li:last-child {
+                font-size: 0.8em !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 434px) {
+    header .wrapper_content {
+        padding: 0 10px !important;
+    }
+    .logo {
+        margin: 10px 10px 10px 0 !important;
+    }
+    .item {
+        padding: 0 7px !important;
+    }
+    .videos_num {
+        width: 65px !important;
+    }
+    h2 {
+        font-size: $FS + 0.5;
+    }
+    .subtext {
+        font-size: $FS - 0.1;
+    }
+    .videos_num {
+        font-size: $FS - 0.1;
+    }
+    .package_head .price {
+        font-size: 1.4em !important;
+    }
+    .get_started {
+        
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .menu {
+        font-size: $FS - 0.4;
+    }
+    .register {
+        width: 80px !important;
+    }
+    .logo {
+        transform: scale(0.7);
+    }
+    h2 {
+        padding: 10px 0;
+    }
+    .slider_scale {
+        font-size: $FS - 0.2;
+    }
+    h3 {
+        font-size: $FS - 0.1;
+    }
+    .subtext {
+        font-size: $FS - 0.2;
+    }
+    .for_multiple_acc .wrapper_content a {
+        height: 26px;
+        width: 130px;
+        line-height: 24px;
+        font-size: $FS - 0.1;
+    }
+    .slider_scale ul {
+        padding: 0 0 5px 15px;
+    }
+    footer .wrapper_content div ul li {
+        margin: 0 5px;
+    }
+    .package_head {
+        & .price {
+            font-size: 1.3em !important;
+        }
+        & ul {
+            li:first-child {
+                font-size: 0.7em !important;
+            }
+            li:last-child {
+                font-size: 0.7em !important;
+            }
+        }
+    }
+    .get_started {
+        width: 70% !important;
+        left: 15% !important;
+        font-size: 0.8em !important;
+    }
+    .package_body {
+        font-size: 0.5em !important;
+        & ul {
+            padding-left: 25% !important;
+        }
+    }
+}

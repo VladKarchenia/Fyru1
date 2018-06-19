@@ -1,0 +1,47 @@
+content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 1600px;
+    font-family: $FF_MAIN;
+    font-size: $FS;
+    font-weight: $FW;
+    color: $LIGHTGREY_COLOR;
+}
+
+.wrapper_content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: $LIGHTGREY_COLOR;
+}
+
+li {
+    list-style-type: none;
+}
+
+h2 {
+    font-size: $FS + 1;
+    font-weight: $FW;
+    color: $DARKGREEN_COLOR;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h3 {
+    font-family: $FF_MENU;
+    font-size: $FS + 0.3;
+    font-weight: $FW + 200;
+    color: $PINK_COLOR;
+    padding: 20px 0 10px 0;
+}
+
+.subtext {
+    color: darken($LIGHTGREY_COLOR, 30%);
+}
