@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+.box {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    bottom: 0; 
+    right: 0;
+    margin: auto;
+}
+
+.loader {
+    position: absolute;
+    width: 700px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-left: 10px solid black;
+    border-right: 10px solid black;
+}
+
+.element {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background: url(run.jpg) 0 -25px;
+    background-repeat: no-repeat;
+    animation: runn 8s infinite alternate linear, flip 8s infinite linear, run 0.8s steps(7) infinite alternate;
+    height: 150px;
+    width: 120px;
+}
+
+@keyframes run {
+    0%, {background-position-x: 0px; }
+    100% {background-position-x: -800px; }
+}
+
+@keyframes flip {
+    0%, 49.9%, 100% {transform: scaleX(1); }
+    50%, 99.9% {transform: scaleX(-1); }
+}
+
+@keyframes runn {
+    0%, 100% {left: 0px; }
+    50% {left: 560px; }
+}
