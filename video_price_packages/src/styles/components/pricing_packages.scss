@@ -84,7 +84,7 @@
                 }
             }
         }
-        .free_body ul li:nth-child(n+7)::before, .basic_body ul li:nth-child(n+10)::before {
+        .cross::before {
             background-position-y: -24px;
         }
         &:hover {
@@ -93,8 +93,11 @@
     }
     .active {
         filter: opacity(1) blur(0);
-        z-index: 99;
+        z-index: 1;
         box-shadow: 0 0 20px 5px rgba(0, 82, 175, 0.829);
+        .cross::before {
+            background-position-y: -24px !important;
+        }
         .package_body ul li::before {
             background-position-y: -12px;
         }

@@ -27,6 +27,9 @@
     .package_body {
         font-size: 1em !important;
     }
+    .for_multiple_acc .wrapper_content div:first-child {
+        margin: 0 auto;
+    }
 }
 
 @media screen and (max-width: 673px) {
@@ -75,6 +78,13 @@
                 font-size: 0.8em !important;
             }
         }
+
+    }
+    .get_started {
+        font-size: 1em !important;
+    }
+    .package_body ul li {
+        font-size: 0.8em !important;
     }
 }
 
@@ -104,7 +114,11 @@
         font-size: 1.4em !important;
     }
     .get_started {
-        
+        width: 70% !important;
+        left: 15% !important;
+    }
+    .package_body ul {
+        padding-left: 20% !important;
     }
 }
 
