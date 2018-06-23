@@ -1,36 +1,36 @@
-'use strict'
+'use strict';
 
-var slider = document.getElementById('myRange');
-var videosNum = document.querySelector('.videos_num');
-var frst = document.getElementById('frst');
-var scnd = document.getElementById('scnd');
-var thrd = document.getElementById('thrd');
-videosNum.innerHTML = slider.value + ' videos';
-
-slider.oninput = function() {
-    if (this.value == 1) {
-        videosNum.innerHTML = this.value + ' video';
-        frst.classList.add('active');
-    } else {
-        frst.classList.remove('active');
+(function() {
+    const slider = document.getElementById('myRange');
+    const videosNum = document.querySelector('.videos_num');
+    const activePlan = document.getElementsByClassName('container active')
+    const numToEntityMap = {
+        1: document.getElementById('frst'),
+        2: document.getElementById('scnd'),
+        3: document.getElementById('thrd')
     }
+    let lastIndex
 
-    if (this.value > 1 & this.value <= 20) {
-        videosNum.innerHTML = this.value + ' videos';
-        scnd.classList.add('active');
-    } else {
-        scnd.classList.remove('active');
-    }
+    const onInput = (event) => {
+        const { value } = event.target;
+        let index;
 
-    if (this.value > 20 & this.value < 30) {
-        videosNum.innerHTML = this.value + ' videos';
-        thrd.classList.add('active');
-    } else {
-        if (this.value == 30) {
-            videosNum.innerHTML = this.value + '+ videos';
-            thrd.classList.add('active');
+        videosNum.innerText = `${value != 30 ? value : value + '+'} video${value == 1 ? '' : 's'}`;
+
+        if (value == 1) {
+            index = 1;
+        } else if (value > 1 && value <= 20) {
+            index = 2;
         } else {
-            thrd.classList.remove('active');
+            index = 3;
+        }
+
+        if (lastIndex !== index) {
+            activePlan[0].classList.remove('active');
+            numToEntityMap[index].classList.add('active');
+            lastIndex = index;
         }
     }
-}
+
+    slider.addEventListener('input', onInput);
+})();
