@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+    margin: 30px;
+}
+
+.container {
+    position: absolute;
+    display: flex;
+    height: 470px;
+    width: 730px;
+    left: 330px;
+    background-color: rgb(245, 233, 255);
+    user-select: none;
+}
+
+.box {
+    position: absolute;
+    font: 1.2em Tahoma Arial;
+    color: rgb(88, 70, 70);
+    height: 50px;
+    width: 140px;
+}
+
+.text {
+    font: 1.2em Tahoma Arial;
+    color: rgb(88, 70, 70);
+    margin: 10px 0px;
+    position: absolute;
+    width: 670px;
+    top: 70px;
+}
+
+.box:hover {
+    cursor: pointer;
+}
+
+.codepen {
+    top: 30px;
+    left: 0px;
+}
+
+.dribbble {
+    left: 139px;
+    top: 30px;
+}
+
+.dropbox {
+    left: 278px;
+    top: 30px;
+}
+
+.drupal {
+    left: 417px;
+    top: 30px;
+}
+
+.emptyblock {
+    top: 30px;
+    left: 496px;
+    margin-right: 30px;
+    display: none;
+}
+
+.title {
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + label span {
+    border: 1px solid #b1b1b1;
+    border-top: 2px solid #ffc13d;
+    border-bottom: 1px solid rgb(245, 233, 255);
+    padding: 15px 25px 15px 26px;
+    margin-left: -26px;
+}
+
+input[type="radio"]:checked + label span.icon-drupal {
+    padding-right: 39px;
+}
+
+.boxtitle {
+    position: absolute;
+    display: flex;
+    height: 80px;
+    width: 660px;
+    left: 40px;
+    content: "";
+    background-color: rgb(245, 233, 255);
+    border-bottom: 1px solid #b1b1b1;
+}

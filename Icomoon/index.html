@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Icomoon</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="fontstyle.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="boxtitle">
+                <label><div class="box codepen">
+                    <input type="radio" id="button-one" name="radio" checked />
+                    <label for="button-one" class="title"><span class="icon-codepen">Codepen</span></label>
+                </div></label>
+                <div class="text text_p"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint repudiandae eveniet ea voluptatem nisi illum dolorem? Perferendis fugiat mollitia incidunt corrupti totam, autem quam eius minus necessitatibus exercitationem voluptatem iure?Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, deserunt id obcaecati quis ipsa, doloremque aliquid eveniet animi esse accusantium dolorem ea omnis reiciendis, iste provident minima voluptates laboriosam facilis.</p></div>
+                <label><div class="box dribbble">
+                    <input type="radio" id="button-two" name="radio" />
+                    <label for="button-two" class="title"><span class="icon-dribbble">Dribbble</span></label>
+                </div></label>
+                <div class="text text_r"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor numquam voluptatibus commodi, et itaque nostrum reprehenderit sapiente assumenda, fugit ipsam magni dignissimos odit recusandae voluptatum, est quisquam? Totam, cumque et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit accusantium molestiae soluta praesentium. Autem, esse aut! Unde deleniti cupiditate delectus sit voluptatum cum. Inventore, optio mollitia esse alias voluptates adipisci. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, molestias cum. Sint maiores odit nesciunt suscipit culpa. Nisi numquam dolores sequi assumenda iure voluptates alias, nostrum aliquam id, aspernatur nesciunt?</p></div>
+                <label><div class="box dropbox">
+                    <input type="radio" id="button-three" name="radio" />
+                    <label for="button-three" class="title"><span class="icon-dropbox">Dropbox</span></label>
+                </div></label>
+                <div class="text text_s"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae commodi inventore earum asperiores fugiat ipsum vero quaerat possimus quod, porro voluptas perspiciatis tenetur amet deleniti veritatis atque dolorem! Ullam, nisi. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis blanditiis veniam eum saepe ipsa nulla, iusto quae, ipsum velit adipisci reiciendis exercitationem itaque inventore labore autem reprehenderit accusantium, debitis neque! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint repudiandae eveniet ea voluptatem nisi illum dolorem? Perferendis fugiat mollitia incidunt corrupti totam, autem quam eius minus necessitatibus exercitationem voluptatem iure?Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, deserunt id obcaecati quis ipsa, doloremque aliquid eveniet animi esse accusantium dolorem ea omnis reiciendis, iste provident minima voluptates laboriosam facilis.</p></div>
+                <label><div class="box drupal">
+                    <input type="radio" id="button-four" name="radio" />
+                    <label for="button-four" class="title"><span class="icon-drupal">Drupal</span></label>
+                </div></label>
+                <div class="text text_t"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor modi ullam corporis eligendi praesentium molestias quod distinctio laudantium quasi, consectetur labore possimus nisi neque velit ab facilis reprehenderit. Vitae, et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque error iure cum ab eos obcaecati veniam, corporis in magnam architecto quidem est. Architecto adipisci perferendis, cupiditate deserunt corrupti vitae perspiciatis! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, doloremque ipsa fuga veritatis nesciunt quia eaque aut nobis exercitationem non sint consequatur animi aspernatur et repellendus. Natus, quam! Facilis, maxime. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint repudiandae eveniet ea voluptatem nisi illum dolorem? Perferendis fugiat mollitia incidunt corrupti totam, autem quam eius minus necessitatibus exercitationem voluptatem iure?Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, deserunt id obcaecati quis ipsa, doloremque aliquid eveniet animi esse accusantium dolorem ea omnis reiciendis, iste provident minima voluptates laboriosam facilis.</p></div>
+                <div class="box emptyblock">
+                    <input type="radio" id="button-five" name="radio" />
+                    <label for="button-five" class="title"><span></span></label>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type=text/javascript>
+        $(document).ready(function(){
+            var myText1 = $('.text_p');
+            var myText2 = $('.text_r');
+            var myText3 = $('.text_s');
+            var myText4 = $('.text_t');
+            myText1.show();
+            myText2.hide();
+            myText3.hide();
+            myText4.hide();
+            $('#button-one').click(function(){
+            myText1.show();
+            myText2.hide();
+            myText3.hide();
+            myText4.hide();
+            });
+            $('#button-two').click(function(){
+            myText1.hide();
+            myText2.show();
+            myText3.hide();
+            myText4.hide();
+            });
+            $('#button-three').click(function(){
+            myText1.hide();
+            myText2.hide();
+            myText3.show();
+            myText4.hide();
+            });
+            $('#button-four').click(function(){
+            myText1.hide();
+            myText2.hide();
+            myText3.hide();
+            myText4.show();
+            });
+            });
+    </script>
+</body>
+</html>
