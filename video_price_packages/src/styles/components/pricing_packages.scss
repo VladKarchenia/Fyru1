@@ -1,0 +1,108 @@
+.pricing_packages .wrapper_content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .container {
+        max-width: 300px;
+        width: 32%;
+        overflow: hidden;
+        margin-bottom: 40px;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+        filter: opacity(0.9) blur(1px);
+        .package_head {
+            width: 100%;
+            text-align: center;
+            background-color: $DARKGREEN_COLOR;
+            color: white;
+            position: relative;
+            .price {
+                padding: 10% 45% 15% 0;
+                font-family: $FF_SUB;
+                font-size: 3.2em;
+                font-weight: $FW;
+                position: relative;
+                &::before {
+                    content: "\00a3" + " ";
+                }
+                &::after {
+                    content: "\002f mo";
+                    position: absolute;
+                    top: 40%;
+                }
+            }
+            ul {
+                padding-left: 0;
+                li:first-child {
+                    padding: 5px 0;
+                    color: darken($LIGHTGREY_COLOR, 15%);
+                    font-size: 1.3em;
+                }
+                li:last-child {
+                    font-size: 1.3em;
+                    padding-bottom: 15%;
+                }
+            }
+        }
+        .get_started {
+            width: 58%;
+            position: absolute;
+            padding: 4% 0;
+            top: 91%;
+            left: 21%;
+            text-align: center;
+            background-color: $BLUE_COLOR;
+            border-radius: 5px;
+            font-size: 1.2em;
+            color: white;
+        }
+        .package_body {
+            width: 100%;
+            height: 100%;
+            padding: 5% 2% 0;
+            background-color: lighten($LIGHTGREY_COLOR, 15%);
+            color: darken($LIGHTGREY_COLOR, 20%);
+            font-size: 1em;
+            ul {
+                padding-left: 15%;
+                li {
+                    padding: 10px 0;
+                    display: flex;
+                    position: relative;
+                    &::before {
+                        content: '';
+                        background-image: url('img/features.png');
+                        background-repeat: no-repeat;
+                        height: 12px;
+                        width: 13px;
+                        position: absolute;
+                        top: 14px;
+                        left: -21px;
+                    }
+                }
+            }
+        }
+        .cross::before {
+            background-position-y: -24px;
+        }
+        &:hover {
+            filter: opacity(1) blur(0);
+        }
+    }
+    .active {
+        filter: opacity(1) blur(0);
+        z-index: 1;
+        box-shadow: 0 0 20px 5px rgba(0, 82, 175, 0.829);
+        .cross::before {
+            background-position-y: -24px !important;
+        }
+        .package_body ul li::before {
+            background-position-y: -12px;
+        }
+        .get_started {
+            background-color: $PINK_COLOR;
+        }
+    }
+}

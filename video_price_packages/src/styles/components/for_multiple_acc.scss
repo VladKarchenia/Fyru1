@@ -1,0 +1,28 @@
+.for_multiple_acc {
+    background-color: lighten($LIGHTGREY_COLOR, 15%);
+    padding: 2% 0;
+    .wrapper_content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        div {
+            width: 630px;
+            text-align: left;
+            padding-bottom: 20px;
+            span {
+                font-size: $FS_SUB;
+            }
+        }
+        a {
+            height: 30px;
+            width: 160px;
+            margin: 10px 0;
+            border: 1px solid $PINK_COLOR;
+            border-radius: 4px;
+            text-align: center;
+            color: $PINK_COLOR;
+            line-height: 28px;
+        }
+    }
+}
