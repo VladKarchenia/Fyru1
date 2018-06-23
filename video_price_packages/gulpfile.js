@@ -43,4 +43,4 @@ gulp.task('build', ['clean', 'styles'], function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['build', 'watcher', 'browserSync',]);
+gulp.task('default', ['build', 'watcher', 'browserSync']);

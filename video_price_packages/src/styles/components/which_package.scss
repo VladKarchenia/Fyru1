@@ -12,7 +12,8 @@
             color: $PINK_COLOR;
             font-weight: $FW + 200;
         }
-        .subsubtext {
+        .uppertext {
+            text-transform: uppercase;
             font-size: $FS_SUB;
             color: darken($LIGHTGREY_COLOR, 20%);
         }
