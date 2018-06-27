@@ -1,0 +1,8 @@
+* {
+    box-sizing: border-box;
+}
+
+.canvasitem {
+    margin-top: 50px;
+    text-align: center;
+}
