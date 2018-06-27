@@ -28,6 +28,8 @@ gulp.task('browserSync', function() {
 
 gulp.task('watcher', function() {
     gulp.watch('src/styles/**/*.scss', ['styles']);
+    gulp.watch('src/*.html', browserSync.reload);
+    gulp.watch('src/*.js', browserSync.reload);
 });
 
 gulp.task('clean', function() {
