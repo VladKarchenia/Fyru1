@@ -1,0 +1,90 @@
+* {
+    box-sizing: content-box;
+}
+
+div.sunholder {
+    position: absolute;
+    display: inline-block;
+    left: calc(50% - 25px);
+    top: calc(50% - 25px);
+    animation: spin 4s linear 0s infinite;
+}
+
+div.sun {
+    display: block;
+    height: 50px;
+    width: 50px;
+    background-color: yellow;
+    border-radius: 50%;
+    animation: changecirclecolor 4s linear 0s infinite;
+}
+
+div.raybase {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+
+div.ray {
+    display: block;
+    width: 10px;
+    height: 30px;
+    background-color: yellow;
+    position: absolute;
+    border-radius: 50%;
+    animation: shine 1s linear 0s infinite alternate, changerayscolor 4s linear 0s infinite;
+}
+
+div.ray1 {
+    transform: translate(25px,0px);
+}
+
+div.ray2 {
+    transform: rotate(45deg) translate(25px,0px) ;
+}
+
+div.ray3 {
+    transform: rotate(90deg) translate(25px,0px) ;
+}
+
+div.ray4 {
+    transform: rotate(135deg) translate(25px,0px) ;
+}
+
+div.ray5 {
+    transform: rotate(180deg) translate(25px,0px) ;
+}
+
+div.ray6 {
+    transform: rotate(225deg) translate(25px,0px) ;
+}
+
+div.ray7 {
+    transform: rotate(270deg) translate(25px,0px) ;
+}
+
+div.ray8 {
+    transform: rotate(315deg) translate(25px,0px) ;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes shine {
+    from { transform: translate(3px,0px) }
+    to { transform: translate(13px,0px) }
+}
+
+@keyframes changerayscolor {
+    from { background-color:#eeff00; }
+    50% { background-color: #ff9100; }
+    to { background-color: #eeff00; }
+}
+
+@keyframes changecirclecolor {
+    from { background-color:#ff9100; }
+    50% { background-color: #eeff00; }
+    to { background-color: #ff9100; }
+}
