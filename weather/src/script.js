@@ -22,21 +22,21 @@ function init() {
     })
 }
 
-function showAddress (value) {
-    var geocoder = ymaps.geocode(value)
-    geocoder.then(
-        function (res) {
-            var coordinates = res.geoObjects.get(0).geometry.getCoordinates()
-            var map = ymaps.Map('map', {
-                center: coordinates,
-                zoom: 9,
-            })
-            map.geoObjects.add(ymaps.Placemark(
-                coordinates, {'preset': 'islands#redDotIcon'}
-            ))
-        }
-    )
-} 
+// function showAddress (value) {
+//     var geocoder = ymaps.geocode(value)
+//     geocoder.then(
+//         function (res) {
+//             var coordinates = res.geoObjects.get(0).geometry.getCoordinates()
+//             var map = ymaps.Map('map', {
+//                 center: coordinates,
+//                 zoom: 9,
+//             })
+//             map.geoObjects.add(ymaps.Placemark(
+//                 coordinates, {'preset': 'islands#redDotIcon'}
+//             ))
+//         }
+//     )
+// }
 
 
     // map.addOverlay(geocoder);
@@ -54,7 +54,7 @@ function showAddress (value) {
 //         alert('Произошла ошибка: ' + error.message)
 //     });
 // }
-document.getElementById('search').addEventListener('submit', showAddress, false)
+// document.getElementById('search').addEventListener('submit', showAddress, false)
 
 navigator.geolocation.getCurrentPosition(function(position) {
     const DAY_NAME = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -68,55 +68,55 @@ navigator.geolocation.getCurrentPosition(function(position) {
         lat: position.coords.latitude,
         lng: position.coords.longitude
     }
+    const DATA_MAP = {
+        wind: (data) => data.wind.speed.toFixed(1) + ' m/s',
+        city: (data) => data.name + ', ' + data.sys.country,
+        temp: (data) => Math.round(data.main.temp),
+        condition: (data) => data.weather[0].description,
+        img: (data) => 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png',
+        cloudiness: (data) => data.weather[0].description,
+        pressure: (data) => (data.main.pressure / 10).toFixed(1) + ' kPa',
+        humidity: (data) => data.main.humidity + ' %',
+        sunrise: (data) => new Date(data.sys.sunrise * 1000).toLocaleString('ru', OPTIONS),
+        sunset: (data) => new Date(data.sys.sunset * 1000).toLocaleString('ru', OPTIONS)
+    }
     // const DATA_MAP = {
-    //     wind: (data) => data.wind.speed.toFixed(1) + ' m/s',
-    //     city: (data) => data.name + ', ' + data.sys.country,
-    //     temp: (data) => Math.round(data.main.temp),
-    //     condition: (data) => data.weather[0].description,
-    //     img: (data) => 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png',
-    //     cloudiness: (data) => data.weather[0].description,
-    //     pressure: (data) => (data.main.pressure / 10).toFixed(1) + ' kPa',
-    //     humidity: (data) => data.main.humidity + ' %',
-    //     sunrise: (data) => new Date(data.sys.sunrise * 1000).toLocaleString('ru', OPTIONS),
+    //     city: (data) => data.city.name + ', ' + data.city.country,
+    //     wind: (data) => data.list[0].wind.speed.toFixed(1) + ' m/s',
+    //     temp: (data) => Math.round(data.list[0].main.temp),
+    //     condition: (data) => data.list[0].weather[0].description,
+    //     img: (data) => 'http://openweathermap.org/img/w/' + data.list[0].weather[0].icon + '.png',
+    //     cloudiness: (data) => data.list[0].weather[0].description,
+    //     pressure: (data) => (data.list[0].main.pressure / 10).toFixed(1) + ' kPa',
+    //     humidity: (data) => data.list[0].main.humidity + ' %',
+    //     sunrise: (data) => new Date(data.list.sys.sunrise * 1000).toLocaleString('ru', OPTIONS),
     //     sunset: (data) => new Date(data.sys.sunset * 1000).toLocaleString('ru', OPTIONS)
     // }
-    const DATA_MAP = {
-        city: (data) => data.city.name + ', ' + data.city.country,
-        wind: (data) => data.list[0].wind.speed.toFixed(1) + ' m/s',
-        temp: (data) => Math.round(data.list[0].main.temp),
-        condition: (data) => data.list[0].weather[0].description,
-        img: (data) => 'http://openweathermap.org/img/w/' + data.list[0].weather[0].icon + '.png',
-        cloudiness: (data) => data.list[0].weather[0].description,
-        pressure: (data) => (data.list[0].main.pressure / 10).toFixed(1) + ' kPa',
-        humidity: (data) => data.list[0].main.humidity + ' %',
-        // sunrise: (data) => new Date(data.list.sys.sunrise * 1000).toLocaleString('ru', OPTIONS),
-        // sunset: (data) => new Date(data.sys.sunset * 1000).toLocaleString('ru', OPTIONS)
-    }
 
     const USER_LANGUAGE = navigator.language && navigator.language.includes('ru') ? 'ru' : 'en'
     const WIND_DIR = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW']
-    const input = document.getElementById('search')
-    const btn = document.getElementById('myBtn')
+    // const input = document.getElementById('search')
+    // const btn = document.getElementById('myBtn')
     
     document.getElementsByClassName('sunholder')[0].style.visibility = 'visible'
     document.getElementsByClassName('wrapper_content')[0].classList.add('preloader_on')
     
 
-// // fetch('http://api.openweathermap.org/data/2.5/weather?q=' + input.value + '&lang=' + USER_LANGUAGE + '&units=metric&APPID=c6f8dd0d039e624a468cee0667029f1f')
-//     fetch('http://api.openweathermap.org/data/2.5/forecast?lat=' + POS.lat + '&lon=' + POS.lng + '&lang=' + USER_LANGUAGE + '&units=metric&APPID=c6f8dd0d039e624a468cee0667029f1f')
-//     .then(response => response.json())
-//     .then(data => {
-//         Object.keys(DATA_MAP).forEach(key => {
-//             const value = DATA_MAP[key](data)
-//             handleResponse(key, value)
-//         })
-//         // console.log(data)})
+// fetch('http://api.openweathermap.org/data/2.5/weather?q=' + input.value + '&lang=' + USER_LANGUAGE + '&units=metric&APPID=c6f8dd0d039e624a468cee0667029f1f')
+    // fetch('http://api.openweathermap.org/data/2.5/forecast?lat=' + POS.lat + '&lon=' + POS.lng + '&lang=' + USER_LANGUAGE + '&units=metric&APPID=c6f8dd0d039e624a468cee0667029f1f')
+    fetch('http://api.openweathermap.org/data/2.5/weather?lat=' + POS.lat + '&lon=' + POS.lng + '&lang=' + USER_LANGUAGE + '&units=metric&APPID=c6f8dd0d039e624a468cee0667029f1f')
+    .then(response => response.json())
+    .then(data => {
+        Object.keys(DATA_MAP).forEach(key => {
+            const value = DATA_MAP[key](data)
+            handleResponse(key, value)
+        })
 
-//         document.querySelector('.wind_direction').style.transform = 'rotate('+ data.list[0].wind.deg + 'deg)'
-//         document.querySelector('.wind_direction').setAttribute('title', WIND_DIR[Math.floor(data.list[0].wind.deg / 22.5)])
-//     })
-//     .then(preloader)
-//     // .catch(err => err.text().then(data) = errorHandler(data))
+        document.querySelector('.wind_direction').style.transform = 'rotate('+ data.wind.deg + 'deg)'
+        document.querySelector('.wind_direction').setAttribute('title', WIND_DIR[Math.floor(data.wind.deg / 22.5)])
+    })
+    .then(preloader)
+    // .catch(err => err.text().then(data) = errorHandler(data))
 
     function handleResponse(key, value) {
         document.querySelector(`.${key}`).innerText += value
