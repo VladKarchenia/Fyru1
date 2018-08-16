@@ -1,9 +1,9 @@
-import React, { Component } from "react"
+import React, { Components } from "react"
 import { generateRnd } from "./utils"
 import { generateColor } from "./utils"
-import { Circle } from '../Circle/Circle.jsx'
+import Circle from '../Circle/Circle.jsx'
 
-export default class Core extends Component {
+export default class Core extends Components {
     state = {
         rnd: '??',
         backgroundColor: '#fff'
