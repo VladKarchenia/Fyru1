@@ -8,8 +8,7 @@ export default class Core extends Component {
   state = {
     rnd: '??',
     backgroundColor: '#fff',
-    modalOpen: false,
-    circleColor: 'rgb(247, 223, 191)'
+    modalOpen: false
   }
 
   updateData = () => this.setState({
@@ -27,16 +26,10 @@ export default class Core extends Component {
   closeModal = () => this.setState({
     modalOpen: false,
   })
-
-  changeCircleBg = (e) => {
-    const { target } = e
-    this.setState({
-      circleColor: target.value,
-    })
-  }
   
+  changeCircleBg = circleColor => this.setState({circleColor})
+
   render() {
-    console.log(this)
     const { rnd, backgroundColor, modalOpen, circleColor } = this.state
     const { generateNum, changeBg } = this.props.btnNames
     const spanColor = {backgroundColor}

@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Circle = props => (
-    <div className='circle' style={{backgroundColor: props.circleColor}} title={props.circleColor} />
+const Circle = ({ circleColor }) => (
+  <div className='circle' style={{backgroundColor: circleColor}} title={circleColor || 'rgb(247, 223, 191)'} />
 )
 
 export default Circle
