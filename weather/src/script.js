@@ -1,5 +1,33 @@
 'use strict';
 
+let instance
+
+class LocationService {
+    constructor() {
+        if (!instance) {
+            instance = this
+        }
+        return instance
+    }
+
+    getLocation() {
+        return new Promise((resolve, reject) => {
+            navigator.geolocation.getCurrentPosition(resolve, reject);
+        })
+    }
+}
+
+const locationManager = new LocationService()
+locationManager.getLocation().then(...)
+
+
+
+
+
+
+
+
+
 
 ymaps.ready(init)
 // var suggestView = ymaps.SuggestView('search', {results: 1, offset: [20, 30]});
