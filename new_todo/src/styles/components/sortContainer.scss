@@ -1,0 +1,31 @@
+.sortContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 8px 0;
+  padding: 0 40px;
+  .sortLabel {
+    margin-right: 50px;
+    line-height: 20px;
+    color: rgb(151, 151, 151);
+    font-size: 18px;
+    padding-left: 5px;
+  }
+  .sort {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    min-width: 16px;
+    min-height: 16px;
+    border: 2px solid #999;
+    transition: 0.2s all linear;
+    outline: none;
+    top: 2px;
+    position: relative;
+    &:checked {
+      border: 3px solid black;
+    }
+  }
+}

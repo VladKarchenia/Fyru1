@@ -1,0 +1,45 @@
+.inputContainer {
+  border-bottom: 1px solid #bcbebd;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.addBtn {
+  height: 45px;
+  padding: 10px 30px;
+  border-radius: 10px;
+  margin: 15px 40px 15px 0;
+  border: 1px solid #99a9a0;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: inset 0 1px 8px rgba(255,255,255,0.4), 0 0 5px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.2);
+  background: #8ea096;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    background: #87968e;
+    border-color: #8d9490;
+  }
+}
+
+.input {
+  border: none;
+  outline: none;
+  padding: 15px 40px;
+  font-size: 36px;
+  font-weight: 300;
+  width: 80%;
+  max-width: 80%;
+  line-height: normal;
+  margin-top: 3px;
+}
+
+.todoListStyle {
+  padding: 0;
+}

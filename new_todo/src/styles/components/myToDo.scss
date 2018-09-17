@@ -1,0 +1,50 @@
+.myToDo {
+  height: 60px;
+  padding: 5px 40px 5px 40px;
+  background-color: #843ab8;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.4), rgba(0,0,0,0.4) 0 1px 3px, inset 0 1px 0 rgba(255,255,255,0.2);
+  background: linear-gradient(0deg, rgba(153,0,173,1) 0%, rgba(150,67,209,1) 60%, rgba(150,67,209,1) 81%, rgba(150,67,209,1) 100%);
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .toDoName {
+    line-height: 10px;
+    &:hover {
+      .newNameSpan::after {
+        content: "\f040";
+        font-family: "FontAwesome";
+        font-size: 18px;
+        color: rgba(255,255,255,0.8);
+        margin-left: 5px;
+        line-height: 1em;
+        position: absolute;
+        top: 50px;
+      }
+    }
+  }
+}
+
+.saveBtn {
+  padding: 10px 20px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #178b49;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 0 5px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.2);
+  background: #1eb760;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    background: #1eaa5b;
+    border-color: #157e42;
+  }
+  &::before {
+    content: "\f111";
+    font-family: FontAwesome;
+    padding-right: 10px;
+  }
+}

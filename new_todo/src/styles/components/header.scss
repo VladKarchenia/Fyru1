@@ -1,0 +1,24 @@
+.header {
+  height: 40px;
+  text-align: right;
+  padding: 0 40px;
+  background-color: #333;
+  border-bottom: 1px solid #111;
+  .a {
+    font-size: 16px;
+    color: #ccc;
+    margin-left: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 40px;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.newList::before {
+  content: "\f067";
+  font-family: FontAwesome;
+  padding-right: 5px;
+}
