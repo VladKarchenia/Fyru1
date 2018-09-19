@@ -2,12 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
+  padding: 15px 40px;
   border-bottom: 1px solid #eef0f5;
   border-top: 1px solid #eef0f5;
   position: relative;
   width: 100%;
-
   .taskHandle {
     cursor: move;
     color: #ccc;
@@ -150,10 +149,12 @@
 }
 
 .completedTask {
-  composes: commonListStyle;
   &:hover {
     .delete, .taskHandle {
       opacity: 1;
+    }
+    .tag, .star {
+      visibility: hidden;
     }
   }
   .taskText {
@@ -169,13 +170,16 @@
     background-position: 1px 1px;
     background-color: #ebeef4;
     border-color: #ebeef4 !important;
+    &:hover {
+      background-color: #ebeef4;
+      border-color: #ebeef4 !important;
+    }
   }
 }
 
 .fixedTask {
-  composes: commonListStyle;
   border-bottom: 1px solid #daeefa;
-  background-color: #f0f8fd !important;
+  background-color: #f0f8fd;
   border-top-color: #daeefa;
   .star {
     opacity: 1;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import styles from './Footer.module.scss'
 
 class Footer extends Component {
   about = () => {
@@ -15,10 +16,10 @@ class Footer extends Component {
 
   render() {
     return (
-      <div className='footer'>
-        <a onClick={this.about} className='a'>About</a>
-        <a onClick={this.developers} className='a'>Developers</a>
-        <a onClick={this.suggest} className='a'>Suggest a feature</a>
+      <div className={styles.footer}>
+        <a onClick={this.about} className={styles.a}>About</a>
+        <a onClick={this.developers} className={styles.a}>Developers</a>
+        <a onClick={this.suggest} className={styles.a}>Suggest a feature</a>
       </div>
     )
   }

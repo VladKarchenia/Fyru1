@@ -17,8 +17,11 @@
   }
 }
 
-.newList::before {
-  content: "\f067";
-  font-family: FontAwesome;
-  padding-right: 5px;
+.newList {
+  composes: a;
+  &::before {
+    content: "\f067";
+    font-family: FontAwesome;
+    padding-right: 5px;
+  }
 }

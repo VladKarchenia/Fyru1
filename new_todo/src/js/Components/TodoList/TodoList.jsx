@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import TodoItem from './apps/TodoItem.jsx'
 import SortContainer from '../SortContainer/SortContainer.jsx'
+import styles from './InputContainer.module.scss'
 
 class TodoList extends Component {
   state = {
@@ -25,16 +26,17 @@ class TodoList extends Component {
 
 
   render() {
+    const { list, inputValue } = this.state
     return (
       <div>
-        <div className='form'>
-          <input value={this.state.inputValue} onChange={this.handleChange} placeholder='Write your next task here...' className='input'/>
-          <button onClick={this.handleClick} className='addBtn'>ADD</button>
+        <div className={styles.form}>
+          <input value={inputValue} onChange={this.handleChange} placeholder='Write your next task here...' className={styles.input} />
+          <button onClick={this.handleClick} className={styles.addBtn}>ADD</button>
         </div>
         <SortContainer />
-        <ul className='todoListStyle'>
+        <ul className={styles.todoListStyle}>
           {
-            this.state.list.map((item, index) => {
+            list.map((item, index) => {
               return (
                 <TodoItem
                   handleDel={this.delItem}

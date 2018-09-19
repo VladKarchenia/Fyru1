@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import styles from './Header.module.scss'
 
 class Header extends Component {
   logIn = () => {
@@ -11,9 +12,9 @@ class Header extends Component {
   
   render() {
     return (
-      <div className='header'>
-        <a onClick={this.logIn} className='a'>Log in</a>
-        <a onClick={this.newList} className='a newList'>New List</a>
+      <div className={styles.header}>
+        <a onClick={this.logIn} className={styles.a}>Log in</a>
+        <a onClick={this.newList} className={styles.newList}>New List</a>
       </div>
     )
   }

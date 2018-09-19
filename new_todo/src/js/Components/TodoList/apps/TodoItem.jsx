@@ -34,17 +34,17 @@ state = {
     const { isFixed, isCompleted } = this.state;
     return (
     <li className={cx('activeTask', {fixedTask:isFixed}, {completedTask:isCompleted})}>
-        <div className='leftSide'>
-          <span className='taskHandle'></span>
-          <input type="checkbox" className='checkImg' id='checkImg' onClick={this.completedTask}/>
-          <label htmlFor="checkImg" className='checkLabel'></label>
-          <span className='taskText'>{content}</span>
-          <span className='dueData'>No due data</span>
+        <div className={styles.leftSide}>
+          <span className={styles.taskHandle}></span>
+          <input type="checkbox" className={styles.checkImg} id='checkImg' />
+          <label htmlFor="checkImg" className={styles.checkLabel} onClick={this.completedTask}></label>
+          <span className={styles.taskText}>{content}</span>
+          <span className={styles.dueData}>No due data</span>
         </div>
-        <ul className='actions'>
-          <li className='star'><input type="text" id='star' className='starInp' /><label htmlFor="star" className='starLabel'><span className='starSpan' onClick={this.fixedTask}></span></label></li>
-          <li className='tag'><span className='tagSpan'></span></li>
-          <li className='delete'><span className='deleteSpan' onClick={this.delItem}></span></li>
+        <ul className={styles.actions}>
+          <li className={styles.star}><input type="text" id='star' className={styles.starInp} /><label htmlFor="star" className={styles.starLabel}><span className={styles.starSpan} onClick={this.fixedTask}></span></label></li>
+          <li className={styles.tag}><span className={styles.tagSpan}></span></li>
+          <li className={styles.delete}><span className={styles.deleteSpan} onClick={this.delItem}></span></li>
         </ul>
       </li>
     )
