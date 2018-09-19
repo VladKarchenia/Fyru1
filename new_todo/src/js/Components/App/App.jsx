@@ -8,10 +8,10 @@ export default class App extends Component {
 
   render() {
     return [
-      <Header />,
-      <MyToDo />,
-      <TodoList />,
-      <Footer />
+      <Header key={1} />,
+      <MyToDo key={2} />,
+      <TodoList key={3} />,
+      <Footer key={4} />
     ]
   }
 }

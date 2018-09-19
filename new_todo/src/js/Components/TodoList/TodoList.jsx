@@ -9,10 +9,29 @@ class TodoList extends Component {
     inputValue: ''
   }
 
-  handleClick = () => this.setState({
-    list: [this.state.inputValue, ...this.state.list],
-    inputValue: ''
-  })
+  componentDidMount() {
+    document.addEventListener('keydown', this.enterAddTodo, true)
+  }
+
+  handleClick = () => {
+    if (this.state.inputValue !== '') {
+      this.setState({
+        list: [this.state.inputValue, ...this.state.list],
+        inputValue: ''
+      })
+    }
+  }
+
+  enterAddTodo = (e) => {
+    if (this.state.inputValue !== '') {
+      if (e.key === 'Enter') {
+        this.setState({
+          list: [this.state.inputValue, ...this.state.list],
+          inputValue: ''
+        })
+      }
+    }
+  }
 
   handleChange = (e) => this.setState({
     inputValue: e.target.value
@@ -23,7 +42,6 @@ class TodoList extends Component {
     list.splice(index, 1);
     this.setState({list})
   }
-
 
   render() {
     const { list, inputValue } = this.state

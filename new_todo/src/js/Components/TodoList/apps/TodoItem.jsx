@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
 import styles from './TasksList.module.scss'
 import classNames from 'classnames/bind'
-
 const cx = classNames.bind(styles)
 
 class TodoItem extends Component {
-state = {
-  isFixed: false,
-  isCompleted: false
-}
+  state = {
+    isFixed: false,
+    isCompleted: false
+  }
 
   delItem = () => {
     const {handleDel, index} = this.props;
@@ -26,6 +25,7 @@ state = {
     const { isCompleted } = this.state
     this.setState({
       isCompleted: !isCompleted,
+      isFixed: false
     })
   }
 
