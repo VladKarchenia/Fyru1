@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import TodoItem from './apps/TodoItem.jsx'
 import SortContainer from '../SortContainer/SortContainer.jsx'
 import styles from './InputContainer.module.scss'
+import _ from 'lodash'
 
 class TodoList extends Component {
   state = {
-    list: [],
+    items: {},
     inputValue: ''
   }
 
@@ -13,23 +14,30 @@ class TodoList extends Component {
     document.addEventListener('keydown', this.enterAddTodo, true)
   }
 
-  handleClick = () => {
-    if (this.state.inputValue !== '') {
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.enterAddTodo, true)
+  }
+
+  addItem = (value, id = Date.now()) => {
+    if (this.state.inputValue !== '' ) {
       this.setState({
-        list: [this.state.inputValue, ...this.state.list],
+        items: {
+          ...this.state.items,
+          [id]: {
+            id,
+            value,
+            isFixed:false,
+            isCompleted:false
+          }
+        },
         inputValue: ''
       })
     }
   }
 
   enterAddTodo = (e) => {
-    if (this.state.inputValue !== '') {
-      if (e.key === 'Enter') {
-        this.setState({
-          list: [this.state.inputValue, ...this.state.list],
-          inputValue: ''
-        })
-      }
+    if (e.key === 'Enter') {
+      this.addItem()
     }
   }
 
@@ -37,37 +45,36 @@ class TodoList extends Component {
     inputValue: e.target.value
   })
 
-  delItem = (index) => {
-    const list = [...this.state.list];
-    list.splice(index, 1);
-    this.setState({list})
+  onDelete = id => {
+    const { items } = this.state
+      this.setState({ items: _.omit(items, id) })
   }
 
   render() {
-    const { list, inputValue } = this.state
+    const { items, inputValue } = this.state
     return (
       <div>
         <div className={styles.form}>
           <input value={inputValue} onChange={this.handleChange} placeholder='Write your next task here...' className={styles.input} />
-          <button onClick={this.handleClick} className={styles.addBtn}>ADD</button>
+          <button onClick={this.addItem} className={styles.addBtn}>ADD</button>
         </div>
         <SortContainer />
         <ul className={styles.todoListStyle}>
-          {
-            list.map((item, index) => {
-              return (
-                <TodoItem
-                  handleDel={this.delItem}
-                  key={index}
-                  content={item}
-                  index={index}
-                />
-              )
-            })
-          }
+        {
+          Object.values(items).map(({id, value, isFixed, isCompleted}, index) => (
+            <TodoItem
+              onDelete={this.onDelete}
+              key={index}
+              isFixed={false}
+              isCompleted={false}
+              value={value}
+              id={id}
+            />
+          ))
+        }
         </ul>
       </div>
-    );
+    )
   }
 }
 

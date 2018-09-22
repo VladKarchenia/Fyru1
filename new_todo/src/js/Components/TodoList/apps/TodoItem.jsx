@@ -10,8 +10,8 @@ class TodoItem extends Component {
   }
 
   delItem = () => {
-    const {handleDel, index} = this.props;
-    handleDel(index);
+    const {onDelete, id} = this.props;
+    onDelete(id);
   }
 
   fixedTask = () => {
@@ -30,7 +30,7 @@ class TodoItem extends Component {
   }
 
   render() {
-    const { content } = this.props;
+    const { value } = this.props;
     const { isFixed, isCompleted } = this.state;
     return (
     <li className={cx('activeTask', {fixedTask:isFixed}, {completedTask:isCompleted})}>
@@ -38,7 +38,7 @@ class TodoItem extends Component {
           <span className={styles.taskHandle}></span>
           <input type="checkbox" className={styles.checkImg} id='checkImg' />
           <label htmlFor="checkImg" className={styles.checkLabel} onClick={this.completedTask}></label>
-          <span className={styles.taskText}>{content}</span>
+          <span className={styles.taskText}>{value}</span>
           <span className={styles.dueData}>No due data</span>
         </div>
         <ul className={styles.actions}>
