@@ -2,41 +2,44 @@ import React, { Component } from 'react'
 import TodoItem from './apps/TodoItem.jsx'
 import SortContainer from '../SortContainer/SortContainer.jsx'
 import styles from './InputContainer.module.scss'
-import _ from 'lodash'
+import _omit from 'lodash/omit'
+import _set from 'lodash/set'
 
 class TodoList extends Component {
   state = {
-    items: {},
-    inputValue: ''
+    items: {}
   }
 
   componentDidMount() {
-    document.addEventListener('keydown', this.enterAddTodo, true)
+    document.addEventListener('keyup', this.enterAddTodo)
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.enterAddTodo, true)
+    document.removeEventListener('keyup', this.enterAddTodo)
   }
 
-  addItem = (value, id = Date.now()) => {
-    if (this.state.inputValue !== '' ) {
+  addItem = () => {
+    const { items } = this.state
+    const { value } = this.inputRef
+    if (value) {
+      const id = Date.now()
       this.setState({
         items: {
-          ...this.state.items,
+          ...items,
           [id]: {
             id,
             value,
-            isFixed:false,
-            isCompleted:false
+            isFixed: false,
+            isCompleted: false
           }
-        },
-        inputValue: ''
+        }
       })
     }
+    this.inputRef.value = ''
   }
 
   enterAddTodo = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && this.inputRef === document.activeElement) {
       this.addItem()
     }
   }
@@ -47,16 +50,32 @@ class TodoList extends Component {
 
   onDelete = id => {
     const { items } = this.state
-      this.setState({ items: _.omit(items, id) })
+      this.setState({ items: _omit(items, id) })
   }
 
+  updateItemByKey = (id, key, value) => {
+    const { items } = this.state
+    this.setState({ items: _set(items, [id, key] , value) })
+  }      
+
+  // sort = () => {
+  //   const { items } = this.state
+  //   this.setState({
+  //     items: items.reduce((acc, item) => {
+  //         return items.isFixed === 'true'
+  //         ? acc.concat(Object.assign({}, item))
+  //         : acc;
+  //     }, {})
+  //   })
+  // }
+
   render() {
-    const { items, inputValue } = this.state
+    const { items } = this.state
     return (
       <div>
         <div className={styles.form}>
-          <input value={inputValue} onChange={this.handleChange} placeholder='Write your next task here...' className={styles.input} />
-          <button onClick={this.addItem} className={styles.addBtn}>ADD</button>
+          <input ref={ref => { this.inputRef = ref }} placeholder='Write your next task here...' className={styles.input} />
+          <button onClick={(id) => this.addItem(id)} className={styles.addBtn}>ADD</button>
         </div>
         <SortContainer />
         <ul className={styles.todoListStyle}>
@@ -64,9 +83,10 @@ class TodoList extends Component {
           Object.values(items).map(({id, value, isFixed, isCompleted}, index) => (
             <TodoItem
               onDelete={this.onDelete}
+              updateItemByKey={this.updateItemByKey}
               key={index}
-              isFixed={false}
-              isCompleted={false}
+              isFixed={isFixed}
+              isCompleted={isCompleted}
               value={value}
               id={id}
             />

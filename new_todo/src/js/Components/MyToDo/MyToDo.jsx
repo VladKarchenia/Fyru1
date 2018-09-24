@@ -2,44 +2,45 @@ import React, { Component } from 'react'
 import styles from './MyToDo.module.scss'
 
 class MyToDo extends Component {
-  state={
+  state = {
     editMode: false,
-    inputListValue: 'My Todo List Name'
-  }
-
-  componentDidMount() {
-    document.addEventListener('keydown', this.handleKeyPress, true)
+    listName: 'My Todo List',
+    defaultValue: ''
   }
 
   changeListName = () => {
-    this.setState({
-      editMode: true
-    })
-    document.addEventListener('click', this.handleOutsideClick, true)
+    this.setState({ editMode: true })
+    document.addEventListener('keyup', this.handleKeyUp)
+    document.addEventListener('click', this.handleOutsideClick)
   }
 
-  handleChange = (e) => this.setState({
-    inputListValue: e.target.value
+  onChange = (e) => this.setState({
+    listName: e.target.value
   })
 
+  exitEditMode = () => {
+    this.setState({ editMode: false })
+    document.removeEventListener('click', this.handleOutsideClick)
+    document.removeEventListener('click', this.handleKeyUp)
+  }
+
   handleOutsideClick = (e) => {
-    const { target } = e
-    if (!this.node.contains(target)) {
-      this.setState({
-        editMode: false
-      })
-      document.removeEventListener('click', this.handleOutsideClick, true)
-      document.removeEventListener('click', this.handleKeyPress, true)
+    if (!this.inputRef.contains(e.target)) {
+      this.exitEditMode()
     }
   }
 
-  handleKeyPress = (e) => {
-    if (e.keyCode === 27 || e.key === 'Enter') {
+  handleKeyUp = (e) => {
+    if (e.key === 'Enter') {
       this.setState({
-        editMode: false
+        defaultValue: this.state.listName
       })
-      document.removeEventListener('click', this.handleOutsideClick, true)
-      document.removeEventListener('click', this.handleKeyPress, true)
+      this.exitEditMode()
+    } else if (e.keyCode === 27) {
+      this.setState({
+        listName: this.state.defaultValue
+      })
+      this.exitEditMode()
     }
   }
 
@@ -48,10 +49,16 @@ class MyToDo extends Component {
   }
 
   render() {
-    const { editMode, inputListValue } = this.state
+    const { editMode, listName, defaultValue } = this.state
+
     return (
-      <div className={styles.myToDo}>
-        {!editMode ? <h2 className={styles.toDoName}><span className={styles.newNameSpan} onClick={this.changeListName}>{inputListValue || '_'}</span></h2> : <input ref={node => (this.node = node)} value={inputListValue || ''} onChange={this.handleChange} autoFocus className={styles.input} />}
+      <div className={styles.root}>
+        {!editMode
+          ? <h2 className={styles.toDoName}>
+              <span className={styles.newNameSpan} onClick={this.changeListName}>{listName || defaultValue || 'Default'}</span>
+            </h2>
+          : <input ref={ref => { this.inputRef = ref }} value={listName} onChange={this.onChange} autoFocus className={styles.input} />
+        }
         <button onClick={this.saveToDo} className={styles.saveBtn}>Save This List</button>
       </div>
     )

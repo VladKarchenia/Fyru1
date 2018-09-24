@@ -1,50 +1,37 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import styles from './TasksList.module.scss'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
-class TodoItem extends Component {
-  state = {
-    isFixed: false,
-    isCompleted: false
+class TodoItem extends PureComponent {
+  toggleFixed = () => {
+    const { id, isFixed, updateItemByKey } = this.props
+    updateItemByKey(id, 'isFixed', !isFixed)
   }
 
-  delItem = () => {
-    const {onDelete, id} = this.props;
-    onDelete(id);
-  }
-
-  fixedTask = () => {
-    const { isFixed } = this.state
-    this.setState({
-      isFixed: !isFixed,
-    })
-  }
-
-  completedTask = () => {
-    const { isCompleted } = this.state
-    this.setState({
-      isCompleted: !isCompleted,
-      isFixed: false
-    })
+  toggleCompleted = () => {
+    const { id, isCompleted, updateItemByKey } = this.props
+    updateItemByKey(id, 'isCompleted', !isCompleted)
+    if (!isCompleted) {
+      updateItemByKey(id, 'isFixed', false)
+    }
   }
 
   render() {
-    const { value } = this.props;
-    const { isFixed, isCompleted } = this.state;
+    const { value, id, isFixed, isCompleted } = this.props;
     return (
-    <li className={cx('activeTask', {fixedTask:isFixed}, {completedTask:isCompleted})}>
+     <li className={ cx('activeTask', { fixedTask:isFixed }, { completedTask:isCompleted }) }>
         <div className={styles.leftSide}>
-          <span className={styles.taskHandle}></span>
+          <span className={styles.taskHandle} ></span>
           <input type="checkbox" className={styles.checkImg} id='checkImg' />
-          <label htmlFor="checkImg" className={styles.checkLabel} onClick={this.completedTask}></label>
+          <label htmlFor="checkImg" className={styles.checkLabel} onClick={this.toggleCompleted}></label>
           <span className={styles.taskText}>{value}</span>
           <span className={styles.dueData}>No due data</span>
         </div>
         <ul className={styles.actions}>
-          <li className={styles.star}><input type="text" id='star' className={styles.starInp} /><label htmlFor="star" className={styles.starLabel}><span className={styles.starSpan} onClick={this.fixedTask}></span></label></li>
+          <li className={styles.star}><input type="text" id='star' className={styles.starInp} /><label htmlFor="star" className={styles.starLabel}><span className={styles.starSpan} onClick={this.toggleFixed}></span></label></li>
           <li className={styles.tag}><span className={styles.tagSpan}></span></li>
-          <li className={styles.delete}><span className={styles.deleteSpan} onClick={this.delItem}></span></li>
+          <li className={styles.delete}><span className={styles.deleteSpan} onClick={() => this.props.onDelete(id)}></span></li>
         </ul>
       </li>
     )
