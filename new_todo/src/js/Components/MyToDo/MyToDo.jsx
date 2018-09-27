@@ -5,7 +5,7 @@ class MyToDo extends Component {
   state = {
     editMode: false,
     listName: 'My Todo List',
-    defaultValue: ''
+    defaultValue: 'My Todo List'
   }
 
   changeListName = () => {
