@@ -4,10 +4,12 @@ import SortContainer from '../SortContainer/SortContainer.jsx'
 import styles from './InputContainer.module.scss'
 import _omit from 'lodash/omit'
 import _set from 'lodash/set'
+import { filterItems } from './helper.js'
 
 class TodoList extends Component {
   state = {
-    items: {}
+    items: {},
+    filterType: 'all'
   }
 
   componentDidMount() {
@@ -29,7 +31,7 @@ class TodoList extends Component {
           [id]: {
             id,
             value,
-            isFixed: false,
+            isPinned: false,
             isCompleted: false
           }
         }
@@ -56,39 +58,37 @@ class TodoList extends Component {
   updateItemByKey = (id, key, value) => {
     const { items } = this.state
     this.setState({ items: _set(items, [id, key] , value) })
-  }      
+  }
 
-  // sort = () => {
-  //   const { items } = this.state
-  //   this.setState({
-  //     items: items.reduce((acc, item) => {
-  //         return items.isFixed === 'true'
-  //         ? acc.concat(Object.assign({}, item))
-  //         : acc;
-  //     }, {})
-  //   })
-  // }
+  changeFilter = type => {
+    this.setState({filterType: type})
+  }
 
   render() {
-    const { items } = this.state
+    const { items, filterType } = this.state
+    const itemsToRender = filterItems(items, filterType)
     return (
       <div>
         <div className={styles.form}>
           <input ref={ref => { this.inputRef = ref }} placeholder='Write your next task here...' className={styles.input} />
           <button onClick={(id) => this.addItem(id)} className={styles.addBtn}>ADD</button>
         </div>
-        <SortContainer />
+        <SortContainer 
+        changeFilter = {this.changeFilter}
+        />
         <ul className={styles.todoListStyle}>
         {
-          Object.values(items).map(({id, value, isFixed, isCompleted}, index) => (
+          itemsToRender
+          .map(({id, value, isPinned, isCompleted}, index) => (
             <TodoItem
               onDelete={this.onDelete}
               updateItemByKey={this.updateItemByKey}
               key={index}
-              isFixed={isFixed}
+              isPinned={isPinned}
               isCompleted={isCompleted}
               value={value}
               id={id}
+              filterType={filterType}
             />
           ))
         }
