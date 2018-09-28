@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import styles from './TasksList.module.scss'
+import styles from './TodoItem.module.scss'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 

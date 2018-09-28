@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import TodoItem from './apps/TodoItem.jsx'
-import SortContainer from '../SortContainer/SortContainer.jsx'
-import styles from './InputContainer.module.scss'
+import TodoItem from './apps/TodoItem/TodoItem.jsx'
+import SortComponent from './apps/SortComponent/SortComponent.jsx'
+import styles from './InputComponent.module.scss'
 import _omit from 'lodash/omit'
 import _set from 'lodash/set'
-import { filterItems } from './helper.js'
+import { filterItems } from './helper'
 
 class TodoList extends Component {
   state = {
@@ -73,7 +73,7 @@ class TodoList extends Component {
           <input ref={ref => { this.inputRef = ref }} placeholder='Write your next task here...' className={styles.input} />
           <button onClick={(id) => this.addItem(id)} className={styles.addBtn}>ADD</button>
         </div>
-        <SortContainer 
+        <SortComponent 
         changeFilter = {this.changeFilter}
         />
         <ul className={styles.todoListStyle}>
