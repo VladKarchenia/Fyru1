@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import styles from './MyToDo.module.scss'
+import styles from './ToDoListManagement.module.scss'
 
-class MyToDo extends Component {
+class ToDoListManagement extends Component {
   state = {
     editMode: false,
     listName: 'My Todo List',
@@ -65,4 +65,4 @@ class MyToDo extends Component {
   }
 }
 
-export default MyToDo
+export default ToDoListManagement

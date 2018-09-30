@@ -1,4 +1,4 @@
-.ul {
+.sortContainer {
   list-style-type: none;
   margin: 10px auto;
   padding-left: 0;
@@ -7,7 +7,7 @@
   width: 540px;
 }
 
-.li {
+.sortItem {
   position: relative;
   padding: 10px;
   padding-left: 40px;
@@ -15,12 +15,12 @@
   margin: 0 10px;
 }
 
-.label {
+.sortLabel {
   font-size: 22px;
   color: #926692;
 }
 
-.label:before {
+.sortLabel:before {
     content: "";
     width: 14px;
     height: 14px;
@@ -32,7 +32,7 @@
     border-radius: 50%;
 }
 
-.input {
+.sortInput {
   opacity: 0;
   -webkit-appearance: none;
   width: 100%;
@@ -52,7 +52,7 @@
     border-radius: 50%;
 }
 
-.input:checked ~ .bullet {
+.sortInput:checked ~ .bullet {
   position:absolute;
   opacity: 1;
   animation-name: explode;
@@ -127,56 +127,56 @@
   height: 10px;
 }
 
-.input:checked ~ .bullet .zero{
+.sortInput:checked ~ .bullet .zero{
   animation-name:drop-zero;
   animation-delay: 0.100s;
   animation-duration: 0.9s;
   animation-fill-mode: forwards;
 }
 
-.input:checked ~ .bullet .one{
+.sortInput:checked ~ .bullet .one{
   animation-name:drop-one;
   animation-delay: 0.100s;
   animation-duration: 0.9s;
   animation-fill-mode: forwards;
 }
 
-.input:checked ~ .bullet .two{
+.sortInput:checked ~ .bullet .two{
   animation-name:drop-two;
   animation-delay: 0.100s;
   animation-duration: 0.9s;
   animation-fill-mode: forwards;
 }
 
-.input:checked ~ .bullet .three{
+.sortInput:checked ~ .bullet .three{
   animation-name:drop-three;
   animation-delay: 0.100s;
   animation-duration: 0.9s;
   animation-fill-mode: forwards;
 }
 
-.input:checked ~ .bullet .four{
+.sortInput:checked ~ .bullet .four{
   animation-name:drop-four;
   animation-delay: 0.100s;
   animation-duration: 0.9s;
   animation-fill-mode: forwards;
 }
 
-.input:checked ~ .bullet .five{
+.sortInput:checked ~ .bullet .five{
   animation-name:drop-five;
   animation-delay: 0.100s;
   animation-duration: 0.9s;
   animation-fill-mode: forwards;
 }
 
-.input:checked ~ .bullet .six{
+.sortInput:checked ~ .bullet .six{
   animation-name:drop-six;
   animation-delay: 0.100s;
   animation-duration: 0.9s;
   animation-fill-mode: forwards;
 }
 
-.input:checked ~ .bullet .seven{
+.sortInput:checked ~ .bullet .seven{
   animation-name:drop-seven;
   animation-delay: 0.100s;
   animation-duration: 0.9s;

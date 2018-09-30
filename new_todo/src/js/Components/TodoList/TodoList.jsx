@@ -4,12 +4,13 @@ import SortComponent from './apps/SortComponent/SortComponent.jsx'
 import styles from './InputComponent.module.scss'
 import _omit from 'lodash/omit'
 import _set from 'lodash/set'
-import { filterItems } from './helper'
+import { filterItems } from './helper.js'
+import { FILTERS_CONFIG } from './apps/SortComponent/constants.js'
 
 class TodoList extends Component {
   state = {
     items: {},
-    filterType: 'all'
+    filterType: FILTERS_CONFIG.all
   }
 
   componentDidMount() {
@@ -67,14 +68,16 @@ class TodoList extends Component {
   render() {
     const { items, filterType } = this.state
     const itemsToRender = filterItems(items, filterType)
+
     return (
       <div>
         <div className={styles.form}>
           <input ref={ref => { this.inputRef = ref }} placeholder='Write your next task here...' className={styles.input} />
           <button onClick={(id) => this.addItem(id)} className={styles.addBtn}>ADD</button>
         </div>
-        <SortComponent 
-        changeFilter = {this.changeFilter}
+        <SortComponent
+          changeFilter={this.changeFilter}
+          activeFilter={filterType}
         />
         <ul className={styles.todoListStyle}>
         {
@@ -88,7 +91,6 @@ class TodoList extends Component {
               isCompleted={isCompleted}
               value={value}
               id={id}
-              filterType={filterType}
             />
           ))
         }

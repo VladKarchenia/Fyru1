@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './SortComponent.module.scss'
-
-const FILTERS_CONFIG = ['active', 'pinned', 'completed', 'all']
+import { FILTERS_CONFIG } from './constants.js'
 
 const AnimationComponent = () => (
   <div className={styles.bullet}>
@@ -15,30 +14,22 @@ const AnimationComponent = () => (
     <div className={styles.seven} />
   </div>
 )
-    
-const SortComponent = () => (
-  <ul className={styles.ul}>
-    <li className={styles.li}>
-      <input type="radio" name="1" className={styles.input} onClick={() => this.props.changeFilter('active')} />
-      <label className={styles.label}>active</label>
-      <AnimationComponent />
-    </li>
-    <li className={styles.li}>
-      <input type="radio" name="1" className={styles.input} onClick={() => this.props.changeFilter('pinned')} />
-      <label className={styles.label}>pinned</label>
-      <AnimationComponent />
-    </li>
-    <li className={styles.li}>
-      <input type="radio" name="1" className={styles.input} onClick={() => this.props.changeFilter('completed')} />
-      <label className={styles.label}>completed</label>
-      <AnimationComponent />
-    </li>
-    <li className={styles.li}>
-      <input type="radio" name="1" defaultChecked className={styles.input} onClick={() => this.props.changeFilter('all')} />
-      <label className={styles.label}>all</label>
-      <AnimationComponent />
-    </li>
+
+const SortComponent = ({changeFilter, activeFilter}) => {
+  return (
+  <ul className={styles.sortContainer}>
+  {
+    Object.values(FILTERS_CONFIG).map((filter) => {
+      return (
+        <li className={styles.sortItem} key={filter}>
+          <input type="radio" name="sort" className={styles.sortInput} onClick={() => changeFilter(filter)} defaultChecked={filter === activeFilter} />
+          <label className={styles.sortLabel}>{filter}</label>
+          {(filter === activeFilter) && <AnimationComponent />}
+        </li>
+      )
+    })
+  }
   </ul>
-)
+)}
 
 export default SortComponent
