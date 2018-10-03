@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
-import styles from './ToDoListManagement.module.scss'
+import styles from './ListManagement.module.scss'
 
 class ToDoListManagement extends Component {
   state = {
     editMode: false,
-    listName: 'My Todo List',
-    defaultValue: 'My Todo List'
+    listName: 'My Todo List'
   }
 
   changeListName = () => {
-    this.setState({ editMode: true })
+    this.setState({ editMode: true, cachedListName: this.state.listName })
     document.addEventListener('keyup', this.handleKeyUp)
     document.addEventListener('click', this.handleOutsideClick)
   }
@@ -31,35 +30,24 @@ class ToDoListManagement extends Component {
   }
 
   handleKeyUp = (e) => {
-    if (e.key === 'Enter') {
-      this.setState({
-        defaultValue: this.state.listName
-      })
-      this.exitEditMode()
-    } else if (e.keyCode === 27) {
-      this.setState({
-        listName: this.state.defaultValue
-      })
+    if (e.keyCode === 13 || e.keyCode === 27) {
+      e.keyCode === 13 ? this.setState({ cachedListName: this.state.listName }) : this.setState({ listName: this.state.cachedListName })
       this.exitEditMode()
     }
   }
 
-  saveToDo = () => {
-    console.log('Save this list')
-  }
-
   render() {
-    const { editMode, listName, defaultValue } = this.state
+    const { editMode, listName } = this.state
 
     return (
       <div className={styles.root}>
         {!editMode
           ? <h2 className={styles.toDoName}>
-              <span className={styles.newNameSpan} onClick={this.changeListName}>{listName || defaultValue || 'Default'}</span>
+              <span className={styles.newNameSpan} onClick={this.changeListName}>{listName || 'Default'}</span>
             </h2>
           : <input ref={ref => { this.inputRef = ref }} value={listName} onChange={this.onChange} autoFocus className={styles.input} />
         }
-        <button onClick={this.saveToDo} className={styles.saveBtn}>Save This List</button>
+        <button className={styles.saveBtn}>Save This List</button>
       </div>
     )
   }

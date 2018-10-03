@@ -81,7 +81,10 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
-    })
+    }),
+    // new HtmlWebpackPlugin({
+    //   favicon: 'src/images/favicon.ico'
+    // })
   ],
   entry: './src/index.js',
   output: {
