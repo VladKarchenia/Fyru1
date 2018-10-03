@@ -8,7 +8,8 @@ class ToDoListManagement extends Component {
   }
 
   changeListName = () => {
-    this.setState({ editMode: true, cachedListName: this.state.listName })
+    this.setState({ editMode: true,
+      cachedListName: this.state.listName })
     document.addEventListener('keyup', this.handleKeyUp)
     document.addEventListener('click', this.handleOutsideClick)
   }
@@ -31,7 +32,9 @@ class ToDoListManagement extends Component {
 
   handleKeyUp = (e) => {
     if (e.keyCode === 13 || e.keyCode === 27) {
-      e.keyCode === 13 ? this.setState({ cachedListName: this.state.listName }) : this.setState({ listName: this.state.cachedListName })
+      e.keyCode === 13
+      ? this.setState({ cachedListName: this.state.listName })
+      : this.setState({ listName: this.state.cachedListName })
       this.exitEditMode()
     }
   }

@@ -20,7 +20,7 @@ class TodoItem extends PureComponent {
   render() {
     const { value, id, isPinned, isCompleted } = this.props;
     return (
-     <li className={ cx('activeTask', { pinnedTask:isPinned }, { completedTask:isCompleted }) }>
+     <li className={cx('activeTask', { pinnedTask:isPinned }, { completedTask:isCompleted })}>
         <div className={styles.leftSide}>
           <span className={styles.taskHandle} ></span>
           <input type="checkbox" className={styles.checkImg} id='checkImg' />
@@ -29,9 +29,18 @@ class TodoItem extends PureComponent {
           <span className={styles.dueData}>No due data</span>
         </div>
         <ul className={styles.actions}>
-          <li className={styles.star}><input type="text" id='star' className={styles.starInp} /><label htmlFor="star" className={styles.starLabel}><span className={styles.starSpan} onClick={this.togglePinned}></span></label></li>
-          <li className={styles.tag}><span className={styles.tagSpan}></span></li>
-          <li className={styles.delete}><span className={styles.deleteSpan} onClick={() => this.props.onDelete(id)}></span></li>
+          <li className={styles.star}>
+            <input type="text" id='star' className={styles.starInp} />
+            <label htmlFor="star" className={styles.starLabel}>
+              <span className={styles.starSpan} onClick={this.togglePinned}></span>
+            </label>
+          </li>
+          <li className={styles.tag}>
+            <span className={styles.tagSpan}></span>
+          </li>
+          <li className={styles.delete}>
+            <span className={styles.deleteSpan} onClick={() => this.props.onDelete(id)}></span>
+          </li>
         </ul>
       </li>
     )

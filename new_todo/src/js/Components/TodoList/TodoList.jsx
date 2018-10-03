@@ -10,7 +10,7 @@ import { FILTERS_CONFIG } from './apps/SortComponent/constants.js'
 class TodoList extends Component {
   state = {
     items: {},
-    filterType: FILTERS_CONFIG.all
+    activeFilter: FILTERS_CONFIG.all
   }
 
   componentDidMount() {
@@ -62,31 +62,27 @@ class TodoList extends Component {
   }
 
   changeFilter = type => {
-    this.setState({filterType: type})
+    this.setState({ activeFilter: type })
   }
 
   render() {
-    const { items, filterType } = this.state
-    const itemsToRender = filterItems(items, filterType)
+    const { items, activeFilter } = this.state
+    const itemsToRender = filterItems(items, activeFilter)
 
     return (
       <div>
         <div className={styles.form}>
           <input ref={ref => { this.inputRef = ref }} placeholder='Write your next task here...' className={styles.input} />
-          <button onClick={(id) => this.addItem(id)} className={styles.addBtn}>ADD</button>
+          <button onClick={this.addItem} className={styles.addBtn}>ADD</button>
         </div>
-        <SortComponent
-          changeFilter={this.changeFilter}
-          activeFilter={filterType}
-        />
+        <SortComponent changeFilter={this.changeFilter} activeFilter={activeFilter} />
         <ul className={styles.todoListStyle}>
         {
-          itemsToRender
-          .map(({id, value, isPinned, isCompleted}, index) => (
+          itemsToRender.map(({ id, value, isPinned, isCompleted }) => (
             <TodoItem
               onDelete={this.onDelete}
               updateItemByKey={this.updateItemByKey}
-              key={index}
+              key={id}
               isPinned={isPinned}
               isCompleted={isCompleted}
               value={value}

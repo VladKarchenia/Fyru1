@@ -15,7 +15,7 @@ const AnimationComponent = () => (
   </div>
 )
 
-const SortComponent = ({changeFilter, activeFilter}) => {
+const SortComponent = ({ changeFilter, activeFilter }) => {
   return (
   <ul className={styles.sortContainer}>
   {
