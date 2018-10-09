@@ -1,15 +1,24 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import styles from './ListManagement.module.scss'
 
-class ToDoListManagement extends Component {
+class ToDoListManagement extends PureComponent {
   state = {
     editMode: false,
-    listName: 'My Todo List'
+    listName: this.props.listName
+  }
+
+  updateListName = value => {
+    const { listName, updateListName } = this.props
+    if (value !== listName) {
+      updateListName(value)
+    }
   }
 
   changeListName = () => {
-    this.setState({ editMode: true,
-      cachedListName: this.state.listName })
+    this.setState({
+      editMode: true,
+      cachedListName: this.state.listName
+    })
     document.addEventListener('keyup', this.handleKeyUp)
     document.addEventListener('click', this.handleOutsideClick)
   }
@@ -25,20 +34,24 @@ class ToDoListManagement extends Component {
   }
 
   handleOutsideClick = (e) => {
-    if (!this.inputRef.contains(e.target)) {
+    if (!this.inputRef.current.contains(e.target)) {
+      this.updateListName()
       this.exitEditMode()
     }
   }
 
   handleKeyUp = (e) => {
     if (e.keyCode === 13 || e.keyCode === 27) {
-      e.keyCode === 13
-      ? this.setState({ cachedListName: this.state.listName })
-      : this.setState({ listName: this.state.cachedListName })
+      if (e.keyCode === 27) {
+        this.setState({ listName: this.state.cachedListName })
+      }
+      this.updateListName()
       this.exitEditMode()
     }
   }
 
+  inputRef = React.createRef()
+  
   render() {
     const { editMode, listName } = this.state
 
@@ -48,7 +61,7 @@ class ToDoListManagement extends Component {
           ? <h2 className={styles.toDoName}>
               <span className={styles.newNameSpan} onClick={this.changeListName}>{listName || 'Default'}</span>
             </h2>
-          : <input ref={ref => { this.inputRef = ref }} value={listName} onChange={this.onChange} autoFocus className={styles.input} />
+          : <input ref={this.inputRef} value={listName} onChange={this.onChange} autoFocus className={styles.input} />
         }
         <button className={styles.saveBtn}>Save This List</button>
       </div>

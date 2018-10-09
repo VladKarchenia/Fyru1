@@ -20,18 +20,18 @@ class TodoItem extends PureComponent {
   render() {
     const { value, id, isPinned, isCompleted } = this.props;
     return (
-     <li className={cx('activeTask', { pinnedTask:isPinned }, { completedTask:isCompleted })}>
+     <li className={cx('activeTask', { pinnedTask: isPinned }, { completedTask: isCompleted })}>
         <div className={styles.leftSide}>
           <span className={styles.taskHandle} ></span>
-          <input type="checkbox" className={styles.checkImg} id='checkImg' />
-          <label htmlFor="checkImg" className={styles.checkLabel} onClick={this.toggleCompleted}></label>
+          <input type="checkbox" className={styles.checkImg} />
+          <label className={styles.checkLabel} onClick={this.toggleCompleted}></label>
           <span className={styles.taskText}>{value}</span>
           <span className={styles.dueData}>No due data</span>
         </div>
         <ul className={styles.actions}>
           <li className={styles.star}>
-            <input type="text" id='star' className={styles.starInp} />
-            <label htmlFor="star" className={styles.starLabel}>
+            <input type="text" className={styles.starInp} />
+            <label className={styles.starLabel}>
               <span className={styles.starSpan} onClick={this.togglePinned}></span>
             </label>
           </li>

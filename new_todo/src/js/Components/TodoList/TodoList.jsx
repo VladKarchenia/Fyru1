@@ -1,15 +1,14 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import TodoItem from './apps/TodoItem/TodoItem.jsx'
 import SortComponent from './apps/SortComponent/SortComponent.jsx'
 import styles from './InputComponent.module.scss'
-import _omit from 'lodash/omit'
-import _set from 'lodash/set'
+// import _omit from 'lodash/omit'
+// import _set from 'lodash/set'
 import { filterItems } from './helper.js'
 import { FILTERS_CONFIG } from './apps/SortComponent/constants.js'
 
-class TodoList extends Component {
+class TodoList extends PureComponent {
   state = {
-    items: {},
     activeFilter: FILTERS_CONFIG.all
   }
 
@@ -22,27 +21,15 @@ class TodoList extends Component {
   }
 
   addItem = () => {
-    const { items } = this.state
-    const { value } = this.inputRef
+    const { value } = this.inputRef.current
     if (value) {
-      const id = Date.now()
-      this.setState({
-        items: {
-          ...items,
-          [id]: {
-            id,
-            value,
-            isPinned: false,
-            isCompleted: false
-          }
-        }
-      })
+      this.props.addItem(value)
     }
-    this.inputRef.value = ''
+    this.inputRef.current.value = ''
   }
 
   enterAddTodo = (e) => {
-    if (e.key === 'Enter' && this.inputRef === document.activeElement) {
+    if (e.key === 'Enter' && this.inputRef.current === document.activeElement) {
       this.addItem()
     }
   }
@@ -51,28 +38,31 @@ class TodoList extends Component {
     inputValue: e.target.value
   })
 
-  onDelete = id => {
-    const { items } = this.state
-      this.setState({ items: _omit(items, id) })
-  }
+  // onDelete = id => {
+  //   const { items } = this.state
+  //     this.setState({ items: _omit(items, id) })
+  // }
 
-  updateItemByKey = (id, key, value) => {
-    const { items } = this.state
-    this.setState({ items: _set(items, [id, key] , value) })
-  }
+  // updateItemByKey = (id, key, value) => {
+  //   const { items } = this.state
+  //   this.setState({ items: _set(items, [id, key] , value) })
+  // }
 
   changeFilter = type => {
     this.setState({ activeFilter: type })
   }
 
+  inputRef = React.createRef()
+
   render() {
-    const { items, activeFilter } = this.state
+    const { activeFilter } = this.state
+    const { items } = this.props
     const itemsToRender = filterItems(items, activeFilter)
 
     return (
       <div>
         <div className={styles.form}>
-          <input ref={ref => { this.inputRef = ref }} placeholder='Write your next task here...' className={styles.input} />
+          <input ref={this.inputRef} placeholder='Write your next task here...' className={styles.input} />
           <button onClick={this.addItem} className={styles.addBtn}>ADD</button>
         </div>
         <SortComponent changeFilter={this.changeFilter} activeFilter={activeFilter} />
@@ -80,8 +70,8 @@ class TodoList extends Component {
         {
           itemsToRender.map(({ id, value, isPinned, isCompleted }) => (
             <TodoItem
-              onDelete={this.onDelete}
-              updateItemByKey={this.updateItemByKey}
+              onDelete={this.props.onDelete}
+              updateItemByKey={this.props.updateItemByKey}
               key={id}
               isPinned={isPinned}
               isCompleted={isCompleted}
