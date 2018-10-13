@@ -63,7 +63,10 @@ class ToDoListManagement extends PureComponent {
             </h2>
           : <input ref={this.inputRef} value={listName} onChange={this.onChange} autoFocus className={styles.input} />
         }
-        <button className={styles.saveBtn}>Save This List</button>
+        <div>
+          <label className={styles.btn} onInput={this.props.importList}><input className={styles.importInput} type="file" accept='.json' id='importInput' />Import List</label>
+          <button className={styles.btn} onClick={this.props.exportList}>Export List</button>
+        </div>
       </div>
     )
   }

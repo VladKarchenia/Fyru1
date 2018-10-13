@@ -11,9 +11,11 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.6",
+    "file-saver": "^2.0.0-rc.3",
     "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.3",
     "npm": "^6.4.1",
+    "react-datepicker": "^1.6.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.22.1"
   },
@@ -32,6 +34,7 @@
     "lodash": "^4.17.10",
     "postcss-loader": "^3.0.0",
     "react": "^16.4.2",
+    "react-date-picker-cs": "^0.1.28",
     "react-dom": "^16.4.2",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",

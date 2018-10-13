@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react';
+// import ReactDatePicker from 'react-date-picker-cs';
 import styles from './TodoItem.module.scss'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
@@ -26,7 +27,10 @@ class TodoItem extends PureComponent {
           <input type="checkbox" className={styles.checkImg} />
           <label className={styles.checkLabel} onClick={this.toggleCompleted}></label>
           <span className={styles.taskText}>{value}</span>
-          <span className={styles.dueData}>No due data</span>
+          <span className={styles.dueData}>
+            No due date
+          </span>
+          {/* <DueDate /> */}
         </div>
         <ul className={styles.actions}>
           <li className={styles.star}>
@@ -48,3 +52,26 @@ class TodoItem extends PureComponent {
 }
 
 export default TodoItem;
+
+// class DueDate extends PureComponent {
+//   state = {
+//   selectedDate: '2017-08-13'
+//   }
+
+//   handleLog = date => this.setState({
+//     selectedDate: date
+//   })
+
+//   render() {
+//       return (
+//           <div>
+//               <ReactDatePicker
+//                   onChange={this.handleLog} 
+//                   range={[2013, 2020]} 
+//                   value={this.state.selectedDate} 
+//                   disabled={true}
+//               />
+//           </div>
+//       );
+//   }
+// }

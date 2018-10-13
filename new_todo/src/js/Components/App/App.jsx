@@ -5,6 +5,8 @@ import TodoList from '../TodoList/TodoList.jsx'
 import Footer from '../Footer/Footer.jsx'
 import _omit from 'lodash/omit'
 import _set from 'lodash/set'
+import fileSaver from 'file-saver'
+import { readFile } from '../TodoList/helper.js'
 
 class App extends Component {
   state = {
@@ -12,11 +14,23 @@ class App extends Component {
     listName: 'My Todo List'
   }
 
+  exportList = () => {
+    const { items, listName } = this.state
+    const json = [JSON.stringify(items, null, 2)]
+    const fileName = `${listName}.json`
+    const file = new Blob(json, {type: 'application/json'});
+    fileSaver.saveAs(file, fileName)
+  }
+
+  importList = () => {
+    readFile()
+  }
+
   updateListName = listName => this.setState({ listName })
 
   updateItemByKey = (id, key, value) => {
     const { items } = this.state
-    this.setState({ items: _set(items, [id, key] , value) })
+    this.setState({ items: {..._set(items, [id, key] , value)} })
   }
 
   addItem = value => {
@@ -43,10 +57,10 @@ class App extends Component {
   render() {
 
     return [
-      <Header key={Header} />,
-      <ListManagement key={ListManagement} listName={this.state.listName} updateListName={this.updateListName} />,
-      <TodoList key={TodoList} items={this.state.items} onDelete={this.onDelete} updateItemByKey={this.updateItemByKey} addItem={this.addItem} />,
-      <Footer key={Footer} />
+      <Header key='Header' />,
+      <ListManagement key='ListManagement' listName={this.state.listName} updateListName={this.updateListName} exportList={this.exportList} importList={this.importList} />,
+      <TodoList key='TodoList' items={this.state.items} onDelete={this.onDelete} updateItemByKey={this.updateItemByKey} addItem={this.addItem} />,
+      <Footer key='Footer' />
     ]
   }
 }

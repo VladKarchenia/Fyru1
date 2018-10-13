@@ -50,6 +50,7 @@
     border: 5px solid rgb(204, 114, 212);
     opacity: 0;
     border-radius: 50%;
+    z-index: 1;
 }
 
 .sortInput:checked ~ .bullet {

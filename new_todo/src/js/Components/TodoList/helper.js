@@ -24,3 +24,14 @@ export const filterItems = (items, filterType) => {
   }
   return filterItems
 }
+
+export const readFile = file => {
+  new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => {
+      resolve(reader.result)
+    }
+    reader.onerror = reject
+    reader.readAsText(file)
+  })
+}
