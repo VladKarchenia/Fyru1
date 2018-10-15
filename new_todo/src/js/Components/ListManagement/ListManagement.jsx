@@ -16,8 +16,7 @@ class ToDoListManagement extends PureComponent {
 
   changeListName = () => {
     this.setState({
-      editMode: true,
-      cachedListName: this.state.listName
+      editMode: true
     })
     document.addEventListener('keyup', this.handleKeyUp)
     document.addEventListener('click', this.handleOutsideClick)
@@ -35,7 +34,8 @@ class ToDoListManagement extends PureComponent {
 
   handleOutsideClick = (e) => {
     if (!this.inputRef.current.contains(e.target)) {
-      this.updateListName()
+      const { listName } = this.state
+      this.updateListName(listName)
       this.exitEditMode()
     }
   }
@@ -43,9 +43,11 @@ class ToDoListManagement extends PureComponent {
   handleKeyUp = (e) => {
     if (e.keyCode === 13 || e.keyCode === 27) {
       if (e.keyCode === 27) {
-        this.setState({ listName: this.state.cachedListName })
+        const { listName } = this.props
+        this.setState({ listName })
       }
-      this.updateListName()
+      const { listName } = this.state
+      this.updateListName(listName)
       this.exitEditMode()
     }
   }
@@ -54,7 +56,7 @@ class ToDoListManagement extends PureComponent {
   
   render() {
     const { editMode, listName } = this.state
-
+    const { importList, exportList } = this.props
     return (
       <div className={styles.root}>
         {!editMode
@@ -64,8 +66,8 @@ class ToDoListManagement extends PureComponent {
           : <input ref={this.inputRef} value={listName} onChange={this.onChange} autoFocus className={styles.input} />
         }
         <div>
-          <label className={styles.btn} onInput={this.props.importList}><input className={styles.importInput} type="file" accept='.json' id='importInput' />Import List</label>
-          <button className={styles.btn} onClick={this.props.exportList}>Export List</button>
+          <label className={styles.btn}><input onInput={importList} className={styles.importInput} type="file" accept='.json' />Import List</label>
+          <button className={styles.btn} onClick={exportList}>Export List</button>
         </div>
       </div>
     )

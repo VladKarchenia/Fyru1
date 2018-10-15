@@ -19,7 +19,7 @@ class TodoItem extends PureComponent {
   }
 
   render() {
-    const { value, id, isPinned, isCompleted } = this.props;
+    const { value, id, isPinned, isCompleted, onDelete } = this.props;
     return (
      <li className={cx('activeTask', { pinnedTask: isPinned }, { completedTask: isCompleted })}>
         <div className={styles.leftSide}>
@@ -43,7 +43,7 @@ class TodoItem extends PureComponent {
             <span className={styles.tagSpan}></span>
           </li>
           <li className={styles.delete}>
-            <span className={styles.deleteSpan} onClick={() => this.props.onDelete(id)}></span>
+            <span className={styles.deleteSpan} onClick={() => onDelete(id)}></span>
           </li>
         </ul>
       </li>

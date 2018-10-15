@@ -16,14 +16,18 @@ class App extends Component {
 
   exportList = () => {
     const { items, listName } = this.state
-    const json = [JSON.stringify(items, null, 2)]
+    const json = JSON.stringify({listName, items}, null, 2)
     const fileName = `${listName}.json`
-    const file = new Blob(json, {type: 'application/json'});
+    const file = new Blob([json], {type: 'application/json'})
     fileSaver.saveAs(file, fileName)
   }
 
-  importList = () => {
-    readFile()
+  importList = async (e) => {
+    const file = e.target.files[0]
+    const json = await readFile(file)
+    console.log(json)
+    const { listName, items } = JSON.parse(json)
+    this.setState({ listName, items })
   }
 
   updateListName = listName => this.setState({ listName })
@@ -55,11 +59,11 @@ class App extends Component {
   }
 
   render() {
-
+    const { items, listName } = this.state
     return [
       <Header key='Header' />,
-      <ListManagement key='ListManagement' listName={this.state.listName} updateListName={this.updateListName} exportList={this.exportList} importList={this.importList} />,
-      <TodoList key='TodoList' items={this.state.items} onDelete={this.onDelete} updateItemByKey={this.updateItemByKey} addItem={this.addItem} />,
+      <ListManagement key='ListManagement' listName={listName} updateListName={this.updateListName} exportList={this.exportList} importList={this.importList} />,
+      <TodoList key='TodoList' items={items} onDelete={this.onDelete} updateItemByKey={this.updateItemByKey} addItem={this.addItem} />,
       <Footer key='Footer' />
     ]
   }
