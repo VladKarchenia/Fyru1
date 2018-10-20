@@ -25,8 +25,10 @@ class App extends Component {
   componentDidUpdate() {
     this.saveState()
   }
-  
-  saveState = _throttle(() => localStorage.setItem('state', JSON.stringify(this.state)), 3000)
+
+  saveState = _throttle(() => {
+      localStorage.setItem('state', JSON.stringify(this.state))
+    }, 3000)
 
   exportList = () => {
     const { items, listName } = this.state

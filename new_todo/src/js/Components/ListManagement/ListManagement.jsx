@@ -76,8 +76,8 @@ class ListManagement extends PureComponent {
             </h2>
           : <input ref={this.inputRef} value={inputValue} onChange={this.onChange} autoFocus className={styles.input} />
         }
-        <div>
-          <label className={styles.btn}><input onInput={importList} className={styles.importInput} type="file" accept='.json' />Import List</label>
+        <div className={styles.buttons}>
+          <label className={styles.btnLabel}><input onInput={importList} className={styles.importInput} type="file" accept='.json' />Import List</label>
           <button className={styles.btn} onClick={exportList}>Export List</button>
         </div>
       </div>
