@@ -1,10 +1,23 @@
 import React, { PureComponent } from 'react'
 import styles from './ListManagement.module.scss'
 
-class ToDoListManagement extends PureComponent {
+class ListManagement extends PureComponent {
+  static getDerivedStateFromProps (nextProps, prevState) {
+    const { listName } = nextProps
+    const { cachedListName } = prevState
+    if (listName !== cachedListName) {
+      return {
+        cachedListName: listName,
+        inputValue: listName
+      }
+    }
+    return null
+  }
+
   state = {
     editMode: false,
-    listName: this.props.listName
+    cachedListName: this.props.listName,
+    inputValue: this.props.listName
   }
 
   updateListName = value => {
@@ -15,15 +28,13 @@ class ToDoListManagement extends PureComponent {
   }
 
   changeListName = () => {
-    this.setState({
-      editMode: true
-    })
+    this.setState({ editMode: true })
     document.addEventListener('keyup', this.handleKeyUp)
     document.addEventListener('click', this.handleOutsideClick)
   }
 
   onChange = (e) => this.setState({
-    listName: e.target.value
+    inputValue: e.target.value
   })
 
   exitEditMode = () => {
@@ -34,8 +45,8 @@ class ToDoListManagement extends PureComponent {
 
   handleOutsideClick = (e) => {
     if (!this.inputRef.current.contains(e.target)) {
-      const { listName } = this.state
-      this.updateListName(listName)
+      const { inputValue } = this.state
+      this.updateListName(inputValue)
       this.exitEditMode()
     }
   }
@@ -44,10 +55,10 @@ class ToDoListManagement extends PureComponent {
     if (e.keyCode === 13 || e.keyCode === 27) {
       if (e.keyCode === 27) {
         const { listName } = this.props
-        this.setState({ listName })
+        this.setState({ inputValue: listName })
       }
-      const { listName } = this.state
-      this.updateListName(listName)
+      const { inputValue } = this.state
+      this.updateListName(inputValue)
       this.exitEditMode()
     }
   }
@@ -55,15 +66,15 @@ class ToDoListManagement extends PureComponent {
   inputRef = React.createRef()
   
   render() {
-    const { editMode, listName } = this.state
-    const { importList, exportList } = this.props
+    const { editMode, inputValue } = this.state
+    const { importList, exportList, listName } = this.props
     return (
       <div className={styles.root}>
         {!editMode
           ? <h2 className={styles.toDoName}>
               <span className={styles.newNameSpan} onClick={this.changeListName}>{listName || 'Default'}</span>
             </h2>
-          : <input ref={this.inputRef} value={listName} onChange={this.onChange} autoFocus className={styles.input} />
+          : <input ref={this.inputRef} value={inputValue} onChange={this.onChange} autoFocus className={styles.input} />
         }
         <div>
           <label className={styles.btn}><input onInput={importList} className={styles.importInput} type="file" accept='.json' />Import List</label>
@@ -74,4 +85,4 @@ class ToDoListManagement extends PureComponent {
   }
 }
 
-export default ToDoListManagement
+export default ListManagement

@@ -7,12 +7,26 @@ import _omit from 'lodash/omit'
 import _set from 'lodash/set'
 import fileSaver from 'file-saver'
 import { readFile } from '../TodoList/helper.js'
+import _throttle from 'lodash/throttle'
 
 class App extends Component {
   state = {
     items: {},
     listName: 'My Todo List'
   }
+
+  componentDidMount() {
+    const storedState = localStorage.getItem('state')
+    if (storedState) {
+      this.setState(JSON.parse(storedState))
+    }
+  }
+
+  componentDidUpdate() {
+    this.saveState()
+  }
+  
+  saveState = _throttle(() => localStorage.setItem('state', JSON.stringify(this.state)), 3000)
 
   exportList = () => {
     const { items, listName } = this.state
@@ -25,9 +39,8 @@ class App extends Component {
   importList = async (e) => {
     const file = e.target.files[0]
     const json = await readFile(file)
-    console.log(json)
-    const { listName, items } = JSON.parse(json)
-    this.setState({ listName, items })
+    const newState = JSON.parse(json)
+    this.setState( newState )
   }
 
   updateListName = listName => this.setState({ listName })
