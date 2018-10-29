@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, {PureComponent} from 'react'
 import styles from './TodoItem.module.scss'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
@@ -27,8 +27,7 @@ class TodoItem extends PureComponent {
   }
 
   render() {
-    const { value, id, isPinned, isCompleted, onDelete, dueDate } = this.props;
-    const selectedDate = (dueDate !== NO_DUE_DATE) ? moment(dueDate) : NO_DUE_DATE;
+    const { value, id, isPinned, isCompleted, onDelete, dueDate } = this.props
     return (
      <li className={cx('activeTask', { pinnedTask: isPinned }, { completedTask: isCompleted })}>
         <div className={styles.leftSide}>
@@ -37,16 +36,11 @@ class TodoItem extends PureComponent {
           <label className={styles.checkLabel} onClick={this.toggleCompleted}></label>
           <span className={styles.taskText}>{value}</span>
           <span className={styles.dueData}>
-            {dueDate !== NO_DUE_DATE
-              ? <DatePicker
-                selected={selectedDate}
-                onChange={this.handleChange}
-              />
-              : <DatePicker
-                placeholderText={NO_DUE_DATE}
-                onChange={this.handleChange}
-              />
-            }
+            <DatePicker
+              placeholderText={NO_DUE_DATE}
+              selected={dueDate !== NO_DUE_DATE ? moment(dueDate) : undefined}
+              onChange={this.handleChange}
+            />
           </span>
         </div>
         <ul className={styles.actions}>
@@ -68,4 +62,4 @@ class TodoItem extends PureComponent {
   }
 }
 
-export default TodoItem;
+export default TodoItem
