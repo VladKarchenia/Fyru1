@@ -5,10 +5,9 @@ const cx = classNames.bind(styles)
 import DatePicker from 'react-datepicker'
 import moment from 'moment'
 import './React-datepicker-cssmodules.scss'
-import { NO_DUE_DATE } from '../../helper.js'
-console.log(NO_DUE_DATE)
-class TodoItem extends PureComponent {
+import { NO_DUE_DATE } from '../../../App/App.jsx'
 
+class TodoItem extends PureComponent {
   togglePinned = () => {
     const { id, isPinned, updateItemByKey } = this.props
     updateItemByKey(id, 'isPinned', !isPinned)
@@ -23,16 +22,13 @@ class TodoItem extends PureComponent {
   }
 
   handleChange = date => {
-    console.log(date)
     const { id, updateItemByKey } = this.props
-    updateItemByKey(id, 'dueDate', date.format('YYYY-MM-DD'))
+    updateItemByKey(id, 'dueDate', date.format('YYYY-DD-MM'))
   }
 
   render() {
     const { value, id, isPinned, isCompleted, onDelete, dueDate } = this.props;
-    const selectedDate = (dueDate !== NO_DUE_DATE) ? dueDate : moment();
-    console.log(selectedDate)
-    console.log(dueDate)
+    const selectedDate = (dueDate !== NO_DUE_DATE) ? moment(dueDate) : NO_DUE_DATE;
     return (
      <li className={cx('activeTask', { pinnedTask: isPinned }, { completedTask: isCompleted })}>
         <div className={styles.leftSide}>
@@ -41,10 +37,16 @@ class TodoItem extends PureComponent {
           <label className={styles.checkLabel} onClick={this.toggleCompleted}></label>
           <span className={styles.taskText}>{value}</span>
           <span className={styles.dueData}>
-            <DatePicker
-              selected={selectedDate}
-              onChange={this.handleChange}
-            />
+            {dueDate !== NO_DUE_DATE
+              ? <DatePicker
+                selected={selectedDate}
+                onChange={this.handleChange}
+              />
+              : <DatePicker
+                placeholderText={NO_DUE_DATE}
+                onChange={this.handleChange}
+              />
+            }
           </span>
         </div>
         <ul className={styles.actions}>

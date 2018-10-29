@@ -8,7 +8,8 @@ import _set from 'lodash/set'
 import fileSaver from 'file-saver'
 import { readFile } from '../TodoList/helper.js'
 import _throttle from 'lodash/throttle'
-import { NO_DUE_DATE } from '../TodoList/helper.js'
+
+export const NO_DUE_DATE = 'No due date'
 
 class App extends Component {
   state = {
@@ -68,7 +69,6 @@ class App extends Component {
         }
       }
     })
-    console.log(dueDate)
   }
 
   onDelete = id => {
