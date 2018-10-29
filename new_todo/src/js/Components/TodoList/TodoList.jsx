@@ -10,7 +10,7 @@ const cx = classNames.bind(styles)
 class TodoList extends PureComponent {
   state = {
     activeFilter: FILTERS_CONFIG.all,
-    inputValue: ''
+    inputValue: '',
   }
 
   componentDidMount() {
@@ -58,7 +58,7 @@ class TodoList extends PureComponent {
         <SortComponent changeFilter={this.changeFilter} activeFilter={activeFilter} />
         <ul className={styles.todoListStyle}>
         {
-          itemsToRender.map(({ id, value, isPinned, isCompleted }) => (
+          itemsToRender.map(({ id, value, isPinned, isCompleted, dueDate }) => (
             <TodoItem
               onDelete={onDelete}
               updateItemByKey={updateItemByKey}
@@ -67,6 +67,7 @@ class TodoList extends PureComponent {
               isCompleted={isCompleted}
               value={value}
               id={id}
+              dueDate={dueDate}
             />
           ))
         }

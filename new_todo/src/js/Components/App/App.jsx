@@ -8,6 +8,7 @@ import _set from 'lodash/set'
 import fileSaver from 'file-saver'
 import { readFile } from '../TodoList/helper.js'
 import _throttle from 'lodash/throttle'
+import { NO_DUE_DATE } from '../TodoList/helper.js'
 
 class App extends Component {
   state = {
@@ -62,10 +63,12 @@ class App extends Component {
           id,
           value,
           isPinned: false,
-          isCompleted: false
+          isCompleted: false,
+          dueDate: NO_DUE_DATE
         }
       }
     })
+    console.log(dueDate)
   }
 
   onDelete = id => {

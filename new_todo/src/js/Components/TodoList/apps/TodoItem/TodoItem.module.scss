@@ -44,22 +44,22 @@
     font-size: 22px;
     color: #555;
   }
-  .dueData {
-    font-size: 12px;
-    line-height: 16px;
-    padding: 0 7px;
-    background: #eee;
-    border: 1px solid transparent;
-    color: #666;
-    white-space: nowrap;
-    display: inline-block;
-    border-radius: 12px;
-    vertical-align: middle;
-    cursor: pointer;
-    &:hover {
-      background: #e1e1e1;
-    }
-  }
+  // .dueData {
+  //   font-size: 12px;
+  //   line-height: 16px;
+  //   padding: 0 7px;
+  //   background: #eee;
+  //   border: 1px solid transparent;
+  //   color: #666;
+  //   white-space: nowrap;
+  //   display: inline-block;
+  //   border-radius: 12px;
+  //   vertical-align: middle;
+  //   cursor: pointer;
+  //   &:hover {
+  //     background: #e1e1e1;
+  //   }
+  // }
 }
 
 .actions {

@@ -1,10 +1,14 @@
 import React, {PureComponent} from 'react';
-// import ReactDatePicker from 'react-date-picker-cs';
 import styles from './TodoItem.module.scss'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
-
+import DatePicker from 'react-datepicker'
+import moment from 'moment'
+import './React-datepicker-cssmodules.scss'
+import { NO_DUE_DATE } from '../../helper.js'
+console.log(NO_DUE_DATE)
 class TodoItem extends PureComponent {
+
   togglePinned = () => {
     const { id, isPinned, updateItemByKey } = this.props
     updateItemByKey(id, 'isPinned', !isPinned)
@@ -18,8 +22,17 @@ class TodoItem extends PureComponent {
     }
   }
 
+  handleChange = date => {
+    console.log(date)
+    const { id, updateItemByKey } = this.props
+    updateItemByKey(id, 'dueDate', date.format('YYYY-MM-DD'))
+  }
+
   render() {
-    const { value, id, isPinned, isCompleted, onDelete } = this.props;
+    const { value, id, isPinned, isCompleted, onDelete, dueDate } = this.props;
+    const selectedDate = (dueDate !== NO_DUE_DATE) ? dueDate : moment();
+    console.log(selectedDate)
+    console.log(dueDate)
     return (
      <li className={cx('activeTask', { pinnedTask: isPinned }, { completedTask: isCompleted })}>
         <div className={styles.leftSide}>
@@ -28,9 +41,11 @@ class TodoItem extends PureComponent {
           <label className={styles.checkLabel} onClick={this.toggleCompleted}></label>
           <span className={styles.taskText}>{value}</span>
           <span className={styles.dueData}>
-            No due date
+            <DatePicker
+              selected={selectedDate}
+              onChange={this.handleChange}
+            />
           </span>
-          {/* <DueDate /> */}
         </div>
         <ul className={styles.actions}>
           <li className={styles.star}>
@@ -52,26 +67,3 @@ class TodoItem extends PureComponent {
 }
 
 export default TodoItem;
-
-// class DueDate extends PureComponent {
-//   state = {
-//   selectedDate: '2017-08-13'
-//   }
-
-//   handleLog = date => this.setState({
-//     selectedDate: date
-//   })
-
-//   render() {
-//       return (
-//           <div>
-//               <ReactDatePicker
-//                   onChange={this.handleLog} 
-//                   range={[2013, 2020]} 
-//                   value={this.state.selectedDate} 
-//                   disabled={true}
-//               />
-//           </div>
-//       );
-//   }
-// }

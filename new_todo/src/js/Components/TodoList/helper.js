@@ -33,3 +33,6 @@ export const readFile = file => new Promise((resolve, reject) => {
   reader.onerror = reject
   reader.readAsText(file)
 })
+
+export const NO_DUE_DATE = 'No due date'
+console.log (NO_DUE_DATE)
