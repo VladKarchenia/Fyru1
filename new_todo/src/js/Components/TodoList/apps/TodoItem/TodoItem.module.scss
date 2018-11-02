@@ -45,6 +45,35 @@
   }
 }
 
+.dueDate input {
+  outline: none;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0 20px 0 7px;
+  width: 65px;
+  border: 1px solid transparent;
+  background: #eee;
+  color: #666;
+  white-space: nowrap;
+  display: inline-block;
+  border-radius: 12px;
+  vertical-align: middle;
+  cursor: pointer;
+  &:hover {
+    background: #e1e1e1;
+  }
+}
+
+.dueDate button {
+  top: 2.5px;
+  right: 1.5px;
+}
+
+.dueDate button::after {
+  background-color: #cc72d4;
+  font-weight: 600;
+}
+
 .actions {
   display: flex;
   font-size: 22px;
@@ -117,7 +146,8 @@
 .activeTask {
   composes: commonListStyle;
   &:hover {
-    border-color: #d1d9e9;
+    border-color: #d1d9e9 !important;
+    z-index: 4;
     .tag, .star, .delete, .taskHandle {
       opacity: 1;
     }

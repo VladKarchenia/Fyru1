@@ -38,14 +38,16 @@ class TodoItem extends PureComponent {
           <input type="checkbox" className={styles.checkImg} />
           <label className={styles.checkLabel} onClick={this.toggleCompleted}></label>
           <span className={styles.taskText}>{value}</span>
-          <DatePicker
-            dateFormat={DATE_FORMAT}
-            placeholderText={NO_DUE_DATE}
-            clearButtonTitle={'Remove due date'}
-            isClearable
-            selected={dueDate !== NO_DUE_DATE ? moment(dueDate) : undefined}
-            onChange={this.handleChange}
-          />
+          <span className={styles.dueDate}>
+            <DatePicker
+              dateFormat={DATE_FORMAT}
+              placeholderText={NO_DUE_DATE}
+              clearButtonTitle={'Remove due date'}
+              isClearable
+              selected={dueDate !== NO_DUE_DATE ? moment(dueDate) : undefined}
+              onChange={this.handleChange}
+            />
+          </span>
         </div>
         <ul className={styles.actions}>
           <li className={styles.star}>
