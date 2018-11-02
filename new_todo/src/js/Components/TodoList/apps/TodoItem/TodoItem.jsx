@@ -1,11 +1,13 @@
 import React, {PureComponent} from 'react'
+import DatePicker from 'react-datepicker'
 import styles from './TodoItem.module.scss'
 import classNames from 'classnames/bind'
-const cx = classNames.bind(styles)
-import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 import moment from 'moment'
-import './React-datepicker-cssmodules.scss'
 import { NO_DUE_DATE } from '../../../App/App.jsx'
+
+const cx = classNames.bind(styles)
+const DATE_FORMAT = 'YYYY-MM-DD'
 
 class TodoItem extends PureComponent {
   togglePinned = () => {
@@ -23,7 +25,8 @@ class TodoItem extends PureComponent {
 
   handleChange = date => {
     const { id, updateItemByKey } = this.props
-    updateItemByKey(id, 'dueDate', date.format('YYYY-DD-MM'))
+    updateItemByKey(id, 'dueDate', date ? date.format(DATE_FORMAT) : NO_DUE_DATE)
+    setTimeout(() => document.activeElement.blur(), 0)
   }
 
   render() {
@@ -35,13 +38,14 @@ class TodoItem extends PureComponent {
           <input type="checkbox" className={styles.checkImg} />
           <label className={styles.checkLabel} onClick={this.toggleCompleted}></label>
           <span className={styles.taskText}>{value}</span>
-          <span className={styles.dueData}>
-            <DatePicker
-              placeholderText={NO_DUE_DATE}
-              selected={dueDate !== NO_DUE_DATE ? moment(dueDate) : undefined}
-              onChange={this.handleChange}
-            />
-          </span>
+          <DatePicker
+            dateFormat={DATE_FORMAT}
+            placeholderText={NO_DUE_DATE}
+            clearButtonTitle={'Remove due date'}
+            isClearable
+            selected={dueDate !== NO_DUE_DATE ? moment(dueDate) : undefined}
+            onChange={this.handleChange}
+          />
         </div>
         <ul className={styles.actions}>
           <li className={styles.star}>

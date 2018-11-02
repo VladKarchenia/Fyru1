@@ -2,9 +2,10 @@ import React, { PureComponent } from 'react'
 import TodoItem from './apps/TodoItem/TodoItem.jsx'
 import SortComponent from './apps/SortComponent/SortComponent.jsx'
 import styles from './TodoList.module.scss'
+import classNames from 'classnames/bind'
 import { filterItems } from './helper.js'
 import { FILTERS_CONFIG } from './apps/SortComponent/constants.js'
-import classNames from 'classnames/bind'
+
 const cx = classNames.bind(styles)
 
 class TodoList extends PureComponent {

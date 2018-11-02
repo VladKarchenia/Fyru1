@@ -5,9 +5,9 @@ import TodoList from '../TodoList/TodoList.jsx'
 import Footer from '../Footer/Footer.jsx'
 import _omit from 'lodash/omit'
 import _set from 'lodash/set'
+import _throttle from 'lodash/throttle'
 import fileSaver from 'file-saver'
 import { readFile } from '../TodoList/helper.js'
-import _throttle from 'lodash/throttle'
 
 export const NO_DUE_DATE = 'No due date'
 
