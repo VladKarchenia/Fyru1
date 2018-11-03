@@ -52,15 +52,16 @@
   padding: 0 20px 0 7px;
   width: 65px;
   border: 1px solid transparent;
-  background: #eee;
+  background: rgb(200, 255, 195);
   color: #666;
   white-space: nowrap;
   display: inline-block;
   border-radius: 12px;
   vertical-align: middle;
+  text-align: center;
   cursor: pointer;
   &:hover {
-    background: #e1e1e1;
+    background: rgb(183, 255, 176);
   }
 }
 
@@ -72,6 +73,20 @@
 .dueDate button::after {
   background-color: #cc72d4;
   font-weight: 600;
+}
+
+.deadlineDueDate input {
+  background: #f9b9b9;
+  &:hover {
+    background: #faafaf;
+  }
+}
+
+.noDueDate input {
+  background: #dadada !important;
+  &:hover {
+    background: #cccccc !important;
+  }
 }
 
 .actions {

@@ -31,6 +31,11 @@ class TodoItem extends PureComponent {
 
   render() {
     const { value, id, isPinned, isCompleted, onDelete, dueDate } = this.props
+    const diffDates = moment(dueDate).diff(moment(), 'days')
+    // console.log(diffDates)
+    const noDueDate = dueDate === NO_DUE_DATE ? true : false
+    const deadlineDate = diffDates <= 1 ? true : false
+
     return (
      <li className={cx('activeTask', { pinnedTask: isPinned }, { completedTask: isCompleted })}>
         <div className={styles.leftSide}>
@@ -38,7 +43,7 @@ class TodoItem extends PureComponent {
           <input type="checkbox" className={styles.checkImg} />
           <label className={styles.checkLabel} onClick={this.toggleCompleted}></label>
           <span className={styles.taskText}>{value}</span>
-          <span className={styles.dueDate}>
+          <span className={cx('dueDate', { deadlineDueDate: deadlineDate }, {noDueDate: noDueDate })}>
             <DatePicker
               dateFormat={DATE_FORMAT}
               placeholderText={NO_DUE_DATE}
@@ -46,6 +51,7 @@ class TodoItem extends PureComponent {
               isClearable
               selected={dueDate !== NO_DUE_DATE ? moment(dueDate) : undefined}
               onChange={this.handleChange}
+              minDate={moment()}
             />
           </span>
         </div>
