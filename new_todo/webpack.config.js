@@ -72,7 +72,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|ico)$/,
         use: ['file-loader'],
       },
       {
@@ -93,15 +93,13 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebPackPlugin({
       template: './src/index.html',
-      filename: './index.html'
+      filename: './index.html',
+      favicon: './src/images/favicon.ico',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
     }),
-    // new HtmlWebpackPlugin({
-    //   favicon: 'src/images/favicon.ico'
-    // })
   ],
   entry: './src/index.js',
   output: {

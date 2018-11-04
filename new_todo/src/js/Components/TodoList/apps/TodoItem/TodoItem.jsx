@@ -31,27 +31,27 @@ class TodoItem extends PureComponent {
 
   render() {
     const { value, id, isPinned, isCompleted, onDelete, dueDate } = this.props
-    const diffDates = moment(dueDate).diff(moment(), 'days')
-    // console.log(diffDates)
-    const noDueDate = dueDate === NO_DUE_DATE ? true : false
-    const deadlineDate = diffDates <= 1 ? true : false
+    const noDueDate = dueDate === NO_DUE_DATE
+    const today = moment(moment().format(DATE_FORMAT))
+    const momentDueDate = noDueDate ? undefined : moment(dueDate)
+    const isDeadline = momentDueDate && momentDueDate.diff(today, 'days') <= 1
 
     return (
-     <li className={cx('activeTask', { pinnedTask: isPinned }, { completedTask: isCompleted })}>
+     <li className={cx('activeTask', { isPinned, isCompleted })}>
         <div className={styles.leftSide}>
           <span className={styles.taskHandle} ></span>
           <input type="checkbox" className={styles.checkImg} />
           <label className={styles.checkLabel} onClick={this.toggleCompleted}></label>
           <span className={styles.taskText}>{value}</span>
-          <span className={cx('dueDate', { deadlineDueDate: deadlineDate }, {noDueDate: noDueDate })}>
+          <span className={cx('dueDate', { isDeadline, noDueDate })}>
             <DatePicker
               dateFormat={DATE_FORMAT}
               placeholderText={NO_DUE_DATE}
               clearButtonTitle={'Remove due date'}
               isClearable
-              selected={dueDate !== NO_DUE_DATE ? moment(dueDate) : undefined}
+              selected={momentDueDate}
               onChange={this.handleChange}
-              minDate={moment()}
+              minDate={today}
             />
           </span>
         </div>
