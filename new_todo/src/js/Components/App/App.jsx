@@ -7,7 +7,7 @@ import _omit from 'lodash/omit'
 import _set from 'lodash/set'
 import _throttle from 'lodash/throttle'
 import fileSaver from 'file-saver'
-import { readFile } from '../TodoList/helper.js'
+import { readFile, titleName } from '../TodoList/helper.js'
 
 export const NO_DUE_DATE = 'No due date'
 
@@ -19,13 +19,17 @@ class App extends Component {
 
   componentDidMount() {
     const storedState = localStorage.getItem('state')
+    const { listName } = this.state
     if (storedState) {
       this.setState(JSON.parse(storedState))
     }
+    titleName(listName)
   }
 
   componentDidUpdate() {
+    const { listName } = this.state
     this.saveState()
+    titleName(listName)
   }
 
   saveState = _throttle(() => {
@@ -47,7 +51,9 @@ class App extends Component {
     this.setState( newState )
   }
 
-  updateListName = listName => this.setState({ listName })
+  updateListName = listName => {
+    this.setState({ listName })
+  }
 
   updateItemByKey = (id, key, value) => {
     const { items } = this.state

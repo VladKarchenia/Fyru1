@@ -7,20 +7,15 @@ export const filterItems = (items, filterType) => {
     return itemsArray.filter(({ isCompleted }) => isCompleted)
   }
   if (filterType === 'active') {
-    return itemsArray.filter(({ isCompleted }) => !isCompleted).sort((a, b) => {
-      if (a.isPinned < b.isPinned) {
-        return !a.isPinned && b.isPinned
-      } return 0
-    })
+    const pinned = itemsArray.filter(({ isPinned }) => isPinned)
+    const ordinary = itemsArray.filter(({ isPinned, isCompleted }) => !isPinned && !isCompleted)
+    return pinned.concat(ordinary)
   }
   if (filterType === 'all') {
-    return itemsArray.sort((a, b) => {
-      if (a.isCompleted > b.isCompleted) {
-        return a.isCompleted && !b.isCompleted
-      } else if (a.isPinned < b.isPinned) {
-        return !a.isPinned && b.isPinned
-      } return 0
-    })
+    const pinned = itemsArray.filter(({ isPinned }) => isPinned)
+    const completed = itemsArray.filter(({ isCompleted }) => isCompleted)
+    const ordinary = itemsArray.filter(({ isPinned, isCompleted }) => !isPinned && !isCompleted)
+    return pinned.concat(ordinary, completed)
   }
   return filterItems
 }
@@ -33,3 +28,5 @@ export const readFile = file => new Promise((resolve, reject) => {
   reader.onerror = reject
   reader.readAsText(file)
 })
+
+export const titleName = title => document.title = title
