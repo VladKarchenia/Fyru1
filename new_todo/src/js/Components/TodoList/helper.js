@@ -29,4 +29,6 @@ export const readFile = file => new Promise((resolve, reject) => {
   reader.readAsText(file)
 })
 
-export const titleName = title => document.title = title
+export const setTitle = title => {
+  document.title = title
+}

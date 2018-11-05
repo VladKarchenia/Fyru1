@@ -7,7 +7,7 @@ import _omit from 'lodash/omit'
 import _set from 'lodash/set'
 import _throttle from 'lodash/throttle'
 import fileSaver from 'file-saver'
-import { readFile, titleName } from '../TodoList/helper.js'
+import { readFile, setTitle } from '../TodoList/helper.js'
 
 export const NO_DUE_DATE = 'No due date'
 
@@ -23,13 +23,13 @@ class App extends Component {
     if (storedState) {
       this.setState(JSON.parse(storedState))
     }
-    titleName(listName)
+    setTitle(listName)
   }
 
   componentDidUpdate() {
     const { listName } = this.state
     this.saveState()
-    titleName(listName)
+    setTitle(listName)
   }
 
   saveState = _throttle(() => {

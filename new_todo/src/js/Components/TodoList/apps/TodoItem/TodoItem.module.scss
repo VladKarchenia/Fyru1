@@ -3,8 +3,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  border: 1px solid #eef0f5;
-  margin: -1px 0;
+  border-top: 1px solid #eef0f5;
+  border-bottom: 1px solid #eef0f5;
+  margin: 5px 0;
   .taskHandle {
     cursor: move;
     color: #ccc;
@@ -42,6 +43,19 @@
     padding-right: 10px;
     font-size: 22px;
     color: #555;
+    max-width: 600px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .inputTask {
+    padding-right: 10px;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    color: #555;
+    width: 600px;
+    background-color: transparent;
   }
 }
 
@@ -74,15 +88,22 @@
     }
   }
   &.isDeadline input {
-    background: #f9b9b9 !important;
+    background: #f9b9b9;
     &:hover {
-      background: #faafaf !important;
+      background: #faafaf;
     }
   }
   &.noDueDate input {
-    background: #dadada !important;
+    background: #dadada;
     &:hover {
-      background: #cccccc !important;
+      background: #cccccc;
+    }
+  }
+  &.isOverdue input {
+    background: #dadada;
+    text-decoration: line-through;
+    &:hover {
+      background: #cccccc;
     }
   }
 }
@@ -126,20 +147,6 @@
     padding: 0 5px;
     display: inline-block;
   }
-  .tag {
-    opacity: 0;
-    .tagSpan {
-      cursor: pointer;
-      color: #ccc;
-      &::before {
-        content: "\f02b";
-        font-family: FontAwesome;
-      }
-      &:hover {
-        color: #843ab8;
-      }
-    }
-  }
   .delete {
     opacity: 0;
     .deleteSpan {
@@ -159,9 +166,8 @@
 .activeTask {
   composes: commonListStyle;
   &:hover {
-    border-color: #d1d9e9 !important;
-    z-index: 4;
-    .tag, .star, .delete, .taskHandle {
+    box-shadow: 0px 0px 0px 1px #bfe9c1;
+    .star, .delete, .taskHandle {
       opacity: 1;
     }
   }
@@ -175,10 +181,11 @@
 
 .isCompleted {
   &:hover {
+    box-shadow: 0px 0px 0px 1px #d1d9e9;
     .delete, .taskHandle {
       opacity: 1;
     }
-    .tag, .star {
+    .star {
       visibility: hidden;
     }
   }
@@ -203,13 +210,15 @@
 }
 
 .isPinned {
-  border-bottom: 1px solid #daeefa;
+  border-color: #daeefa;
   background-color: #f0f8fd;
-  border-top-color: #daeefa;
   .star {
     opacity: 1;
     .starSpan {
       color: orange;
     }
+  }
+  &:hover {
+    box-shadow: 0px 0px 0px 1px #d0edfd;
   }
 }
