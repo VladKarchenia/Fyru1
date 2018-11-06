@@ -27,9 +27,7 @@ class App extends Component {
   }
 
   componentDidUpdate() {
-    const { listName } = this.state
     this.saveState()
-    setTitle(listName)
   }
 
   saveState = _throttle(() => {
@@ -53,6 +51,7 @@ class App extends Component {
 
   updateListName = listName => {
     this.setState({ listName })
+    setTitle(listName)
   }
 
   updateItemByKey = (id, key, value) => {

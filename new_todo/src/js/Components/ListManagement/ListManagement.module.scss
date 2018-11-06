@@ -6,7 +6,6 @@
   background: linear-gradient(0deg, rgba(153,0,173,1) 0%, rgba(150,67,209,1) 60%, rgba(150,67,209,1) 81%, rgba(150,67,209,1) 100%);
   color: #fff;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -29,7 +28,6 @@
 
 .buttons {
   display: flex;
-  flex-wrap: wrap;
   width: 290px;
   justify-content: space-between;
 }
@@ -74,6 +72,7 @@
   font-size: 28px;
   line-height: 48px;
   position: relative;
+  border-radius: 12px;
 }
 
 .importInput {
