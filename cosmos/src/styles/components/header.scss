@@ -1,0 +1,48 @@
+header {
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50px;
+    width: 350px;
+    height: 90px;
+    margin-left: 40px;
+    background-image: url('img/malevolence.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.menu {
+    position: absolute;
+    width: 100%;
+    top: 90px;
+    margin: 0;
+    padding-left: 0;
+    display: none;
+    opacity: 0;
+}
+
+header:hover > nav > .menu {
+    display: block;
+    opacity: 1;
+}
+
+.menu li {
+    height: 90px;
+    background-color: transparent;
+    text-align: center;
+    list-style: none;
+}
+
+.menu li a {
+    color: aliceblue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2em;
+    font-weight: 1000;
+    letter-spacing: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+        text-shadow: 1px 0 rgba(240, 248, 255, .5), 2px 0 rgba(240, 248, 255, .4), 3px 0 rgba(240, 248, 255, .3), 4px 0 rgba(240, 248, 255, .2), 5px 0 rgba(240, 248, 255, .1);
+    }
+}

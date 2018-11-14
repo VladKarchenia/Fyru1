@@ -1,0 +1,49 @@
+* {
+    pointer-events: all;
+}
+
+#all {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.bg {
+    background-image: url('img/artleo.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    left: -5% !important;
+    top: -5% !important;
+    margin-top: -10px;
+}
+
+.planet {
+    z-index: 2;
+    background-image: url('img/mars.png');
+    background-repeat: no-repeat;
+    background-size: 101%;
+    background-position: center;
+    width: 550px;
+    height: 550px;
+    top: 25% !important;
+    left: 15% !important;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: shadow 0.8s infinite alternate;
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+
+@keyframes shadow {
+    from {
+        box-shadow:0 0 60px 20px rgba(238, 229, 229, 0.5);
+    }
+    to {
+        box-shadow:0 0 70px 25px rgba(238, 233, 233, 0.5);
+    }
+  }
