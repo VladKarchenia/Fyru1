@@ -47,6 +47,8 @@ class TodoItem extends PureComponent {
     setTimeout(() => document.activeElement.blur(), 0)
   }
 
+  onKeyDown = (e) => e.preventDefault()
+
   updateTaskName = name => {
     const { value, id, updateItemByKey } = this.props
     if (name !== value) {
@@ -120,6 +122,7 @@ class TodoItem extends PureComponent {
               selected={momentDueDate}
               onChange={this.handleChange}
               minDate={today}
+              onKeyDown={this.onKeyDown}
             />
           </span>
         </div>
