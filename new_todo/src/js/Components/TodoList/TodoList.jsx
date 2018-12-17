@@ -51,7 +51,7 @@ class TodoList extends PureComponent {
     const itemsToRender = filterItems(items, activeFilter)
 
     return (
-      <div>
+      <div className={styles.listContent}>
         <div className={styles.form}>
           <input ref={this.inputRef} placeholder='Write your next task here...' className={styles.input} value={inputValue} onChange={this.handleChange}/>
           <button onClick={this.addItem} className={cx('addBtn', { inactiveBtn: !inputValue }, { activeBtn: inputValue })}>ADD</button>
