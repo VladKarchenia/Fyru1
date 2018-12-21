@@ -1,13 +1,25 @@
-@media screen and (max-width: 846px) {
+@media screen and (max-width: 839px) {
+    .slider {
+        width: 98% !important;
+    }
+    .scale {
+        width: 97% !important;
+    }
+    .scale li:first-child {
+        left: 1.6% !important;
+    }
+    .scale li:nth-child(2) {
+        left: 14.8% !important;
+    }
     .for_multiple_acc .wrapper_content {
         div {
             text-align: center;
-            &:first-child {
-                text-align: center;
-            }
         }
         a {
             margin: 0 auto 20px;
+        }
+        div:first-child {
+            margin: 0 auto;
         }
     }
     .package_head .price {
@@ -26,9 +38,6 @@
     }
     .package_body {
         font-size: 1em !important;
-    }
-    .for_multiple_acc .wrapper_content div:first-child {
-        margin: 0 auto;
     }
 }
 
