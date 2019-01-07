@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import Header from '../Header/Header.jsx'
 import ListManagement from '../ListManagement/ListManagement.jsx'
-import TodoList from '../TodoList/TodoList.jsx'
+import TodoList from '../TodoList'
 import Footer from '../Footer/Footer.jsx'
 import _omit from 'lodash/omit'
 import _set from 'lodash/set'
