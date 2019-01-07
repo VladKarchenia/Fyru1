@@ -1,3 +1,7 @@
+.listContent {
+  flex-grow: 1;
+}
+
 .form {
   display: flex;
   flex-wrap: wrap;
@@ -40,11 +44,42 @@
   padding: 15px 40px;
   font-size: 36px;
   font-weight: 300;
-  width: 70%;
+  // width: 70%;
   line-height: normal;
   margin-top: 3px;
+  flex-grow: 2;
 }
 
 .todoListStyle {
   padding: 0;
+}
+
+@media screen and (max-width: 780px) {
+  .form {
+    flex-direction: column;
+    align-items: center;
+    &:input {
+        width: 85%;
+    }
+    .addBtn {
+      margin: 0;
+      margin-top: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .input {
+    font-size: 30px !important;
+  }
+  .addBtn {
+    font-size: 20px !important;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .input {
+    font-size: 25px !important;
+    max-width: 280px;
+  }
 }

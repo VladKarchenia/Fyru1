@@ -5,7 +5,6 @@
   "main": "gulpfile.js",
   "dependencies": {
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.2.1",
@@ -13,7 +12,8 @@
     "npm": "^5.8.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.23.6"
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1"
   },
   "scripts": {
     "start": "gulp",
