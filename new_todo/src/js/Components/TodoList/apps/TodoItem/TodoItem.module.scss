@@ -1,0 +1,250 @@
+.commonListStyle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-top: 1px solid #eef0f5;
+  border-bottom: 1px solid #eef0f5;
+  margin: 5px 0;
+  &:hover {
+    .taskHandle {
+      animation-name: taskHandleMargin;
+      animation-duration: 0.3s;
+      display: inline;
+      color: rgb(133, 133, 133);
+    }
+  }
+  .taskHandle {
+    cursor: move;
+    color: #ccc;
+    font-size: 24px;
+    display: none;
+    margin-right: 5px;
+    &::before {
+      content: "\f07d";
+      font-family: FontAwesome;
+    }
+  }
+  .leftSide {
+    display: flex;
+    align-items: center;
+  }
+  .checkImg {
+    display: none;
+  }
+  .checkLabel {
+    cursor: pointer;
+    border: 1px solid #1eb760;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    display: inline-block;
+  }
+  .taskText {
+    padding-right: 10px;
+    font-size: 22px;
+    color: #555;
+    max-width: 600px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .inputTask {
+    padding-right: 10px;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    color: #555;
+    max-width: 600px;
+    background-color: transparent;
+  }
+}
+
+.dueDate {
+  input {
+    outline: none;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 0 20px 0 7px;
+    width: 70px;
+    border: 1px solid transparent;
+    background: rgb(200, 255, 195);
+    color: #666;
+    white-space: nowrap;
+    display: inline-block;
+    border-radius: 12px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      background: rgb(183, 255, 176);
+    }
+  }
+  button {
+    top: 2.5px;
+    right: 1.5px;
+    &::after {
+      background-color: #cc72d4;
+      font-weight: 600;
+    }
+  }
+  &.isDeadline input {
+    background: #f9b9b9;
+    &:hover {
+      background: #faafaf;
+    }
+  }
+  &.noDueDate input {
+    background: #dadada;
+    &:hover {
+      background: #cccccc;
+    }
+  }
+  &.isOverdue input {
+    background: #dadada;
+    text-decoration: line-through;
+    &:hover {
+      background: #cccccc;
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  font-size: 22px;
+  li {
+    list-style: none;
+    margin: 0 5px;
+    span {
+      display: inline-block;
+      width: 1.25em;
+      text-align: center;
+    }
+  }
+  .star {
+    opacity: 0;
+  }
+  .starSpan {
+    cursor: pointer;
+    color: #ccc;
+    &::before {
+      content: "\f005";
+      font-family: FontAwesome;
+    }
+    &:hover {
+      color: orange;
+    }
+  }
+  .starInp {
+    display: none;
+  }
+  .starLabel {
+    margin: 0;
+    clear: none;
+    padding: 0 5px;
+    display: inline-block;
+  }
+  .delete {
+    opacity: 0;
+    .deleteSpan {
+      cursor: pointer;
+      color: #ccc;
+      &::before {
+        content: "\f00d";
+        font-family: FontAwesome;
+      }
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}
+
+.activeTask {
+  composes: commonListStyle;
+  &:hover {
+    box-shadow: 0px 0px 0px 1px #bfe9c1;
+    .star, .delete, .taskHandle {
+      opacity: 1;
+    }
+  }
+  .checkLabel:hover {
+    background-image: url('https://vignette.wikia.nocookie.net/lub/images/5/5b/%D0%93%D0%B0%D0%BB%D0%BE%D1%87%D0%BA%D0%B0_%D0%B1%D0%B5%D0%B7_%D1%84%D0%BE%D0%BD%D0%B0.png/revision/latest?cb=20140314123945&path-prefix=ru');
+    background-size: contain;
+    background-position: 1px 1px;
+    background-color: #1eb760;
+  }
+}
+
+.isCompleted {
+  &:hover {
+    box-shadow: 0px 0px 0px 1px #d1d9e9;
+    .delete, .taskHandle {
+      opacity: 1;
+    }
+    .star {
+      visibility: hidden;
+    }
+  }
+  .taskText {
+    color: #bbb;
+    text-decoration: line-through;
+  }
+  .dueData {
+    text-decoration: line-through;
+  }
+  .checkLabel {
+    background-image: url('https://vignette.wikia.nocookie.net/lub/images/5/5b/%D0%93%D0%B0%D0%BB%D0%BE%D1%87%D0%BA%D0%B0_%D0%B1%D0%B5%D0%B7_%D1%84%D0%BE%D0%BD%D0%B0.png/revision/latest?cb=20140314123945&path-prefix=ru');
+    background-size: contain;
+    background-position: 1px 1px;
+    background-color: #ebeef4;
+    border-color: #ebeef4 !important;
+    &:hover {
+      background-color: #ebeef4;
+      border-color: #ebeef4 !important;
+    }
+  }
+}
+
+.isPinned {
+  border-color: #daeefa;
+  background-color: #f0f8fd;
+  .star {
+    opacity: 1;
+    .starSpan {
+      color: orange;
+    }
+  }
+  &:hover {
+    box-shadow: 0px 0px 0px 1px #d0edfd;
+  }
+}
+
+@keyframes taskHandleMargin {
+  from {
+    margin-right: 2px;
+  }
+  to {
+    margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .activeTask {
+    flex-direction: column;
+  }
+  .commonListStyle {
+    align-items: flex-start;
+    padding: 10px 40px;
+  }
+  .actions {
+    margin-top: 10px;
+    padding-left: 0;
+  }
+  .taskText {
+    max-width: 130px !important;
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+}

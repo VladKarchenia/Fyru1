@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Weather</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+    <div class="sunholder" style="visibility: hidden">
+        <div class="sun"></div>
+        <div class="raybase ray1"><div class="ray"></div></div>
+        <div class="raybase ray2"><div class="ray"></div></div>
+        <div class="raybase ray3"><div class="ray"></div></div>
+        <div class="raybase ray4"><div class="ray"></div></div>
+        <div class="raybase ray5"><div class="ray"></div></div>
+        <div class="raybase ray6"><div class="ray"></div></div>
+        <div class="raybase ray7"><div class="ray"></div></div>
+        <div class="raybase ray8"><div class="ray"></div></div>
+    </div>
+    <div class="wrapper_content">
+        <header>
+            <nav>
+                <a href="#" class="logo"></a>
+                <h1>THE WEATHER</h1>
+                <ul class="menu">
+                    <li class="item"><a href="#">Today</a></li>
+                    <li class="item"><a href="#">3 Days</a></li>
+                    <li class="item"><a href="#">Week</a></li>
+                    <li class="item"><a href="#">2 Weeks</a></li>
+                    <li class="item"><a href="#">Weather History</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="search_city">
+            <form action="" method="get">
+                <input id="search" type="text" placeholder="City" />
+                <button type="submit" id="myBtn"></button>
+            </form>
+        </div>
+        <div class="weather_today">
+            <div class="weather_container">
+                <span class="date" id="date_today"></span>
+                <h3>Current Weather</h3>
+                <h3 class="city"></h3>
+                <div><img class="img" src="" alt="" /></div>
+                <div class="info">
+                    <span class="temp"></span>
+                </div>
+                <span class="condition"></span>
+            </div>
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Wind</th>
+                        <th></th>
+                        <th>Cloudiness</th>
+                        <th>Pressure</th>
+                        <th>Humidity</th>
+                        <th>Sunrise</th>
+                        <th>Sunset</th>
+                    </tr>
+                    <tr>
+                        <td class="wind"></td>
+                        <td class="img"><img class="wind_direction" src="img/wind.jpg" alt="" /></td>
+                        <td class="cloudiness"></td>
+                        <td class="pressure"></td>
+                        <td class="humidity"></td>
+                        <td class="sunrise"></td>
+                        <td class="sunset"></td>
+                    </tr>
+                </table>
+            </div>    
+        </div>
+        <div class="weather_tomorrow">
+            <div class="weather_container">
+                <span class="date" id="date_tomorrow"></span>
+                <h3>Tomorrow</h3>
+                <div><img class="img" src="" alt="" /></div>
+                <div class="info">
+                    <span class="temp"></span>
+                </div>
+                <span class="condition"></span>
+            </div>
+        </div>
+        <div class="for_3_days">
+            <div class="">
+                <h3 class="date"></h3>
+                <div class="img"></div>
+                <div class="info">
+                    <span class="temp"></span>
+                </div>
+                <span class="condition"></span>
+            </div>
+            <div class="">
+                <h3 class="date"></h3>
+                <div class="img"></div>
+                <div class="info">
+                    <span class="temp"></span>
+                </div>
+                <span class="condition"></span>
+            </div>
+            <div class="">
+                <h3 class="date"></h3>
+                <div class="img"></div>
+                <div class="info">
+                    <span class="temp"></span>
+                </div>
+                <span class="condition"></span>
+            </div>
+        </div>
+        <div class="for_2_Weeks">
+        </div>
+        <div class="map">
+            <h2>Current Location</h2>
+            <div id="map"></div>
+        </div>
+        <footer>
+            <ul class="footer_list">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Security</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Feedback</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">&#9773; Copyright</a></li>
+                <li><a href="#">Terms + Conditions</a></li>
+            </ul>
+        </footer>
+    </div>
+    <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <!-- <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU&amp;load=SuggestView&amp;" type="text/javascript"></script> -->
+
+    <script src="script.js"></script>
+</body>
+</html>

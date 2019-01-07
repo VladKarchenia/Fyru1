@@ -36,7 +36,7 @@
 .first {
     height: 25px;
     margin-left: -45px;
-    background-color: rgb(50, 201, 70);
+    background-color: rgb(78, 165, 90);
     animation-name: move1;
     animation-delay: -1.05s;
 }
@@ -44,7 +44,7 @@
 .second {
     height: 85px;
     margin-left: -15px;
-    background-color: rgb(241, 80, 80);
+    background-color: rgb(212, 93, 93);
     animation-name: move2;
     animation-delay: -0.75s;
 }
@@ -52,14 +52,14 @@
 .third {
     height: 136px;
     margin-left: 15px;
-    background-color: rgb(69, 250, 235);
+    background-color: rgb(250, 69, 144);
     animation-name: move3;
 }
 
 .fourth {
     height: 126px;
     margin-left: 45px;
-    background-color: rgb(66, 141, 252);
+    background-color: rgb(203, 235, 60);
     animation-name: move4;
     animation-delay: -0.35s;
 }
