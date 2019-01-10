@@ -3,8 +3,6 @@ import TodoItem from './apps/TodoItem/TodoItem.jsx'
 import SortComponent from './apps/SortComponent/SortComponent.jsx'
 import styles from './TodoList.module.scss'
 import classNames from 'classnames/bind'
-import { filterItems } from './helper.js'
-// import { FILTERS_CONFIG } from './apps/SortComponent/constants.js'
 
 const cx = classNames.bind(styles)
 
@@ -43,7 +41,6 @@ class TodoList extends PureComponent {
   render() {
     const { inputValue } = this.state
     const { items, updateItemByKey, onDelete, activeFilter, setVisibilityFilter } = this.props
-    const itemsToRender = filterItems(items, activeFilter)
 
     return (
       <div className={styles.listContent}>
@@ -54,7 +51,7 @@ class TodoList extends PureComponent {
         <SortComponent changeFilter={setVisibilityFilter} activeFilter={activeFilter} />
         <ul className={styles.todoListStyle}>
         {
-          itemsToRender.map(({ id, value, isPinned, isCompleted, dueDate }) => (
+          items.map(({ id, value, isPinned, isCompleted, dueDate }) => (
             <TodoItem
               onDelete={onDelete}
               updateItemByKey={updateItemByKey}

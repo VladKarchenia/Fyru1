@@ -13,7 +13,6 @@ export const NO_DUE_DATE = 'No due date'
 
 class App extends Component {
   state = {
-    items: {},
     listName: 'My Todo List'
   }
 
@@ -35,7 +34,8 @@ class App extends Component {
     }, 3000)
 
   exportList = () => {
-    const { items, listName } = this.state
+    const { listName } = this.state
+    const { items } = this.props
     const json = JSON.stringify({listName, items}, null, 2)
     const fileName = `${listName}.json`
     const file = new Blob([json], {type: 'application/json'})
@@ -55,12 +55,12 @@ class App extends Component {
   }
 
   updateItemByKey = (id, key, value) => {
-    const { items } = this.state
+    const { items } = this.props
     this.setState({ items: {..._set(items, [id, key] , value)} })
   }
 
   addItem = value => {
-    const { items } = this.state
+    const { items } = this.props
     const id = Date.now()
     this.setState({
       items: {
@@ -77,16 +77,16 @@ class App extends Component {
   }
 
   onDelete = id => {
-    const { items } = this.state
+    const { items } = this.props
       this.setState({ items: _omit(items, id) })
   }
 
   render() {
-    const { items, listName } = this.state
+    const { listName } = this.state
     return [
       <Header key='Header' />,
       <ListManagement key='ListManagement' listName={listName} updateListName={this.updateListName} exportList={this.exportList} importList={this.importList} />,
-      <TodoList key='TodoList' items={items} onDelete={this.onDelete} updateItemByKey={this.updateItemByKey} addItem={this.addItem} />,
+      <TodoList key='TodoList' onDelete={this.onDelete} updateItemByKey={this.updateItemByKey} addItem={this.addItem} />,
       <Footer key='Footer' />
     ]
   }

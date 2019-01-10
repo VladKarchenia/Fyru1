@@ -9,10 +9,20 @@ const visibilityFilter = (state = 'all', action) => {
   }
 }
 
-const todos = (state = [], action) => {
+const items = (state = {}, action) => {
   switch (action.type) {
     case 'ADD_TODO':
-      return state
+    const id = Date.now()
+      return {
+        ...state,
+        [id]: {
+          id,
+          value: action.value,
+          isPinned: false,
+          isCompleted: false,
+          dueDate: 'No due date'
+        }
+      }
     case 'TOGGLE_TODO':
       return state
     default:
@@ -22,7 +32,7 @@ const todos = (state = [], action) => {
 
 const rootReducer = combineReducers({
   visibilityFilter,
-  todos,
+  items,
 })
 
 export default rootReducer
