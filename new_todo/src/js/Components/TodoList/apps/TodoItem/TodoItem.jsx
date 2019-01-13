@@ -5,7 +5,7 @@ import moment from 'moment'
 import 'react-datepicker/dist/react-datepicker.css'
 
 import { ITEM_KEYS } from '../../../../constants/todoItem'
-import { NO_DUE_DATE } from '../../../App/App.jsx'
+import { NO_DUE_DATE } from '../../../../constants/noDueDate'
 import styles from './TodoItem.module.scss'
 
 const cx = classNames.bind(styles)

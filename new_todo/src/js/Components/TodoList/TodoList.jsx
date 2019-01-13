@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import TodoItem from './apps/TodoItem/TodoItem.jsx'
-import SortComponent from './apps/SortComponent/SortComponent.jsx'
+import SortComponent from '../TodoList/apps/SortComponent'
 import styles from './TodoList.module.scss'
 import classNames from 'classnames/bind'
 
