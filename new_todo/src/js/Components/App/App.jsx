@@ -1,95 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
+
 import Header from '../Header/Header.jsx'
-import ListManagement from '../ListManagement/ListManagement.jsx'
+import ListManagement from '../ListManagement'
 import TodoList from '../TodoList'
 import Footer from '../Footer/Footer.jsx'
-import _omit from 'lodash/omit'
-import _set from 'lodash/set'
-import _throttle from 'lodash/throttle'
-import fileSaver from 'file-saver'
-import { readFile, setTitle } from '../TodoList/helper.js'
 
-export const NO_DUE_DATE = 'No due date'
-
-class App extends Component {
-  state = {
-    listName: 'My Todo List'
-  }
-
-  componentDidMount() {
-    const storedState = localStorage.getItem('state')
-    const { listName } = this.state
-    if (storedState) {
-      this.setState(JSON.parse(storedState))
-    }
-    setTitle(listName)
-  }
-
-  componentDidUpdate() {
-    this.saveState()
-  }
-
-  saveState = _throttle(() => {
-      localStorage.setItem('state', JSON.stringify(this.state))
-    }, 3000)
-
-  exportList = () => {
-    const { listName } = this.state
-    const { items } = this.props
-    const json = JSON.stringify({listName, items}, null, 2)
-    const fileName = `${listName}.json`
-    const file = new Blob([json], {type: 'application/json'})
-    fileSaver.saveAs(file, fileName)
-  }
-
-  importList = async (e) => {
-    const file = e.target.files[0]
-    const json = await readFile(file)
-    const newState = JSON.parse(json)
-    this.setState( newState )
-  }
-
-  updateListName = listName => {
-    this.setState({ listName })
-    setTitle(listName)
-  }
-
-  updateItemByKey = (id, key, value) => {
-    const { items } = this.props
-    this.setState({ items: {..._set(items, [id, key] , value)} })
-  }
-
-  addItem = value => {
-    const { items } = this.props
-    const id = Date.now()
-    this.setState({
-      items: {
-        ...items,
-        [id]: {
-          id,
-          value,
-          isPinned: false,
-          isCompleted: false,
-          dueDate: NO_DUE_DATE
-        }
-      }
-    })
-  }
-
-  onDelete = id => {
-    const { items } = this.props
-      this.setState({ items: _omit(items, id) })
-  }
-
-  render() {
-    const { listName } = this.state
-    return [
-      <Header key='Header' />,
-      <ListManagement key='ListManagement' listName={listName} updateListName={this.updateListName} exportList={this.exportList} importList={this.importList} />,
-      <TodoList key='TodoList' onDelete={this.onDelete} updateItemByKey={this.updateItemByKey} addItem={this.addItem} />,
-      <Footer key='Footer' />
-    ]
-  }
-}
+const App = () => [
+  <Header key='Header' />,
+  <ListManagement key='ListManagement' />,
+  <TodoList key='TodoList' />,
+  <Footer key='Footer' />,
+]
 
 export default App

@@ -1,37 +1,73 @@
 import { combineReducers } from 'redux'
+import _omit from 'lodash/omit'
+import _set from 'lodash/set'
 
-const visibilityFilter = (state = 'all', action) => {
-  switch (action.type) {
+import { APP_KEY } from '../constants/permanentSave'
+import { ITEM_KEYS } from '../constants/todoItem'
+
+const visibilityFilterInitial = 'all'
+let itemsInitial = {}
+let listNameInitial = 'My Todo List'
+
+const localData = localStorage.getItem(APP_KEY)
+if (localData) {
+  const { listName, items } = JSON.parse(localData)
+  listNameInitial = listName
+  itemsInitial = items
+}
+
+const visibilityFilter = (state = visibilityFilterInitial, { type, payload }) => {
+  switch (type) {
     case 'SET_VISIBILITY_FILTER':
-      return action.payload.filter
+      return payload.filter
     default:
       return state
   }
 }
 
-const items = (state = {}, action) => {
-  switch (action.type) {
+const items = (state = itemsInitial, { type, payload }) => {
+  switch (type) {
     case 'ADD_TODO':
     const id = Date.now()
       return {
         ...state,
         [id]: {
-          id,
-          value: action.value,
-          isPinned: false,
-          isCompleted: false,
-          dueDate: 'No due date'
+          [ITEM_KEYS.id]: id,
+          [ITEM_KEYS.value]: payload.value,
+          [ITEM_KEYS.isPinned]: false,
+          [ITEM_KEYS.isCompleted]: false,
+          [ITEM_KEYS.dueDate]: 'No due date'
         }
       }
-    case 'TOGGLE_TODO':
-      return state
+    case 'DELETE_TODO':
+      return _omit(state, payload.id)
+    case 'EDIT_TODO':
+      return {
+        ...state,
+        [payload.id]: {
+          ...state[payload.id],
+          [payload.key]: payload.value,
+        },
+      }
+    case 'IMPORT_TODOS':
+      return payload.items
     default:
       return state
   }
 }
 
+const listName = (state = listNameInitial, { type, payload }) => {
+  switch (type) {
+    case 'CHANGE_LISTNAME':
+      return payload.listName
+  default:
+    return state
+  }
+}
+
 const rootReducer = combineReducers({
   visibilityFilter,
+  listName,
   items,
 })
 

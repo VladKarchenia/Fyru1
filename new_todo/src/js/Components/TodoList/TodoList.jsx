@@ -40,7 +40,7 @@ class TodoList extends PureComponent {
 
   render() {
     const { inputValue } = this.state
-    const { items, updateItemByKey, onDelete, activeFilter, setVisibilityFilter } = this.props
+    const { items, updateItemByKey, deleteItem } = this.props
 
     return (
       <div className={styles.listContent}>
@@ -48,12 +48,12 @@ class TodoList extends PureComponent {
           <input ref={this.inputRef} placeholder='Write your next task here...' className={styles.input} value={inputValue} onChange={this.handleChange}/>
           <button onClick={this.addItem} className={cx('addBtn', { inactiveBtn: !inputValue }, { activeBtn: inputValue })}>ADD</button>
         </div>
-        <SortComponent changeFilter={setVisibilityFilter} activeFilter={activeFilter} />
+        <SortComponent />
         <ul className={styles.todoListStyle}>
         {
           items.map(({ id, value, isPinned, isCompleted, dueDate }) => (
             <TodoItem
-              onDelete={onDelete}
+              deleteItem={deleteItem}
               updateItemByKey={updateItemByKey}
               key={id}
               isPinned={isPinned}

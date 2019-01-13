@@ -1,10 +1,12 @@
 import React, {PureComponent} from 'react'
 import DatePicker from 'react-datepicker'
-import styles from './TodoItem.module.scss'
 import classNames from 'classnames/bind'
-import 'react-datepicker/dist/react-datepicker.css'
 import moment from 'moment'
+import 'react-datepicker/dist/react-datepicker.css'
+
+import { ITEM_KEYS } from '../../../../constants/todoItem'
 import { NO_DUE_DATE } from '../../../App/App.jsx'
+import styles from './TodoItem.module.scss'
 
 const cx = classNames.bind(styles)
 const DATE_FORMAT = 'YYYY-MM-DD'
@@ -30,20 +32,36 @@ class TodoItem extends PureComponent {
 
   togglePinned = () => {
     const { id, isPinned, updateItemByKey } = this.props
-    updateItemByKey(id, 'isPinned', !isPinned)
+    updateItemByKey({
+      id,
+      key: ITEM_KEYS.isPinned,
+      value: !isPinned,
+    })
   }
 
   toggleCompleted = () => {
     const { id, isCompleted, updateItemByKey } = this.props
-    updateItemByKey(id, 'isCompleted', !isCompleted)
+    updateItemByKey({
+      id,
+      key: ITEM_KEYS.isCompleted,
+      value: !isCompleted,
+    })
     if (!isCompleted) {
-      updateItemByKey(id, 'isPinned', false)
+      updateItemByKey({
+        id,
+        key: ITEM_KEYS.isPinned,
+        value: false,
+      })
     }
   }
 
   handleChange = date => {
     const { id, updateItemByKey } = this.props
-    updateItemByKey(id, 'dueDate', date ? date.format(DATE_FORMAT) : NO_DUE_DATE)
+    updateItemByKey({
+      id,
+      key: ITEM_KEYS.dueDate,
+      value: date ? date.format(DATE_FORMAT) : NO_DUE_DATE
+    })
     setTimeout(() => document.activeElement.blur(), 0)
   }
 
@@ -52,7 +70,11 @@ class TodoItem extends PureComponent {
   updateTaskName = name => {
     const { value, id, updateItemByKey } = this.props
     if (name !== value) {
-      updateItemByKey(id, 'value', name)
+      updateItemByKey({
+        id,
+        key: ITEM_KEYS.value,
+        value: name,
+      })
     }
   }
 
@@ -95,7 +117,7 @@ class TodoItem extends PureComponent {
   inputRef = React.createRef()
 
   render() {
-    const { value, id, isPinned, isCompleted, onDelete, dueDate } = this.props
+    const { value, id, isPinned, isCompleted, deleteItem, dueDate } = this.props
     const { editMode, inputTaskValue } = this.state
     const noDueDate = dueDate === NO_DUE_DATE
     const today = moment(moment().format(DATE_FORMAT))
@@ -134,7 +156,7 @@ class TodoItem extends PureComponent {
             </label>
           </li>
           <li className={styles.delete}>
-            <span className={styles.deleteSpan} onClick={() => onDelete(id)}></span>
+            <span className={styles.deleteSpan} onClick={() => deleteItem(id)}></span>
           </li>
         </ul>
       </li>
