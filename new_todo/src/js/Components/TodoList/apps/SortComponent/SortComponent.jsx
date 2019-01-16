@@ -1,6 +1,6 @@
 import React from 'react'
-
 import styles from './SortComponent.module.scss'
+
 import { FILTERS_CONFIG } from './constants.js'
 
 const AnimationComponent = () => (
@@ -18,19 +18,20 @@ const AnimationComponent = () => (
 
 const SortComponent = ({ activeFilter, setVisibilityFilter }) => {
   return (
-  <ul className={styles.sortContainer}>
-  {
-    Object.values(FILTERS_CONFIG).map((filter) => {
-      return (
-        <li className={styles.sortItem} key={filter}>
-          <input type="radio" name="sort" className={styles.sortInput} onClick={() => setVisibilityFilter(filter)} defaultChecked={filter === activeFilter} />
-          <label className={styles.sortLabel}>{filter}</label>
-          {(filter === activeFilter) && <AnimationComponent />}
-        </li>
-      )
-    })
-  }
-  </ul>
-)}
+    <ul className={styles.sortContainer}>
+    {
+      Object.values(FILTERS_CONFIG).map((filter) => {
+        return (
+          <li className={styles.sortItem} key={filter}>
+            <input type="radio" name="sort" className={styles.sortInput} onClick={() => setVisibilityFilter(filter)} defaultChecked={filter === activeFilter} />
+            <label className={styles.sortLabel}>{filter}</label>
+            {(filter === activeFilter) && <AnimationComponent />}
+          </li>
+        )
+      })
+    }
+    </ul>
+  )
+}
 
 export default SortComponent

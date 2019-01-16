@@ -4,14 +4,14 @@ import fileSaver from 'file-saver'
 import { readFile } from '../../utils'
 
 import { changeListName, importTodos } from '../../actions'
-import { getListName, getAllItems } from '../../selectors'
+import { getListName, getFilteredItems } from '../../selectors'
 import ListManagement from './ListManagement.jsx'
 
 export default compose(
 	connect(
 		(state) => ({
 			listName: getListName(state),
-			items: getAllItems(state),
+			items: getFilteredItems(state),
 		}),
 		{
 			changeListName,
