@@ -4,22 +4,23 @@ import PrintSetup from './PrintSetup'
 
 class Header extends PureComponent {
   state = {
-    printMode: false,
+    printMode: true,
   }
 
   componentDidMount() {
     document.addEventListener('keyup', this.handleKeyUp)
-    window.addEventListener('keydown', function(e) {
-      if (e.keyCode === 80 && (e.ctrlKey || e.metaKey) && !e.altKey && (!e.shiftKey || window.chrome || window.opera)) {
-        event.preventDefault()
-        if (e.stopImmediatePropagation) {
-          e.stopImmediatePropagation()
-        } else {
-          e.stopPropagation()
-        }
-        return
+    document.addEventListener('keydown', this.printStopPropagation)
+  }
+
+  printStopPropagation = (e) => {
+    if (e.keyCode === 80 && (e.ctrlKey || e.metaKey) && !e.altKey && (!e.shiftKey || window.chrome || window.opera)) {
+      event.preventDefault()
+      if (e.stopImmediatePropagation) {
+        e.stopImmediatePropagation()
+      } else {
+        e.stopPropagation()
       }
-    }, true)
+    }
   }
 
   handleKeyUp = (e) => {
@@ -31,13 +32,17 @@ class Header extends PureComponent {
     }
   }
 
+  printStart = () => this.setState({ printMode: true })
+  printEnd = () => this.setState({ printMode: false })
+
   render() {
     const { printMode } = this.state
     return (
       <div>
         {printMode
-          ? <PrintSetup />
-          : <div className={styles.header}>
+          ? <PrintSetup printEnd={this.printEnd} />
+          : <div className={styles.header} onClick={this.printStart}>
+            <button className={styles.printIcon}></button>
             <a className={styles.a}>Log in</a>
             <a className={styles.newList}>New List</a>
           </div>

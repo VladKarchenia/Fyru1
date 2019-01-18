@@ -21,6 +21,7 @@
 }
 
 .activeBtn {
+  composes: addBtn;
   border: 1px solid #178b49;
   text-shadow: 0 1px 2px rgba(0,0,0,0.2);
   box-shadow: inset 0 1px 8px rgba(255,255,255,0.4), 0 0 5px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.2);
@@ -32,6 +33,7 @@
 }
 
 .inactiveBtn {
+  composes: addBtn;
   border: 1px solid #99a9a0;
   text-shadow: 0 1px 2px rgba(0,0,0,0.2);
   box-shadow: inset 0 1px 8px rgba(255,255,255,0.4), 0 0 5px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.2);

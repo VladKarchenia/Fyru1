@@ -5,6 +5,7 @@ import {
   getFilteredItems,
   getVisibilityFilter,
 } from '../../../selectors'
+import { setVisibilityFilter } from '../../../actions'
 
 import PrintSetup from './PrintSetup.jsx'
 
@@ -15,6 +16,6 @@ export default connect(
     filter: getVisibilityFilter(state),
   }),
   {
-
+    setVisibilityFilter,
   }
 )(PrintSetup)

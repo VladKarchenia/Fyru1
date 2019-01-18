@@ -1,5 +1,6 @@
 .header {
-  height: 40px;
+  height: 49px;
+  line-height: 49px;
   text-align: right;
   padding: 0 5%;
   background-color: #333;
@@ -23,5 +24,25 @@
     content: "\f067";
     font-family: FontAwesome;
     padding-right: 5px;
+  }
+}
+
+.printIcon {
+  height: 30px;
+  width: 30px;
+  background-color: #333;
+  border: 0.5px solid #ccc;
+  border-radius: 50%;
+  font-size: 15px;
+  color: #ccc;
+  outline: none;
+  cursor: pointer;
+  &::before {
+    content: "\f02f";
+    font-family: FontAwesome;
+  }
+  &:hover {
+    color: #fff;
+    border-color: #fff;
   }
 }

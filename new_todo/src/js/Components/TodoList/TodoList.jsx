@@ -46,7 +46,7 @@ class TodoList extends PureComponent {
       <div className={styles.listContent}>
         <div className={styles.form}>
           <input ref={this.inputRef} placeholder='Write your next task here...' className={styles.input} value={inputValue} onChange={this.handleChange}/>
-          <button onClick={this.addItem} className={cx('addBtn', { inactiveBtn: !inputValue }, { activeBtn: inputValue })}>ADD</button>
+          <button onClick={this.addItem} className={cx({ inactiveBtn: !inputValue }, { activeBtn: inputValue })}>ADD</button>
         </div>
         <SortComponent />
         <ul className={styles.todoListStyle}>

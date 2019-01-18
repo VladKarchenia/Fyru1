@@ -6,25 +6,25 @@
   border-top: 1px solid #eef0f5;
   border-bottom: 1px solid #eef0f5;
   margin: 5px 0;
-  &:hover {
-    .taskHandle {
-      animation-name: taskHandleMargin;
-      animation-duration: 0.3s;
-      display: inline;
-      color: rgb(133, 133, 133);
-    }
-  }
-  .taskHandle {
-    cursor: move;
-    color: #ccc;
-    font-size: 24px;
-    display: none;
-    margin-right: 5px;
-    &::before {
-      content: "\f07d";
-      font-family: FontAwesome;
-    }
-  }
+  // &:hover {
+  //   .taskHandle {
+  //     animation-name: taskHandleMargin;
+  //     animation-duration: 0.3s;
+  //     display: inline;
+  //     color: rgb(133, 133, 133);
+  //   }
+  // }
+  // .taskHandle {
+  //   cursor: move;
+  //   color: #ccc;
+  //   font-size: 24px;
+  //   display: none;
+  //   margin-right: 5px;
+  //   &::before {
+  //     content: "\f07d";
+  //     font-family: FontAwesome;
+  //   }
+  // }
   .leftSide {
     display: flex;
     align-items: center;
