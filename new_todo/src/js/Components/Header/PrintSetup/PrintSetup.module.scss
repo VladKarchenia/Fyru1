@@ -1,4 +1,4 @@
-.print {
+.root {
   position: fixed;
   z-index: 3;
   top: 0;
@@ -7,29 +7,31 @@
   right: 0;
 }
 
-.print_head {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 5vh;
   min-height: 60px;
-  padding: 0 5%;
   background-color: rgb(62, 62, 62);
 }
 
-.print_listname {
+.listname {
+  flex-grow: 3;
+  padding-left: 60px;
   color: white;
   font-size: 20px;
 }
 
-.print_head_buttons {
-  float: left;
+.header_buttons {
+  width: 250px;
 }
 
-.print_button {
+.print_btn {
   width: 90px;
   padding: 10px 0;
   border: none;
+  background: #1eb760;
   color: white;
   font-weight: 600;
   text-transform: uppercase;
@@ -38,31 +40,26 @@
 }
 
 .calcel_btn {
-  composes: print_button;
+  composes: print_btn;
   margin-right: 15px;
   background: rgb(94, 94, 94);
 }
 
 .calcel_btn:hover {
-  background: rgb(134, 134, 134);
-}
-
-.print_btn {
-  composes: print_button;
-  background: #1eb760;
+  background: rgb(134, 134, 134) !important;
 }
 
 .print_btn:hover {
   background: rgba(14, 211, 99, 0.5);
 }
 
-.print_body {
+.body {
   display: flex;
   height: 95vh;
   background-color: rgb(105, 105, 105);
 }
 
-.print_mainscreen {
+.preview {
   flex-grow: 3;
   overflow: auto;
   margin: 30px;
@@ -72,7 +69,7 @@
   -moz-box-shadow: 3px 5px 10px 0px rgba(88, 88, 88, 0.75);
   box-shadow: 3px 5px 10px 0px rgba(88, 88, 88, 0.75);
   &:hover {
-    .print_zoom_btn {
+    .zoom_btn {
       animation-name: zoom_side;
       animation-delay: 0.2s;
       animation-duration: 0.9s;
@@ -88,21 +85,21 @@
   }
 }
 
-.print_rightcolumn {
+.options {
   position: relative;
   width: 250px;
   background-color: white;
   color: dimgray;
 }
 
-// .print_zoom {
+// .zoom {
 //   position: absolute;
 //   top: 70%;
 //   display: flex;
 //   flex-direction: column;
 // }
 
-// .print_zoom_btn {
+// .zoom_btn {
 //   height: 45px;
 //   width: 45px;
 //   border-radius: 50%;
@@ -117,11 +114,11 @@
 //   font-family: FontAwesome;
 // }
 
-// .print_zoom_btn:first-child {
+// .zoom_btn:first-child {
 //   margin-bottom: 10px;
 // }
 
-// .print_zoom_btn:hover {
+// .zoom_btn:hover {
 //   border: 0.5px solid rgba(105, 105, 105, 0.75);
 //   -webkit-box-shadow: 1px 2px 3px 0px rgba(88, 88, 88, 1);
 //   -moz-box-shadow: 1px 2px 3px 0px rgba(88, 88, 88, 1);
@@ -129,21 +126,21 @@
 //   color: rgb(105, 105, 105);
 // }
 
-// .print_zoom_plus {
-//   composes: print_zoom_btn;
+// .zoom_plus {
+//   composes: zoom_btn;
 //   &::before {
 //     content: "\F067";
 //   }
 // }
 
-// .print_zoom_minus {
-//   composes: print_zoom_btn;
+// .zoom_minus {
+//   composes: zoom_btn;
 //   &::before {
 //     content: "\F068";
 //   }
 // }
 
-.print_orientation {
+.orientation {
   height: 60px;
   span {
     height: 30px;
@@ -155,7 +152,7 @@
   }
 }
 
-.print_orientation_titleSpan {
+.orientation_titleSpan {
   display: block;
   text-align: center;
   line-height: 40px;
@@ -167,47 +164,107 @@
   color: rgb(66, 66, 66);
 }
 
-.print_orientation_types {
+.orientation_types {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 10px;
   line-height: 25px;
-  label {
-    padding: 0 10px;
-    font-size: 13px;
-    text-transform: uppercase;
-    font-weight: 600;
-    cursor: pointer;
+  div {
+    position: relative;
   }
-  input {
-    display: none;
-  }
-  label:first-child {
-    background: rgba(117, 236, 101, 0.75);
-  }  
+}
+
+.orientation_label {
+  padding: 5px 10px;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.orientation_types_input {
+  z-index: 1;
+  opacity: 0;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+}
+
+.orientation_types_input:checked + .orientation_label {
+  background: #bada55;
 }
 
 .custom_common {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 35px;
   line-height: 35px;
   margin: 10px 0;
   padding: 0 10px;
+  position: relative;
   span {
     font-size: 18px;
     text-transform: capitalize;
-    margin-right: 10px;
   }
 }
 
-.print_filter_ul {
+.custom_common_label {
+  cursor: pointer;
+  width: 50px;
+  height: 25px;
+  background: grey;
+  display: block;
+  border-radius: 15px;
+  position: relative;
+}
+
+.custom_common_label:after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.custom_common_label:active:after {
+  width: 25px;
+}
+
+.custom_common_input {
+  left: 183px;
+  z-index: 1;
+  opacity: 0;
+  -webkit-appearance: none;
+  width: 50px;
+  height: 25px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.custom_common_input:checked + .custom_common_label {
+  background: #bada55;
+}
+
+.custom_common_input:checked + .custom_common_label:after {
+  left: calc(100% - 3px);
+  transform: translateX(-100%);
+}
+
+.filter_ul {
   margin: 0 auto;
   padding-left: 0px;
   list-style-type: none;
 }
 
-.print_filter_li {
+.filter_li {
   display: flex;
   align-items: center;
   height: 30px;
@@ -229,7 +286,7 @@
   }
 }
 
-.print_filterLabel::before {
+.filterLabel::before {
   content: "";
   border: 1px solid #1eb760;
   border-radius: 5px;
@@ -240,7 +297,7 @@
   font-size: 18px;
 }
 
-.print_checkFilterLabel::before {
+.checkFilterLabel::before {
   content: "";
   border: 1px solid #1eb760;
   border-radius: 5px;
@@ -254,7 +311,7 @@
   background-color: #1eb760;
 }
 
-// .filter_radio:checked ~ .print_checkFilter::before {
+// .filter_radio:checked ~ .checkFilter::before {
 //   background-image: url('https://vignette.wikia.nocookie.net/lub/images/5/5b/%D0%93%D0%B0%D0%BB%D0%BE%D1%87%D0%BA%D0%B0_%D0%B1%D0%B5%D0%B7_%D1%84%D0%BE%D0%BD%D0%B0.png/revision/latest?cb=20140314123945&path-prefix=ru');
 //   background-size: contain;
 //   background-color: #1eb760;

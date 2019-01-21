@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
-import styles from './ListManagement.module.scss'
+
 import { setTitle } from '../../utils'
+import styles from './ListManagement.module.scss'
 
 class ListManagement extends PureComponent {
   componentDidMount() {

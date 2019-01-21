@@ -5,11 +5,11 @@ import moment from 'moment'
 import 'react-datepicker/dist/react-datepicker.css'
 
 import { ITEM_KEYS } from '../../../../constants/todoItem'
-import { NO_DUE_DATE } from '../../../../constants/noDueDate'
+import { DATE } from '../../../../constants/date'
 import styles from './TodoItem.module.scss'
 
-const cx = classNames.bind(styles)
 const DATE_FORMAT = 'YYYY-MM-DD'
+const cx = classNames.bind(styles)
 
 class TodoItem extends PureComponent {
   static getDerivedStateFromProps (nextProps, prevState) {
@@ -60,7 +60,7 @@ class TodoItem extends PureComponent {
     updateItemByKey({
       id,
       key: ITEM_KEYS.dueDate,
-      value: date ? date.format(DATE_FORMAT) : NO_DUE_DATE
+      value: date ? date.format(DATE_FORMAT) : DATE
     })
     setTimeout(() => document.activeElement.blur(), 0)
   }
@@ -119,7 +119,7 @@ class TodoItem extends PureComponent {
   render() {
     const { value, id, isPinned, isCompleted, deleteItem, dueDate } = this.props
     const { editMode, inputTaskValue } = this.state
-    const noDueDate = dueDate === NO_DUE_DATE
+    const noDueDate = dueDate === DATE
     const today = moment(moment().format(DATE_FORMAT))
     const momentDueDate = noDueDate ? undefined : moment(dueDate)
     const isDeadline = momentDueDate && momentDueDate.diff(today, 'days') <= 1
@@ -138,7 +138,7 @@ class TodoItem extends PureComponent {
           <span className={cx('dueDate', { isDeadline, noDueDate, isOverdue })}>
             <DatePicker
               dateFormat={DATE_FORMAT}
-              placeholderText={NO_DUE_DATE}
+              placeholderText={DATE}
               clearButtonTitle={'Remove due date'}
               isClearable
               selected={momentDueDate}

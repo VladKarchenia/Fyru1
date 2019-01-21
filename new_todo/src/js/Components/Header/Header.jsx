@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
-import styles from './Header.module.scss'
+
 import PrintSetup from './PrintSetup'
+import styles from './Header.module.scss'
 
 class Header extends PureComponent {
   state = {
@@ -9,17 +10,12 @@ class Header extends PureComponent {
 
   componentDidMount() {
     document.addEventListener('keyup', this.handleKeyUp)
-    document.addEventListener('keydown', this.printStopPropagation)
+    document.addEventListener('keydown', this.printPreventDefault)
   }
 
-  printStopPropagation = (e) => {
-    if (e.keyCode === 80 && (e.ctrlKey || e.metaKey) && !e.altKey && (!e.shiftKey || window.chrome || window.opera)) {
-      event.preventDefault()
-      if (e.stopImmediatePropagation) {
-        e.stopImmediatePropagation()
-      } else {
-        e.stopPropagation()
-      }
+  printPreventDefault = (e) => {
+    if (e.ctrlKey && (e.key == "p" || e.charCode == 16 || e.charCode == 112 || e.keyCode == 80)) {
+      e.preventDefault()
     }
   }
 
@@ -43,9 +39,8 @@ class Header extends PureComponent {
           ? <PrintSetup printEnd={this.printEnd} />
           : <div className={styles.header} onClick={this.printStart}>
             <button className={styles.printIcon}></button>
-            <a className={styles.a}>Log in</a>
-            <a className={styles.newList}>New List</a>
-          </div>
+            <a className={styles.a}>Print</a>
+        </div>
         }
       </div>
     )

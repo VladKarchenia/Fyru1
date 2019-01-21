@@ -1,7 +1,7 @@
 import React from 'react'
-import styles from './SortComponent.module.scss'
 
-import { FILTERS_CONFIG } from './constants.js'
+import { FILTERS_CONFIG } from './constant_filter'
+import styles from './SortComponent.module.scss'
 
 const AnimationComponent = () => (
   <div className={styles.bullet}>

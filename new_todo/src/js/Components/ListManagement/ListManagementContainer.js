@@ -1,11 +1,11 @@
 import { connect } from 'react-redux'
 import { compose, withProps } from 'recompose'
 import fileSaver from 'file-saver'
-import { readFile } from '../../utils'
 
+import ListManagement from './ListManagement.jsx'
 import { changeListName, importTodos } from '../../actions'
 import { getListName, getFilteredItems } from '../../selectors'
-import ListManagement from './ListManagement.jsx'
+import { readFile } from '../../utils'
 
 export default compose(
 	connect(

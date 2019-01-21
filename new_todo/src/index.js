@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 
 import rootReducer from './js/reducers'
 import { permanentSave } from './js/middleware'
-import App from './js/Components/App/App.jsx'
+import App from './js/components/App/App.jsx'
 import './styles/main.scss'
 import 'normalize.css/normalize.css'
 

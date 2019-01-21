@@ -1,6 +1,6 @@
 // import { createSelector } from "reselect";
 
-import { filterItems } from '../Components/TodoList/helper'
+import { filterItems } from '../components/TodoList/helper'
 
 export const getListName = state => state.listName || 'Default'
 
