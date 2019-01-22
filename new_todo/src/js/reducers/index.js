@@ -65,6 +65,15 @@ const listName = (state = listNameInitial, { type, payload }) => {
   }
 }
 
+// const print = (state = printInitial, { type, payload }) => {
+//   switch (type) {
+//     case 'PRINT':
+//       return payload.listName
+//   default:
+//     return state
+//   }
+// }
+
 const rootReducer = combineReducers({
   visibilityFilter,
   listName,

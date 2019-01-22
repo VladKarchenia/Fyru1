@@ -1,29 +1,31 @@
 .header {
-  height: 49px;
-  line-height: 49px;
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
   padding: 0 5%;
   background-color: #333;
   border-bottom: 1px solid #111;
-  .a {
+  .text {
     font-size: 20px;
     color: #ccc;
-    margin-left: 20px;
     text-decoration: none;
     cursor: pointer;
-    line-height: 40px;
-    &:hover {
-      color: #fff;
-    }
+    line-height: 60px;
+    margin-left: 10px;
   }
 }
 
-.newList {
-  composes: a;
-  &::before {
-    content: "\f067";
-    font-family: FontAwesome;
-    padding-right: 5px;
+.printList {
+  width: 85px;
+  display: flex;
+  align-items: center;
+  &:hover {
+    .printIcon {
+      color: #fff;
+      border-color: #fff;
+    }
+    .text {
+      color: #fff;
+    }
   }
 }
 
@@ -40,9 +42,5 @@
   &::before {
     content: "\f02f";
     font-family: FontAwesome;
-  }
-  &:hover {
-    color: #fff;
-    border-color: #fff;
   }
 }

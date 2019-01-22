@@ -1,0 +1,25 @@
+.preview {
+  height: 80vh;
+  overflow: auto;
+  margin: 30px;
+  background-color: white;
+  border: 1px solid rgba(197, 195, 195, 0.50);
+  -webkit-box-shadow: 3px 5px 10px 0px rgba(88, 88, 88, 0.75);
+  -moz-box-shadow: 3px 5px 10px 0px rgba(88, 88, 88, 0.75);
+  box-shadow: 3px 5px 10px 0px rgba(88, 88, 88, 0.75);
+  &:hover {
+    .zoom_btn {
+      animation-name: zoom_side;
+      animation-delay: 0.2s;
+      animation-duration: 0.9s;
+    }
+  }
+  ul {
+    margin: 0;
+    pointer-events: none;
+    padding-left: 0;
+    li {
+      padding: 12px 10px;
+    }
+  }
+}

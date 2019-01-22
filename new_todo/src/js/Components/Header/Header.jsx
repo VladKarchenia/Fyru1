@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 
-import PrintSetup from './PrintSetup'
+import PrintSetup from './apps/PrintSetup'
 import styles from './Header.module.scss'
 
 class Header extends PureComponent {
@@ -29,6 +29,7 @@ class Header extends PureComponent {
   }
 
   printStart = () => this.setState({ printMode: true })
+  
   printEnd = () => this.setState({ printMode: false })
 
   render() {
@@ -37,10 +38,12 @@ class Header extends PureComponent {
       <div>
         {printMode
           ? <PrintSetup printEnd={this.printEnd} />
-          : <div className={styles.header} onClick={this.printStart}>
-            <button className={styles.printIcon}></button>
-            <a className={styles.a}>Print</a>
-        </div>
+          : <div className={styles.header}>
+            <div className={styles.printList} onClick={this.printStart}>
+              <button className={styles.printIcon}></button>
+              <a className={styles.text}>Print</a>
+            </div>
+          </div>
         }
       </div>
     )
