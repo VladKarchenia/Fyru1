@@ -23,6 +23,11 @@ export const setVisibilityFilter = filter => ({
   payload: { filter },
 })
 
+export const setPrintVisibilityFilter = filter => ({
+  type: 'SET_PRINT_VISIBILITY_FILTER',
+  payload: { filter },
+})
+
 export const deleteItem = id => ({
   type: 'DELETE_TODO',
   payload: { id },

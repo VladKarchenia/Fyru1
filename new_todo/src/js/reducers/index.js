@@ -25,6 +25,15 @@ const visibilityFilter = (state = visibilityFilterInitial, { type, payload }) =>
   }
 }
 
+const printVisibilityFilter = (state = visibilityFilterInitial, { type, payload }) => {
+  switch (type) {
+    case 'SET_PRINT_VISIBILITY_FILTER':
+      return payload.filter
+    default:
+      return state
+  }
+}
+
 const items = (state = itemsInitial, { type, payload }) => {
   switch (type) {
     case 'ADD_TODO':
@@ -65,17 +74,9 @@ const listName = (state = listNameInitial, { type, payload }) => {
   }
 }
 
-// const print = (state = printInitial, { type, payload }) => {
-//   switch (type) {
-//     case 'PRINT':
-//       return payload.listName
-//   default:
-//     return state
-//   }
-// }
-
 const rootReducer = combineReducers({
   visibilityFilter,
+  printVisibilityFilter,
   listName,
   items,
 })

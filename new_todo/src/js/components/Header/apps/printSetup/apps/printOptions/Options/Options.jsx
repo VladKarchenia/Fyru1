@@ -8,80 +8,73 @@ const cx = classNames.bind(styles)
 
 class Options extends PureComponent {
   state = {
-    selectedOption: 'landscape',
-    activeFilter: this.props.filter,
-    items: this.props.items,
+    selectedOrientation: this.props.orientation,
+    selectedCustomHeader: false,
+    selectedCustomFooter: false,
   }
 
-  handleOptionChange = (e) => this.setState({
-    selectedOption: e.target.value
+  handleOrientationChange = () => {
+    const { setOrientation } = this.props
+    if (this.state.selectedOrientation !== this.props.orientation) {
+      return this.setState({
+        selectedOrientation: 'portrait'
+      })
+    } else {
+      return this.setState({
+        selectedOrientation: 'landscape'
+      })
+    }
+    setOrientation(this.state.selectedOrientation)
+  }
+  
+  handleCustomHeaderChange = () => this.setState({
+    selectedCustomHeader: !this.state.selectedCustomHeader
   })
 
-  handleFilterChange = (e) => this.setState({
-    activeFilter: e.target.value
+  handleCustomFooterChange = () => this.setState({
+    selectedCustomFooter: !this.state.selectedCustomFooter
   })
 
   render () {
-    const { setVisibilityFilter } = this.props
-    const { selectedOption, activeFilter } = this.state
-    console.log(activeFilter)
+    const { selectedOrientation, selectedCustomHeader, selectedCustomFooter } = this.state
+    const { activeFilter, setPrintVisibilityFilter } = this.props
     return (
       <div className={styles.options}>
-        <div className={styles.layout}>
-          <div className={styles.orientation_container}>
+        <div>
+          <div>
             <span className={styles.orientation_titleSpan}>layout</span>
             <div className={styles.orientation}>
               <span>page orientation</span>
-              <div>
-                <form className={cx('orientation_types', { landscape_orientation: selectedOption === 'landscape' }, { portrait_orientation: selectedOption === 'portrait' })}>
-                  <div>
-                    <label className={styles.landscape_label}>
-                      <input
-                      type="radio"
-                      className={styles.orientation_types_input}
-                      value="landscape"
-                      name="react-tips"
-                      onChange={this.handleOptionChange}
-                      />
-                      landscape
-                    </label>
-                  </div>
-                  <div>
-                    <label className={styles.portrait_label}>
-                      <input
-                      type="radio"
-                      className={styles.orientation_types_input}
-                      value="portrait"
-                      name="react-tips"
-                      onChange={this.handleOptionChange}
-                      />
-                      portrait
-                    </label>
-                  </div>
-                </form>
+              <div className={styles.orientation_types}>
+                <div className={cx({ active_orientation: selectedOrientation === 'landscape' })} onClick={this.handleOrientationChange}>
+                  landscape
+                </div>
+                <div className={cx({ active_orientation: selectedOrientation === 'portrait' })} onClick={this.handleOrientationChange}>
+                  portrait
+                </div>
+                <style>
+                  
+                </style>
               </div>
             </div>
           </div>
-          <div className={styles.custom_common}>
-            <span>use custom header</span>
-            <input type="checkbox" className={styles.custom_common_input} />
-            <label className={styles.custom_common_label}></label>
+          <div className={styles.custom_common_container}>
+            use custom header
+            <label className={cx( 'custom_common', { custom_checked: selectedCustomHeader })} onClick={this.handleCustomHeaderChange}></label>
           </div>
-          <div className={styles.custom_common}>
-            <span>use custom footer</span>
-            <input type="checkbox" className={styles.custom_common_input} />
-            <label className={styles.custom_common_label}></label>
+          <div className={styles.custom_common_container}>
+            use custom footer
+            <label className={cx('custom_common', { custom_checked: selectedCustomFooter })} onClick={this.handleCustomFooterChange}></label>
           </div>
         </div>
         <div className={styles.filter}>
-          <span className={styles.orientation_titleSpan}>print filter</span>
+          print filter
           <ul className={styles.filter_ul}>
             {
               Object.values(FILTERS_CONFIG).map((filter) => {
                 return (
                   <li key={filter} className={styles.filter_li}>
-                    <label className={cx({ checked_label: filter === activeFilter }, { filterLabel: filter !== activeFilter })}>
-                      <input type="radio" onChange={this.handleFilterChange} value={filter} className={styles.filter_radio} onClick={() => setVisibilityFilter(filter)} />
+                    <label onClick={() => setPrintVisibilityFilter(filter)} className={cx({ checked_filter: filter === activeFilter })}>
                       {filter}
                     </label>
                   </li>

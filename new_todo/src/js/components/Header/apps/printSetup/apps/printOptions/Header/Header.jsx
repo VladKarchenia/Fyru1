@@ -12,7 +12,7 @@ class Header extends PureComponent {
         </div>
         <div className={styles.header_buttons}>
           <button className={styles.calcel_btn} onClick={printEnd}>cancel</button>
-          <button className={styles.print_btn}>print</button>
+          <button className={styles.print_btn} onClick={() => print()}>print</button>
         </div>
       </div>
     )

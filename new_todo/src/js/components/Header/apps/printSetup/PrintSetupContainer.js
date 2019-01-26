@@ -1,20 +1,20 @@
 import { connect } from 'react-redux'
 
 import PrintSetup from './PrintSetup.jsx'
-import { setVisibilityFilter } from '../../../../actions'
+import { setPrintVisibilityFilter } from '../../../../actions'
 import {
   getListName,
-  getFilteredItems,
-  getVisibilityFilter,
+  getPrintFilteredItems,
+  getPrintVisibilityFilter,
 } from '../../../../selectors'
 
 export default connect(
   (state) => ({
     listName: getListName(state),
-    items: getFilteredItems(state),
-    filter: getVisibilityFilter(state),
+    items: getPrintFilteredItems(state),
+    activeFilter: getPrintVisibilityFilter(state),
   }),
   {
-    setVisibilityFilter,
+    setPrintVisibilityFilter,
   }
 )(PrintSetup)

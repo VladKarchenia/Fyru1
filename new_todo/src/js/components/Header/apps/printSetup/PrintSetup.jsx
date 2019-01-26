@@ -7,20 +7,30 @@ import styles from './PrintSetup.module.scss'
 
 class PrintSetup extends PureComponent {
   state = {
-    // isPrintMode: false,
-    // options: {},
-    filter: this.props.filter,
+    orientation: 'portrait',
+    useCustomHeader: false,
+    useCustomFooter: false,
+    customHeader: '',
+    customFooter: '',
   }
 
+  setOrientation = (value) => this.setState({ orientation: value })
+
   render() {
-    const { filter } = this.state
-    const { items, listName, printEnd, setVisibilityFilter } = this.props
+    const { orientation, useCustomHeader, useCustomFooter, customHeader, customFooter } = this.state
+    const { items, listName, printEnd, setPrintVisibilityFilter, activeFilter } = this.props
     return (
       <div className={styles.root}>
         <Header key='Header' listName={listName} printEnd={printEnd} />
         <div className={styles.mainContainer}>
-          <Preview key='Preview' className={styles.preview} items={items} />
-          <Options key='Options' className={styles.options} items={items} setVisibilityFilter={setVisibilityFilter} filter={filter} />
+          <Preview key='Preview' items={items} />
+          <Options
+            key='Options'
+            setOrientation={this.setOrientation}
+            setPrintVisibilityFilter={setPrintVisibilityFilter}
+            activeFilter={activeFilter}
+            orientation={orientation}
+          />
         </div>
       </div>
     )

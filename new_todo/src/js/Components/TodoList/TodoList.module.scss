@@ -85,3 +85,9 @@
     max-width: 280px;
   }
 }
+
+@media print {
+  .listContent {
+    display: none;
+  }
+}

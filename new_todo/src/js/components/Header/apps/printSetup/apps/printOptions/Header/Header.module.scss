@@ -43,3 +43,9 @@
 .print_btn:hover {
   background: rgba(14, 211, 99, 0.5);
 }
+
+@media print {
+  .header {
+    display: none;
+  }
+}

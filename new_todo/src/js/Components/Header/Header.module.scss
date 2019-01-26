@@ -44,3 +44,9 @@
     font-family: FontAwesome;
   }
 }
+
+@media print {
+  .header {
+    display: none;
+  }
+}
