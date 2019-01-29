@@ -19,11 +19,11 @@
 }
 
 .orientation {
-  height: 60px;
+  height: 70px;
   span {
-    height: 30px;
+    height: 35px;
     display: block;
-    line-height: 30px;
+    line-height: 35px;
     text-align: center;
     font-size: 18px;
     text-transform: capitalize;
@@ -44,6 +44,7 @@
     text-transform: uppercase;
     font-weight: 600;
     cursor: pointer;
+    transition: 0.5s;
   }
 }
 
@@ -51,17 +52,9 @@
   background: #bada55;
 }
 
-// @media print{
-//   @page {
-//     size: landscape;
-//   }
-// }
-
-// @media print{
-//   @page {
-//     size: portrait;
-//   }
-// }
+.media_print {
+  display: none;
+}
 
 .custom_common_container {
   display: flex;
@@ -129,6 +122,7 @@
   line-height: 30px;
   padding-left: 15px;
   border-bottom: 0.5px solid rgb(218, 218, 218);
+  transition: 0.5s;
   label {
     display: flex;
     align-items: center;
@@ -143,6 +137,7 @@
       margin-right: 10px;
       display: inline-block;
       font-size: 18px;
+      transition: 0.3s;
     }
   }
 }

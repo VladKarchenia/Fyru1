@@ -21,6 +21,7 @@ class Preview extends PureComponent {
                   dueDate={dueDate}
                 />
               ))
+              // items.map((id, props) => <TodoItem key={id} {...props} />)
             }
           </ul>
         </div>

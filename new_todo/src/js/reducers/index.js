@@ -4,6 +4,7 @@ import _set from 'lodash/set'
 
 import { APP_KEY } from '../constants/permanentSave'
 import { ITEM_KEYS } from '../constants/todoItem'
+import { DATE } from '../constants/date'
 
 const visibilityFilterInitial = 'all'
 let itemsInitial = {}
@@ -45,7 +46,7 @@ const items = (state = itemsInitial, { type, payload }) => {
           [ITEM_KEYS.value]: payload.value,
           [ITEM_KEYS.isPinned]: false,
           [ITEM_KEYS.isCompleted]: false,
-          [ITEM_KEYS.dueDate]: 'No due date'
+          [ITEM_KEYS.dueDate]: DATE
         }
       }
     case 'DELETE_TODO':
