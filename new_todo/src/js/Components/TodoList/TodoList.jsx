@@ -35,7 +35,7 @@ class TodoList extends PureComponent {
 
   inputRef = React.createRef()
 
-  handleChange = (e) => this.setState({
+  onChange = (e) => this.setState({
     inputValue: e.target.value
   })
 
@@ -46,7 +46,7 @@ class TodoList extends PureComponent {
     return (
       <div className={styles.listContent}>
         <div className={styles.form}>
-          <input ref={this.inputRef} placeholder='Write your next task here...' className={styles.input} value={inputValue} onChange={this.handleChange}/>
+          <input ref={this.inputRef} placeholder='Write your next task here...' className={styles.input} value={inputValue} onChange={this.onChange} />
           <button onClick={this.addItem} className={cx({ inactiveBtn: !inputValue }, { activeBtn: inputValue })}>ADD</button>
         </div>
         <SortComponent />

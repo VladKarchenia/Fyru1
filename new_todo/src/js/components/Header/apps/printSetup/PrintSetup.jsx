@@ -27,6 +27,14 @@ class PrintSetup extends PureComponent {
 
   setFilter = (filter) => this.setState({ activeFilter: filter })
 
+  onChangeHeader = (e) => this.setState({
+    customHeader: e.target.value
+  })
+
+  onChangeFooter = (e) => this.setState({
+    customFooter: e.target.value
+  })
+
   render() {
     const { orientation, activeFilter, useCustomHeader, useCustomFooter, customHeader, customFooter } = this.state
     const { items, listName, printEnd } = this.props
@@ -34,7 +42,14 @@ class PrintSetup extends PureComponent {
       <div className={styles.root}>
         <Header listName={listName} printEnd={printEnd} />
         <div className={styles.mainContainer}>
-          <Preview items={items} activeFilter={activeFilter} />
+          <Preview
+            items={items}
+            activeFilter={activeFilter}
+            useCustomHeader={useCustomHeader}
+            useCustomFooter={useCustomFooter}
+            customHeader={customHeader}
+            customFooter={customFooter}
+          />
           <Options
             setOrientation={this.setOrientation}
             setFilter={this.setFilter}
@@ -46,6 +61,8 @@ class PrintSetup extends PureComponent {
             handleCustomFooterChange={this.handleCustomFooterChange}
             customHeader={customHeader}
             customFooter={customFooter}
+            onChangeHeader={this.onChangeHeader}
+            onChangeFooter={this.onChangeFooter}
           />
         </div>
       </div>

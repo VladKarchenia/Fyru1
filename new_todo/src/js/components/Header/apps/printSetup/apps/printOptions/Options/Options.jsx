@@ -7,6 +7,9 @@ import styles from './Options.module.scss'
 const cx = classNames.bind(styles)
 
 class Options extends PureComponent {
+
+  // inputRef = React.createRef()
+
   render () {
     const {
       activeFilter,
@@ -16,7 +19,11 @@ class Options extends PureComponent {
       useCustomHeader,
       useCustomFooter,
       handleCustomHeaderChange,
-      handleCustomFooterChange
+      handleCustomFooterChange,
+      customHeader,
+      customFooter,
+      onChangeHeader,
+      onChangeFooter
     } = this.props
     return (
       <div className={styles.options}>
@@ -54,12 +61,25 @@ class Options extends PureComponent {
           </ul>
         </div>
         <div className={styles.custom_common_container}>
-          use custom header
-          <label className={cx( 'custom_common', { custom_checked: useCustomHeader })} onClick={handleCustomHeaderChange}></label>
+          <div>
+            use custom header
+            <label className={cx( 'custom_common', { custom_checked: useCustomHeader })} onClick={handleCustomHeaderChange}></label>
+          </div>
+          {useCustomHeader
+            ? <input className={styles.custom_input} onChange={onChangeHeader} value={customHeader} autoFocus />
+            : null
+          }
         </div>
         <div className={styles.custom_common_container}>
-          use custom footer
-          <label className={cx('custom_common', { custom_checked: useCustomFooter })} onClick={handleCustomFooterChange}></label>
+          <div>
+            use custom footer
+            <label className={cx('custom_common', { custom_checked: useCustomFooter })} onClick={handleCustomFooterChange}></label>
+          </div>
+          {useCustomFooter
+            ? <input className={styles.custom_input} onChange={onChangeFooter} value={customFooter} autoFocus />
+            // ref={this.inputRef}
+            : null
+          }
         </div>
       </div>
     )

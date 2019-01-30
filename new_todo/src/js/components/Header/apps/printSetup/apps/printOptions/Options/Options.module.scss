@@ -58,15 +58,18 @@
 
 .custom_common_container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 35px;
+  flex-direction: column;
   line-height: 35px;
   margin: 10px 0;
   padding: 0 10px;
   position: relative;
   font-size: 18px;
   text-transform: capitalize;
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .custom_common {
@@ -100,6 +103,11 @@
     left: calc(100% - 3px);
     transform: translateX(-100%);
   }
+}
+
+.custom_input {
+  height: 25px;
+  outline: none;
 }
 
 .filter {
