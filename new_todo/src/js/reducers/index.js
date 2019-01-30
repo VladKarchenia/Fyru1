@@ -4,7 +4,7 @@ import _set from 'lodash/set'
 
 import { APP_KEY } from '../constants/permanentSave'
 import { ITEM_KEYS } from '../constants/todoItem'
-import { DATE } from '../constants/date'
+import { NO_DUE_DATE } from '../constants/date'
 
 const visibilityFilterInitial = 'all'
 let itemsInitial = {}
@@ -26,15 +26,6 @@ const visibilityFilter = (state = visibilityFilterInitial, { type, payload }) =>
   }
 }
 
-const printVisibilityFilter = (state = visibilityFilterInitial, { type, payload }) => {
-  switch (type) {
-    case 'SET_PRINT_VISIBILITY_FILTER':
-      return payload.filter
-    default:
-      return state
-  }
-}
-
 const items = (state = itemsInitial, { type, payload }) => {
   switch (type) {
     case 'ADD_TODO':
@@ -46,7 +37,7 @@ const items = (state = itemsInitial, { type, payload }) => {
           [ITEM_KEYS.value]: payload.value,
           [ITEM_KEYS.isPinned]: false,
           [ITEM_KEYS.isCompleted]: false,
-          [ITEM_KEYS.dueDate]: DATE
+          [ITEM_KEYS.dueDate]: NO_DUE_DATE
         }
       }
     case 'DELETE_TODO':
@@ -77,7 +68,6 @@ const listName = (state = listNameInitial, { type, payload }) => {
 
 const rootReducer = combineReducers({
   visibilityFilter,
-  printVisibilityFilter,
   listName,
   items,
 })

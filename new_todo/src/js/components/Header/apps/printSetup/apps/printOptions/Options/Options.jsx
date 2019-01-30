@@ -10,7 +10,7 @@ class Options extends PureComponent {
   render () {
     const {
       activeFilter,
-      setPrintVisibilityFilter,
+      setFilter,
       orientation,
       setOrientation,
       useCustomHeader,
@@ -44,7 +44,7 @@ class Options extends PureComponent {
               Object.values(FILTERS_CONFIG).map((filter) => {
                 return (
                   <li key={filter} className={styles.filter_li}>
-                    <label onClick={() => setPrintVisibilityFilter(filter)} className={cx({ checked_filter: filter === activeFilter })}>
+                    <label onClick={() => setFilter(filter)} className={cx({ checked_filter: filter === activeFilter })}>
                       {filter}
                     </label>
                   </li>

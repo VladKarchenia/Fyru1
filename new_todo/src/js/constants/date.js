@@ -1,1 +1,1 @@
-export const DATE = 'No due date'
+export const NO_DUE_DATE = 'No due date'
