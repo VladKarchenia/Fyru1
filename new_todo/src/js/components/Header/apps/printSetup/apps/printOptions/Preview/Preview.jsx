@@ -8,7 +8,7 @@ const Preview = ({ items, activeFilter, useCustomHeader, useCustomFooter, custom
   <div className={styles.body}>
     <div className={styles.preview}>
       {useCustomHeader
-        ? <span className={styles.header_span}>{customHeader}</span>
+        ? <div className={styles.preview_header}>{customHeader}</div>
         : null
       }
       <ul className={styles.todoListStyle}>
@@ -17,7 +17,7 @@ const Preview = ({ items, activeFilter, useCustomHeader, useCustomFooter, custom
         }
       </ul>
       {useCustomFooter
-        ? <span className={styles.footer_span}>{customFooter}</span>
+        ? <div className={styles.preview_footer}>{customFooter}</div>
         : null
       }
     </div>
