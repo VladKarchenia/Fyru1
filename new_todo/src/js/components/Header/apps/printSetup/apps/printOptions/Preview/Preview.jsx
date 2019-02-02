@@ -13,7 +13,7 @@ const Preview = ({ items, activeFilter, useCustomHeader, useCustomFooter, custom
       }
       <ul className={styles.todoListStyle}>
         {
-          filterItems(items, activeFilter).map((props, i) => <TodoItem key={i} {...props} />)
+          filterItems(Object.values(items).reverse(), activeFilter).map((props, i) => <TodoItem key={i} {...props} />)
         }
       </ul>
       {useCustomFooter
