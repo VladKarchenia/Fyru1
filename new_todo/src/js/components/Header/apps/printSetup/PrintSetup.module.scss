@@ -9,9 +9,6 @@
 
 .mainContainer {
   display: flex;
-  height: 95vh;
+  height: 100%;
   background-color: rgb(105, 105, 105);
-  div:first-child {
-    flex-grow: 3;
-  }
 }

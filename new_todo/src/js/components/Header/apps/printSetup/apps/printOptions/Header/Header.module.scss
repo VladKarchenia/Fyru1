@@ -2,13 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 5vh;
   min-height: 60px;
   background-color: rgb(62, 62, 62);
 }
 
 .listname {
-  flex-grow: 3;
   padding-left: 60px;
   color: white;
   font-size: 20px;
