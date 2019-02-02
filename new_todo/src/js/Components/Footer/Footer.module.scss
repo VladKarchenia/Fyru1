@@ -1,10 +1,15 @@
 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(172, 172, 172);
+}
+
+.links {
   padding: 0 40px;
   display: flex;
-  justify-content: flex-end;
   .a {
     font-size: 20px;
-    color: rgb(172, 172, 172);
     margin-left: 20px;
     text-decoration: none;
     cursor: pointer;
@@ -14,6 +19,11 @@
       color: #666;
     }
   }
+}
+
+.counter {
+  font-size: 20px;
+  padding: 0 40px;
 }
 
 @media screen and (max-width: 468px) {

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import TodoItem from '../../../../../../TodoList/apps/TodoItem/TodoItem.jsx'
-import { filterItems } from '../../../../../../TodoList/helper'
+import { filterItems } from '../../../../../../../utils'
 import styles from './Preview.module.scss'
 
 const Preview = ({ items, activeFilter, useCustomHeader, useCustomFooter, customHeader, customFooter }) => (

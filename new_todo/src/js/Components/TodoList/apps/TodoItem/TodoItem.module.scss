@@ -232,6 +232,9 @@
 }
 
 @media print {
+  .commonListStyle {
+    padding: 14.73px 40px !important;
+  }
   .activeTask {
     margin: 0;
     border: 1px solid #eef0f5;

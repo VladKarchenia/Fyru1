@@ -3,7 +3,7 @@ import React from 'react'
 import Header from '../Header/Header.jsx'
 import ListManagement from '../ListManagement'
 import TodoList from '../TodoList'
-import Footer from '../Footer/Footer.jsx'
+import Footer from '../Footer'
 
 const App = () => [
   <Header key='Header' />,
