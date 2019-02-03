@@ -18,7 +18,7 @@
       font-family: "FontAwesome";
       font-size: 18px;
       color: rgba(255,255,255,0.8);
-      margin-left: 5px;
+      margin: auto 5px;
       line-height: 5em;
       position: absolute;
       top: 50px;
@@ -80,18 +80,30 @@
   display: none;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 700px) {
   .buttons {
     flex-direction: column;
     align-items: center;
+    margin: 15px 0;
   }
   .btnLabel {
     margin-bottom: 10px;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .root {
+    padding: 0 20px !important;
+  }
+  .buttons {
+    margin: 10px 0;
   }
 }
 
 @media screen and (max-width: 573px) {
   .toDoName {
+    font-size: 26px;
     margin-right: 20px;
   }
 }
@@ -108,6 +120,7 @@
   }
   .toDoName {
     margin-right: 0;
+    margin-bottom: 5px !important;
   }
   .btnLabel {
     margin-bottom: 0;
@@ -120,6 +133,12 @@
   .buttons {
     flex-direction: row;
     align-items: center;
+    margin-top: 0;
+  }
+  .input {
+    font-size: 23px;
+    line-height: 32px;
+    margin: 5px 0;
   }
 }
 

@@ -2,19 +2,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 5px 40px;
+  min-height: 40px;
   color: rgb(172, 172, 172);
 }
 
 .links {
-  padding: 0 40px;
   display: flex;
   .a {
     font-size: 20px;
     margin-left: 20px;
     text-decoration: none;
     cursor: pointer;
-    height: 40px;
-    line-height: 40px;
     &:hover {
       color: #666;
     }
@@ -23,7 +22,6 @@
 
 .counter {
   font-size: 20px;
-  padding: 0 40px;
 }
 
 @media screen and (max-width: 468px) {
@@ -39,8 +37,15 @@
   }
 }
 
-// @media screen and (max-width: 586px) {
-//   .footer {
-//     flex-direction: column;
-//   }
-// }
+@media screen and (max-width: 586px) {
+  .footer {
+    flex-direction: column;
+    padding: 5px 20px;
+    div {
+      font-size: 17px;
+    }
+    .links a {
+      font-size: 17px;
+    }
+  }
+}

@@ -212,13 +212,39 @@
   }
 }
 
-@media screen and (max-width: 468px) {
-  .activeTask {
-    flex-direction: column;
+@media screen and (max-width: 932px) {
+  .taskText {
+    max-width: 400px !important;
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .taskText {
+    max-width: 200px !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .inputTask {
+    max-width: 200px !important;
+  }
+}
+
+@media screen and (max-width: 586px) {
+  .taskText {
+    max-width: 150px !important;
   }
   .commonListStyle {
+    padding: 15px 20px;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .commonListStyle {
     align-items: flex-start;
-    padding: 10px 40px;
+    padding: 10px 30px;
   }
   .actions {
     margin-top: 10px;
@@ -226,20 +252,25 @@
   }
   .taskText {
     max-width: 130px !important;
-    word-break: break-all;
-    overflow-wrap: break-word;
   }
 }
 
 @media print {
-  .commonListStyle {
-    padding: 14.73px 40px !important;
-  }
   .activeTask {
     margin: 0;
-    border: 1px solid #eef0f5;
+    border: 1px solid #dadada;
+    padding: 13.65px 40px !important;
   }
   .dueDate button::after {
     display: none;
+  }
+  .taskText {
+    max-width: 320px !important;
+  }
+}
+
+@media print and (orientation: landscape) {
+  .activeTask {
+    padding: 13.19px 40px !important;
   }
 }

@@ -1,7 +1,7 @@
 .header {
   display: flex;
   justify-content: flex-end;
-  padding: 0 5%;
+  padding: 0 40px;
   background-color: #333;
   border-bottom: 1px solid #111;
   .text {
@@ -48,5 +48,14 @@
 @media print {
   .header {
     display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    padding: 0 20px !important;
+  }
+  .text {
+    line-height: 50px !important;
   }
 }

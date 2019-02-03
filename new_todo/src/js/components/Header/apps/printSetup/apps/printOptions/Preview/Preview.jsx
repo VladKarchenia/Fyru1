@@ -7,16 +7,16 @@ import styles from './Preview.module.scss'
 const Preview = ({ items, activeFilter, useCustomHeader, useCustomFooter, customHeader, customFooter }) => (
   <div className={styles.body}>
     <div className={styles.preview}>
-      {useCustomHeader
+      {useCustomHeader && customHeader !== ''
         ? <div className={styles.preview_header}>{customHeader}</div>
         : null
       }
       <ul className={styles.todoListStyle}>
         {
-          filterItems(Object.values(items).reverse(), activeFilter).map((props, i) => <TodoItem key={i} {...props} />)
+          filterItems(items, activeFilter).map((props, i) => <TodoItem key={i} {...props} />)
         }
       </ul>
-      {useCustomFooter
+      {useCustomFooter && customFooter !== ''
         ? <div className={styles.preview_footer}>{customFooter}</div>
         : null
       }

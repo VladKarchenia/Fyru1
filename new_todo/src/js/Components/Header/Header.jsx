@@ -5,7 +5,7 @@ import styles from './Header.module.scss'
 
 class Header extends PureComponent {
   state = {
-    printMode: true,
+    printMode: false,
   }
 
   componentDidMount() {
