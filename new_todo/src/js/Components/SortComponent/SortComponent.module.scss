@@ -39,6 +39,8 @@
   -webkit-appearance: none;
   width: 100%;
   height: 30px;
+  top: 0;
+  left: 0;
   position: absolute;
   cursor: pointer;
 }
@@ -365,9 +367,40 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 414px) {
   .sortContainer {
-    margin: 5px auto 10px;
+    min-height: 40px;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+  }
+  .sortItem {
+    margin: 0;
+    padding-left: 35px;
+  }
+  .sortLabel {
+    font-size: 17px;
+    &::before {
+      top: 13px;
+      left: 7px;
+    }
+  }
+  .bullet {
+    top: 5px;
+    left: -1px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .sortItem {
+    padding-left: 30px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .sortContainer {
+    flex-direction: column;
+    margin: 0 auto;
   }
 }
 

@@ -243,15 +243,29 @@
 
 @media screen and (max-width: 468px) {
   .commonListStyle {
-    align-items: flex-start;
+    align-items: center;
     padding: 10px 30px;
   }
   .actions {
-    margin-top: 10px;
     padding-left: 0;
+  }
+  .leftSide {
+    flex-wrap: wrap;
   }
   .leftSide .taskText {
     max-width: 130px;
+  }
+  .leftSide .dueDate {
+    margin: 0 auto;
+  }
+  .leftSide .inputTask {
+    max-width: 153px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .leftSide .taskText {
+    max-width: 120px;
   }
 }
 

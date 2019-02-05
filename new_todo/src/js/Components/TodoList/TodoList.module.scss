@@ -69,12 +69,36 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 414px) {
   .listContent {
-    max-height: calc(100vh - 51px - 91px - 92px - 135px - 30px - 5px);
+    max-height: calc(100vh - 51px - 97px - 67px - 40px - 30px);
   }
   .todoListStyle {
-    margin: 21px 0;
+    margin: 16px 0;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .todoListStyle {
+    margin: 12px 0;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .listContent {
+    max-height: calc(100vh - 51px - 97px - 64px - 40px - 30px);
+  }
+  .todoListStyle {
+    margin: 8px 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .listContent {
+    max-height: calc(100vh - 51px - 97px - 49px - 120px - 30px);
+  }
+  .todoListStyle {
+    margin: 12px 0;
   }
 }
 

@@ -120,7 +120,8 @@
     flex-direction: column;
   }
   .toDoName {
-    font-size: 21px;
+    font-size: 22px;
+    line-height: 30px;
     margin-top: 10px;
     margin-bottom: 20px;
   }
@@ -142,8 +143,8 @@
 
 @media screen and (max-width: 430px) {
   .input {
-    font-size: 23px;
-    line-height: 32px;
+    font-size: 22px;
+    line-height: 33px;
     margin: 5px 0;
   }
 }
@@ -151,6 +152,12 @@
 @media screen and (max-width: 393px) {
   .root {
     padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .toDoName {
+    font-size: 18px;
   }
 }
 
