@@ -24,13 +24,6 @@
   font-size: 20px;
 }
 
-@media screen and (max-width: 468px) {
-  .footer {
-    justify-content: center;
-    flex-direction: column;
-  }
-}
-
 @media print {
   .footer {
     display: none;
@@ -47,5 +40,23 @@
     .links a {
       font-size: 17px;
     }
+  }
+}
+
+
+@media screen and (max-width: 468px) {
+  .footer {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .footer {
+    min-height: 30px;
+    padding: 0;
+  }
+  .links {
+    display: none;
   }
 }

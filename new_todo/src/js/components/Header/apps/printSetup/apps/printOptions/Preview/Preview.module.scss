@@ -54,7 +54,7 @@
 }
 
 @media print and (orientation: landscape) {
-  .preview_header {
-    margin: 28px auto !important;
+  .preview .preview_header {
+    margin: 28px auto;
   }
 }

@@ -15,11 +15,11 @@ class PrintSetup extends PureComponent {
     customFooter: '',
   }
 
-  handleCustomHeaderChange = () => this.setState({
+  toggleCustomHeader = () => this.setState({
     useCustomHeader: !this.state.useCustomHeader
   })
 
-  handleCustomFooterChange = () => this.setState({
+  toggleCustomFooter = () => this.setState({
     useCustomFooter: !this.state.useCustomFooter
   })
 
@@ -36,7 +36,7 @@ class PrintSetup extends PureComponent {
   })
 
   render() {
-    const { orientation, activeFilter, useCustomHeader, useCustomFooter, customHeader, customFooter } = this.state
+    const { activeFilter, useCustomHeader, useCustomFooter, customHeader, customFooter } = this.state
     const { items, listName, printEnd } = this.props
     return (
       <div className={styles.root}>
@@ -45,22 +45,15 @@ class PrintSetup extends PureComponent {
           <Preview
             items={items}
             activeFilter={activeFilter}
-            useCustomHeader={useCustomHeader}
-            useCustomFooter={useCustomFooter}
-            customHeader={customHeader}
-            customFooter={customFooter}
+            customHeader={useCustomHeader && customHeader.trim()}
+            customFooter={useCustomFooter && customFooter.trim()}
           />
           <Options
+            options={this.state}
             setOrientation={this.setOrientation}
             setFilter={this.setFilter}
-            activeFilter={activeFilter}
-            orientation={orientation}
-            useCustomHeader={useCustomHeader}
-            useCustomFooter={useCustomFooter}
-            handleCustomHeaderChange={this.handleCustomHeaderChange}
-            handleCustomFooterChange={this.handleCustomFooterChange}
-            customHeader={customHeader}
-            customFooter={customFooter}
+            toggleCustomHeader={this.toggleCustomHeader}
+            toggleCustomFooter={this.toggleCustomFooter}
             onChangeHeader={this.onChangeHeader}
             onChangeFooter={this.onChangeFooter}
           />

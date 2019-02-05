@@ -126,40 +126,42 @@ class TodoItem extends PureComponent {
     const isOverdue = momentDueDate && momentDueDate.diff(today, 'days') < 0
 
     return (
-     <li className={cx('activeTask', { isPinned, isCompleted })}>
-        <div className={styles.leftSide}>
-          <span className={styles.taskHandle} ></span>
-          <input type="checkbox" className={styles.checkImg} />
-          <label className={styles.checkLabel} onClick={this.toggleCompleted}></label>
-          {!editMode
-            ? <span className={styles.taskText} onClick={this.changeTaskName}>{value || 'Default'}</span>
-            : <input ref={this.inputRef} value={inputTaskValue} onChange={this.onChange} autoFocus className={styles.inputTask} />
-          }
-          <span className={cx('dueDate', { isDeadline, noDueDate, isOverdue })}>
-            <DatePicker
-              dateFormat={DATE_FORMAT}
-              placeholderText={NO_DUE_DATE}
-              clearButtonTitle={'Remove due date'}
-              isClearable
-              selected={momentDueDate}
-              onChange={this.handleChange}
-              minDate={today}
-              onKeyDown={this.onKeyDown}
-            />
-          </span>
-        </div>
-        <ul className={styles.actions}>
-          <li className={styles.star}>
-            <input type="text" className={styles.starInp} />
-            <label className={styles.starLabel}>
-              <span className={styles.starSpan} onClick={this.togglePinned}></span>
-            </label>
-          </li>
-          <li className={styles.delete}>
-            <span className={styles.deleteSpan} onClick={() => deleteItem(id)}></span>
-          </li>
-        </ul>
-      </li>
+      <div className={styles.root}>
+        <li className={cx('activeTask', { isPinned, isCompleted })}>
+          <div className={styles.leftSide}>
+            <span className={styles.taskHandle} ></span>
+            <input type="checkbox" className={styles.checkImg} />
+            <label className={styles.checkLabel} onClick={this.toggleCompleted}></label>
+            {!editMode
+              ? <span className={styles.taskText} onClick={this.changeTaskName}>{value || 'Default'}</span>
+              : <input ref={this.inputRef} value={inputTaskValue} onChange={this.onChange} autoFocus className={styles.inputTask} />
+            }
+            <span className={cx('dueDate', { isDeadline, noDueDate, isOverdue })}>
+              <DatePicker
+                dateFormat={DATE_FORMAT}
+                placeholderText={NO_DUE_DATE}
+                clearButtonTitle={'Remove due date'}
+                isClearable
+                selected={momentDueDate}
+                onChange={this.handleChange}
+                minDate={today}
+                onKeyDown={this.onKeyDown}
+              />
+            </span>
+          </div>
+          <ul className={styles.actions}>
+            <li className={styles.star}>
+              <input type="text" className={styles.starInp} />
+              <label className={styles.starLabel}>
+                <span className={styles.starSpan} onClick={this.togglePinned}></span>
+              </label>
+            </li>
+            <li className={styles.delete}>
+              <span className={styles.deleteSpan} onClick={() => deleteItem(id)}></span>
+            </li>
+          </ul>
+        </li>
+      </div>
     )
   }
 }

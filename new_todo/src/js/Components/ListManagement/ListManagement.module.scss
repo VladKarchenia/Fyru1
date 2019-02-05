@@ -80,6 +80,12 @@
   display: none;
 }
 
+@media screen and (max-width: 780px) {
+  .toDoName {
+    font-size: 26px;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .buttons {
     flex-direction: column;
@@ -94,7 +100,7 @@
 
 @media screen and (max-width: 600px) {
   .root {
-    padding: 0 20px !important;
+    padding: 0 20px;
   }
   .buttons {
     margin: 10px 0;
@@ -108,33 +114,33 @@
   }
 }
 
-@media screen and (max-width: 468px) {
+@media screen and (max-width: 486px) {
   .root {
-    padding: 0 40px;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  .root {
+    padding: 0 20px;
     flex-direction: column;
   }
   .toDoName {
+    font-size: 21px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .root .toDoName {
     margin-right: 0;
-    margin-bottom: 5px !important;
+    margin-bottom: 5px;
   }
   .btnLabel {
     margin-bottom: 0;
     margin-right: 10px;
-  }
-  .toDoName {
-    margin-top: 10px;
-    margin-bottom: 20px;
   }
   .buttons {
     flex-direction: row;
     align-items: center;
     margin-top: 0;
   }
+
+}
+
+@media screen and (max-width: 430px) {
   .input {
     font-size: 23px;
     line-height: 32px;
@@ -144,11 +150,7 @@
 
 @media screen and (max-width: 393px) {
   .root {
-    padding: 10px 20px;
-  }
-  .toDoName {
-    font-size: 25px;
-    margin-bottom: 15px;
+    padding: 0 20px;
   }
 }
 

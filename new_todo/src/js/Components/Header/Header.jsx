@@ -35,7 +35,7 @@ class Header extends PureComponent {
   render() {
     const { printMode } = this.state
     return (
-      <div>
+      <div className={styles.root}>
         {printMode
           ? <PrintSetup printEnd={this.printEnd} />
           : <div className={styles.header}>

@@ -62,17 +62,17 @@
 }
 
 @media screen and (max-width: 700px) {
-  .input {
-    padding: 10px 20px !important;
+  .form .input {
+    padding: 10px 20px;
   }
-  .addBtn {
-    margin-bottom: 0 !important;
+  .form .activeBtn, .form .inactiveBtn {
+    margin-bottom: 0;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .input {
-    font-size: 30px !important;
+  .form .input {
+    font-size: 30px;
   }
   .addBtn {
     height: 40px;
@@ -82,20 +82,20 @@
 }
 
 @media screen and (max-width: 586px) {
-  .input {
-    padding: 10px 20px !important;
+  .form .input {
+    padding: 10px 20px;
   }
 }
 
 @media screen and (max-width: 520px) {
-  .addBtn {
-    font-size: 20px !important;
+  .form .activeBtn, .form .inactiveBtn {
+    font-size: 20px;
   }
 }
 
 @media screen and (max-width: 445px) {
-  .input {
-    font-size: 25px !important;
+  .form .input {
+    font-size: 25px;
     max-width: 280px;
   }
 }

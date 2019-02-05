@@ -7,16 +7,11 @@ import styles from './Options.module.scss'
 const cx = classNames.bind(styles)
 
 const Options = ({
-  activeFilter,
+  options,
   setFilter,
-  orientation,
   setOrientation,
-  useCustomHeader,
-  useCustomFooter,
-  handleCustomHeaderChange,
-  handleCustomFooterChange,
-  customHeader,
-  customFooter,
+  toggleCustomHeader,
+  toggleCustomFooter,
   onChangeHeader,
   onChangeFooter
  }) => (
@@ -27,13 +22,13 @@ const Options = ({
         <div className={styles.orientation}>
           <span>page orientation</span>
           <div className={styles.orientation_types}>
-            <div className={cx({ active_orientation: orientation === 'landscape' })} onClick={() => setOrientation('landscape')}>
+            <div className={cx({ active_orientation: options.orientation === 'landscape' })} onClick={() => setOrientation('landscape')}>
               landscape
             </div>
-            <div className={cx({ active_orientation: orientation === 'portrait' })} onClick={() => setOrientation('portrait')}>
+            <div className={cx({ active_orientation: options.orientation === 'portrait' })} onClick={() => setOrientation('portrait')}>
               portrait
             </div>
-            <div className={styles.media_print} dangerouslySetInnerHTML={{__html: `<style media="print">@page {size: ${orientation}}</style>`}} />
+            <div className={styles.media_print} dangerouslySetInnerHTML={{__html: `<style media="print">@page {size: ${options.orientation}}</style>`}} />
           </div>
         </div>
       </div>
@@ -45,7 +40,7 @@ const Options = ({
           Object.values(FILTERS_CONFIG).map((filter) => {
             return (
               <li key={filter} className={styles.filter_li}>
-                <label onClick={() => setFilter(filter)} className={cx({ checked_filter: filter === activeFilter })}>
+                <label onClick={() => setFilter(filter)} className={cx({ checked_filter: filter === options.activeFilter })}>
                   {filter}
                 </label>
               </li>
@@ -57,20 +52,20 @@ const Options = ({
     <div className={styles.custom_common_container}>
       <div>
         use custom header
-        <label className={cx( 'custom_common', { custom_checked: useCustomHeader })} onClick={handleCustomHeaderChange}></label>
+        <label className={cx( 'custom_common', { custom_checked: options.useCustomHeader })} onClick={toggleCustomHeader}></label>
       </div>
-      {useCustomHeader
-        ? <input className={styles.custom_input} onChange={onChangeHeader} value={customHeader} autoFocus />
+      {options.useCustomHeader
+        ? <input className={styles.custom_input} onChange={onChangeHeader} value={options.customHeader} autoFocus />
         : null
       }
     </div>
     <div className={styles.custom_common_container}>
       <div>
         use custom footer
-        <label className={cx('custom_common', { custom_checked: useCustomFooter })} onClick={handleCustomFooterChange}></label>
+        <label className={cx('custom_common', { custom_checked: options.useCustomFooter })} onClick={toggleCustomFooter}></label>
       </div>
-      {useCustomFooter
-        ? <input className={styles.custom_input} onChange={onChangeFooter} value={customFooter} autoFocus />
+      {options.useCustomFooter
+        ? <input className={styles.custom_input} onChange={onChangeFooter} value={options.customFooter} autoFocus />
         : null
       }
     </div>

@@ -181,10 +181,10 @@
     background-size: contain;
     background-position: 1px 1px;
     background-color: #d8dbe0;
-    border-color: #d8dbe0 !important;
+    border-color: #d8dbe0;
     &:hover {
-      background-color: #d8dbe0;
-      border-color: #d8dbe0 !important;
+      background-color: #c4c5c7;
+      border-color: #c4c5c7;
     }
   }
 }
@@ -213,28 +213,28 @@
 }
 
 @media screen and (max-width: 932px) {
-  .taskText {
-    max-width: 400px !important;
+  .leftSide .taskText {
+    max-width: 400px;
     word-break: break-all;
     overflow-wrap: break-word;
   }
 }
 
 @media screen and (max-width: 749px) {
-  .taskText {
-    max-width: 200px !important;
+  .leftSide .taskText {
+    max-width: 200px;
   }
 }
 
 @media screen and (max-width: 700px) {
-  .inputTask {
-    max-width: 200px !important;
+  .leftSide .inputTask {
+    max-width: 200px;
   }
 }
 
 @media screen and (max-width: 586px) {
-  .taskText {
-    max-width: 150px !important;
+  .leftSide .taskText {
+    max-width: 150px;
   }
   .commonListStyle {
     padding: 15px 20px;
@@ -250,27 +250,27 @@
     margin-top: 10px;
     padding-left: 0;
   }
-  .taskText {
-    max-width: 130px !important;
+  .leftSide .taskText {
+    max-width: 130px;
   }
 }
 
 @media print {
-  .activeTask {
+  .root .activeTask {
     margin: 0;
     border: 1px solid #dadada;
-    padding: 13.65px 40px !important;
+    padding: 13.65px 40px;
   }
   .dueDate button::after {
     display: none;
   }
-  .taskText {
-    max-width: 320px !important;
+  .leftSide .taskText {
+    max-width: 320px;
   }
 }
 
 @media print and (orientation: landscape) {
-  .activeTask {
-    padding: 13.19px 40px !important;
+  .root .activeTask {
+    padding: 13.19px 40px;
   }
 }

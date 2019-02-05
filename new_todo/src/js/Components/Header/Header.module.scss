@@ -52,10 +52,10 @@
 }
 
 @media screen and (max-width: 600px) {
-  .header {
-    padding: 0 20px !important;
+  .root .header {
+    padding: 0 20px;
   }
-  .text {
-    line-height: 50px !important;
+  .printList .text {
+    line-height: 50px;
   }
 }
