@@ -32,3 +32,11 @@ export const updateItemByKey =  ({ id, key, value }) => ({
   type: 'EDIT_TODO',
   payload: { id, key, value},
 })
+
+export const clearTodos = () => ({
+  type: 'CLEAR_TODOS',
+})
+
+export const clearListName = () => ({
+  type: 'CLEAR_LISTNAME',
+})

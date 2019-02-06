@@ -32,6 +32,13 @@ class Header extends PureComponent {
   
   printEnd = () => this.setState({ printMode: false })
 
+  clearList = () => {
+    const { clearTodos, clearListName, changeListName } = this.props
+    clearTodos()
+    clearListName()
+    changeListName('My Todo List')
+  }
+  
   render() {
     const { printMode } = this.state
     return (
@@ -39,6 +46,10 @@ class Header extends PureComponent {
         {printMode
           ? <PrintSetup printEnd={this.printEnd} />
           : <div className={styles.header}>
+            <div className={styles.clearList} onClick={this.clearList}>
+              <button className={styles.clearIcon}></button>
+              <a className={styles.text}>Clear List</a>
+            </div>
             <div className={styles.printList} onClick={this.printStart}>
               <button className={styles.printIcon}></button>
               <a className={styles.text}>Print</a>
@@ -51,3 +62,9 @@ class Header extends PureComponent {
 }
 
 export default Header
+
+
+
+// const Header = ({  }) => (
+//   <div className={styles.clearList} onClick={this.clearList}></div>
+// )

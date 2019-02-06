@@ -52,6 +52,8 @@ const items = (state = itemsInitial, { type, payload }) => {
       }
     case 'IMPORT_TODOS':
       return payload.items
+    case 'CLEAR_TODOS':
+      return {}
     default:
       return state
   }
@@ -60,7 +62,9 @@ const items = (state = itemsInitial, { type, payload }) => {
 const listName = (state = listNameInitial, { type, payload }) => {
   switch (type) {
     case 'CHANGE_LISTNAME':
-      return payload.listName
+      return payload.listName || 'My Todo List'
+    case 'CLEAR_LISTNAME':
+      return 'My Todo List'
   default:
     return state
   }

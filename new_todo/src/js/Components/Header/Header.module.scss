@@ -14,6 +14,38 @@
   }
 }
 
+.clearList {
+  width: 125px;
+  margin-right: 35px;
+  display: flex;
+  align-items: center;
+  &:hover {
+    .clearIcon {
+      color: #fff;
+      border-color: #fff;
+    }
+    .text {
+      color: #fff;
+    }
+  }
+}
+
+.clearIcon {
+  height: 30px;
+  width: 30px;
+  background-color: #333;
+  border: 0.5px solid #ccc;
+  border-radius: 50%;
+  font-size: 15px;
+  color: #ccc;
+  outline: none;
+  cursor: pointer;
+  &::before {
+    content: "\f1f8";
+    font-family: FontAwesome;
+  }
+}
+
 .printList {
   width: 85px;
   display: flex;
@@ -55,7 +87,7 @@
   .root .header {
     padding: 0 20px;
   }
-  .printList .text {
+  .printList .text, .clearList .text  {
     line-height: 50px;
   }
 }

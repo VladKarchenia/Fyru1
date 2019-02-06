@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Header from '../Header/Header.jsx'
+import Header from '../Header'
 import ListManagement from '../ListManagement'
 import InputField from '../InputField'
 import SortComponent from '../SortComponent'
