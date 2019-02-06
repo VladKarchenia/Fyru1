@@ -229,3 +229,22 @@
     margin-right: 5px;
   }
 }
+
+@media screen and (max-width: 468px) {
+  .activeTask {
+    flex-direction: column;
+  }
+  .commonListStyle {
+    align-items: flex-start;
+    padding: 10px 40px;
+  }
+  .actions {
+    margin-top: 10px;
+    padding-left: 0;
+  }
+  .taskText {
+    max-width: 130px !important;
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+}

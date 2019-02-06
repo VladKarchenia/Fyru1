@@ -29,7 +29,7 @@ function flattenArray(arr) {
 sortDifArrays([[3,4], [7,8], [1,2], [5,6], [1,7]]);
 
 //лучше, по ECMA6
-const flattenArray = arr => arr.reduce((acc, array) => acc.concat(array);
+const flattenArray = arr => arr.reduce((acc, array) => acc.concat(array));
 flattenArray([[3,4], [7,8], [1,2], [5,6], [1,7]]);
 
 
