@@ -36,7 +36,7 @@ class Header extends PureComponent {
     const { clearTodos, clearListName, changeListName } = this.props
     clearTodos()
     clearListName()
-    changeListName('My Todo List')
+    changeListName('')
   }
   
   render() {

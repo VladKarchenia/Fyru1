@@ -4,6 +4,17 @@ import { setTitle } from '../../utils'
 import styles from './ListManagement.module.scss'
 
 class ListManagement extends PureComponent {
+  static getDerivedStateFromProps (props, state) {
+    const { editMode, inputValue } = state
+    const { listName } = props
+    if (!editMode && (listName !== inputValue)) {
+      return {
+        inputValue: listName,
+      }
+    }
+    return null
+  }
+
   componentDidMount() {
     setTitle(this.props.listName)
   }
