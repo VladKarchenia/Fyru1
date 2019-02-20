@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux'
 import _omit from 'lodash/omit'
-import _set from 'lodash/set'
 
 import { APP_KEY } from '../constants/permanentSave'
 import { ITEM_KEYS } from '../constants/todoItem'
