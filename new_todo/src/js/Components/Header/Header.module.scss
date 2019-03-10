@@ -1,27 +1,93 @@
 .header {
-  height: 40px;
-  text-align: right;
-  padding: 0 5%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 40px;
   background-color: #333;
   border-bottom: 1px solid #111;
-  .a {
+  .text {
     font-size: 20px;
     color: #ccc;
-    margin-left: 20px;
     text-decoration: none;
     cursor: pointer;
-    line-height: 40px;
-    &:hover {
+    line-height: 60px;
+    margin-left: 10px;
+  }
+}
+
+.clearList {
+  width: 125px;
+  margin-right: 35px;
+  display: flex;
+  align-items: center;
+  &:hover {
+    .clearIcon {
+      color: #fff;
+      border-color: #fff;
+    }
+    .text {
       color: #fff;
     }
   }
 }
 
-.newList {
-  composes: a;
+.clearIcon {
+  height: 30px;
+  width: 30px;
+  background-color: #333;
+  border: 0.5px solid #ccc;
+  border-radius: 50%;
+  font-size: 15px;
+  color: #ccc;
+  outline: none;
+  cursor: pointer;
   &::before {
-    content: "\f067";
+    content: "\f1f8";
     font-family: FontAwesome;
-    padding-right: 5px;
+  }
+}
+
+.printList {
+  width: 85px;
+  display: flex;
+  align-items: center;
+  &:hover {
+    .printIcon {
+      color: #fff;
+      border-color: #fff;
+    }
+    .text {
+      color: #fff;
+    }
+  }
+}
+
+.printIcon {
+  height: 30px;
+  width: 30px;
+  background-color: #333;
+  border: 0.5px solid #ccc;
+  border-radius: 50%;
+  font-size: 15px;
+  color: #ccc;
+  outline: none;
+  cursor: pointer;
+  &::before {
+    content: "\f02f";
+    font-family: FontAwesome;
+  }
+}
+
+@media print {
+  .header {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .root .header {
+    padding: 0 20px;
+  }
+  .printList .text, .clearList .text  {
+    line-height: 50px;
   }
 }

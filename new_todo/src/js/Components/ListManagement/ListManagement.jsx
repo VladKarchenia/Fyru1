@@ -1,29 +1,33 @@
 import React, { PureComponent } from 'react'
+
+import { setTitle } from '../../utils'
 import styles from './ListManagement.module.scss'
 
 class ListManagement extends PureComponent {
-  static getDerivedStateFromProps (nextProps, prevState) {
-    const { listName } = nextProps
-    const { cachedListName } = prevState
-    if (listName !== cachedListName) {
+  static getDerivedStateFromProps (props, state) {
+    const { editMode, inputValue } = state
+    const { listName } = props
+    if (!editMode && (listName !== inputValue)) {
       return {
-        cachedListName: listName,
-        inputValue: listName
+        inputValue: listName,
       }
     }
     return null
   }
 
+  componentDidMount() {
+    setTitle(this.props.listName)
+  }
+  
   state = {
     editMode: false,
-    cachedListName: this.props.listName,
     inputValue: this.props.listName
   }
 
   updateListName = value => {
-    const { listName, updateListName } = this.props
+    const { listName, changeListName } = this.props
     if (value !== listName) {
-      updateListName(value)
+      changeListName(value)
     }
   }
 
@@ -72,7 +76,7 @@ class ListManagement extends PureComponent {
       <div className={styles.root}>
         {!editMode
           ? <h2 className={styles.toDoName}>
-              <span className={styles.newNameSpan} onClick={this.changeListName}>{listName || 'Default'}</span>
+              <span className={styles.newNameSpan} onClick={this.changeListName}>{listName}</span>
             </h2>
           : <input ref={this.inputRef} value={inputValue} onChange={this.onChange} autoFocus className={styles.input} />
         }

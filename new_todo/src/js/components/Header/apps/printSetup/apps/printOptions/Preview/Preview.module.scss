@@ -1,0 +1,59 @@
+.body {
+  width: calc(100% - 250px);
+  margin: 30px 30px 90px;
+  background-color: white;
+  overflow: auto;
+}
+
+.preview {
+  &:hover {
+    .zoom_btn {
+      animation-name: zoom_side;
+      animation-delay: 0.2s;
+      animation-duration: 0.9s;
+    }
+  }
+  ul {
+    margin: 0;
+    pointer-events: none;
+    padding-top: 2px;
+    padding-left: 0;
+    li {
+      padding: 12px 20px;
+    }
+  }
+}
+
+.preview_header {
+  max-width: 90%;
+  margin: 29px auto;
+  text-align: center;
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  span:hover {
+    white-space: normal;
+  }
+}
+
+.preview_footer {
+  composes: preview_header;
+  bottom: 0;
+  margin: 23px auto;
+}
+
+@media print {
+  .body {
+    position: absolute;
+    top: -10px;
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+@media print and (orientation: landscape) {
+  .preview .preview_header {
+    margin: 28px auto;
+  }
+}
