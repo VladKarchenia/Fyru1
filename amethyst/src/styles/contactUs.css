@@ -1,0 +1,26 @@
+.contactUs {
+  font-size: 0.8rem;
+  filter: opacity(0.8);
+}
+
+.contactUs:hover {
+  filter: opacity(1);
+}
+
+.location::before {
+  content: "\f041";
+  font-family: FontAwesome;
+  padding-right: 5px;
+}
+
+.tel::before {
+  content: "\f095";
+  font-family: FontAwesome;
+  padding-right: 5px;
+}
+
+.mail::before {
+  content: "\f0e0";
+  font-family: FontAwesome;
+  padding-right: 5px;
+}
