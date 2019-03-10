@@ -1,0 +1,163 @@
+.options {
+  position: relative;
+  min-width: 250px;
+  background-color: white;
+  color: dimgray;
+}
+
+.orientation_titleSpan {
+  display: block;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  background-color: rgba(175, 220, 241, 0.75);
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgb(66, 66, 66);
+}
+
+.orientation {
+  height: 70px;
+  span {
+    height: 35px;
+    display: block;
+    line-height: 35px;
+    text-align: center;
+    font-size: 18px;
+    text-transform: capitalize;
+  }
+}
+
+.orientation_types {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  line-height: 25px;
+  div {
+    width: 50%;
+    text-align: center;
+    position: relative;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.5s;
+  }
+}
+
+.active_orientation {
+  background: #bada55;
+}
+
+.media_print {
+  display: none;
+}
+
+.custom_common_container {
+  display: flex;
+  flex-direction: column;
+  line-height: 35px;
+  margin: 10px 0;
+  padding: 0 10px;
+  position: relative;
+  font-size: 18px;
+  text-transform: capitalize;
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.custom_common {
+  cursor: pointer;
+  width: 50px;
+  height: 25px;
+  background: grey;
+  display: block;
+  border-radius: 15px;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 20px;
+    transition: 0.3s;
+  }
+  &:active:after {
+    width: 25px;
+  }
+}
+
+.custom_checked {
+  composes: custom_common;
+  background: #bada55;
+  &:after {
+    left: calc(100% - 3px);
+    transform: translateX(-100%);
+  }
+}
+
+.custom_input {
+  height: 25px;
+  outline: none;
+}
+
+.filter {
+  line-height: 30px;
+  text-align: center;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+.filter_ul {
+  margin: 0 auto;
+  padding-left: 0px;
+  list-style-type: none;
+}
+
+.filter_li {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 15px;
+  border-bottom: 0.5px solid rgb(218, 218, 218);
+  label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    &::before {
+      content: "";
+      border: 1px solid #1eb760;
+      border-radius: 5px;
+      width: 15px;
+      height: 15px;
+      margin-right: 10px;
+      display: inline-block;
+      font-size: 18px;
+      transition: background-color 0.3s;
+    }
+  }
+}
+
+.checked_filter {
+  &::before {
+    background-image: url('https://vignette.wikia.nocookie.net/lub/images/5/5b/%D0%93%D0%B0%D0%BB%D0%BE%D1%87%D0%BA%D0%B0_%D0%B1%D0%B5%D0%B7_%D1%84%D0%BE%D0%BD%D0%B0.png/revision/latest?cb=20140314123945&path-prefix=ru');
+    background-size: contain;
+    background-color: #1eb760;
+  }
+}
+
+@media print {
+  .options {
+    display: none;
+  }
+}

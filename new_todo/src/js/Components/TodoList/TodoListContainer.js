@@ -1,15 +1,20 @@
 import { connect } from 'react-redux'
 
-import { getVisibilityFilter } from '../../selectors'
-import { setVisibilityFilter } from '../../actions'
 import TodoList from './TodoList.jsx'
+import { getFilteredItems } from '../../selectors'
+import {
+  updateItemByKey,
+  deleteItem,
+  addItem,
+} from '../../actions'
 
 export default connect(
   (state) => ({
-    activeFilter: getVisibilityFilter(state),
+    items: getFilteredItems(state)
   }),
   {
-    setVisibilityFilter,
-  },
+    addItem,
+    deleteItem,
+    updateItemByKey,
+  }
 )(TodoList)
-	

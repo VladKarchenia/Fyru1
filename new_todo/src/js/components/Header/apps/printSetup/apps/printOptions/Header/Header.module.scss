@@ -1,0 +1,49 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+  background-color: rgb(62, 62, 62);
+}
+
+.listname {
+  padding-left: 60px;
+  color: white;
+  font-size: 20px;
+}
+
+.header_buttons {
+  width: 250px;
+}
+
+.print_btn {
+  width: 90px;
+  padding: 10px 0;
+  border: none;
+  background: #1eb760;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+}
+
+.calcel_btn {
+  composes: print_btn;
+  margin-right: 15px;
+  background: rgb(94, 94, 94);
+}
+
+.header_buttons .calcel_btn:hover {
+  background: rgb(134, 134, 134);
+}
+
+.print_btn:hover {
+  background: rgba(14, 211, 99, 0.5);
+}
+
+@media print {
+  .header {
+    display: none;
+  }
+}
