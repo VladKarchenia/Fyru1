@@ -11,6 +11,11 @@
   background-color: initial;
 }
 
+#works .card {
+  min-width: 200px;
+  max-width: 320px;
+}
+
 .works-icon {
   height: 60px;
   width: 60px;
@@ -113,11 +118,5 @@ h6 {
 @media screen and (max-width: 630px) {
   #list-tab {
     flex-wrap: wrap;
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .table {
-    visibility: hidden;
   }
 }

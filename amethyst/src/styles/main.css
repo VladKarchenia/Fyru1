@@ -75,8 +75,25 @@
 
 .menu-nav div {
   min-width: 80px;
+  max-width: 110px;
+  padding-top: 5px !important;
 }
 
 .menu-nav div a {
   width: 100%;
+}
+
+@media screen and (max-width: 550px) {
+  .table {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  #carousel .carousel-inner {
+    min-height: 400px;
+  }
+  .main-menu {
+    width: 100% !important;
+  }
 }

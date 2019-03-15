@@ -1,13 +1,14 @@
 'use strict'
 
-$(function () {
-  var element = $("#toTopBtn"), display
-  $(window).scroll(function () {
-    display = $(this).scrollTop() >= 800
-    if (display) {
-      element.show()
+$(function() {
+  $(window).scroll(function() {
+    if ($(this).scrollTop() >= 830) {
+      $('#toTopBtn').show()
     } else {
-      element.hide()
+      $('#toTopBtn').hide()
     }
+  })
+  $('#toTopBtn').click(function() {
+    $('html, body').animate({ scrollTop: 0 }, 800)
   })
 })
