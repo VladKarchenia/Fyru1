@@ -136,32 +136,35 @@
   color: #9966cc;
 }
 
-/* .displayed-card {
-  #accordion .card .card-header {
-    background: #9966cc;
-  }
-  #accordion .card button span {
-    color: white;
-  }
-  .accordPlus::before {
-    content: "\f068";
-    color: white;
-  }
-} */
+.displayed-card {
+  background: #9966cc !important;
+}
+
+.displayed-card span {
+  color: white !important;
+}
+
+.displayed-card .accordPlus::before {
+  content: "\f068";
+  color: white;
+}
+
+.displayed-card button:hover > .accordPlus::before {
+  color: #343a40 !important;
+}
 
 .tablist {
-  border: 1px solid #9966cc;
   border-radius: 5px;
   margin-bottom: 15px;
   padding: 0;
 }
 
 .tablist .nav {
-  border-bottom: 1px solid #9966cc;
+  border-bottom: none;
 }
 
 .tablist .nav li {
-  width: calc(100% / 3 - 2px);
+  width: 188px;
   background: #9966cc;
   border: 1px solid #9966cc;
   border-bottom: none;
@@ -171,16 +174,50 @@
   border-top-right-radius: 5px;
 }
 
-.tab-pane p {
-  padding: 20px;
-  padding-bottom: 25px;
+.tab-pane {
+  border: 1px solid #9966cc;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
-/* .active-taditem {
-  .tablist .nav li {
-    background: white;
+.tab-pane p {
+  padding: 20px;
+  padding-bottom: 23px;
+}
+
+.nav-tabs li a {
+  font-weight: 500;
+}
+
+.active-tadItem {
+  background: white !important;
+}
+
+.active-tadItem a {
+  color: #343a40;
+}
+
+.active-tadItem a:hover {
+  color: #9c9c9c;
+}
+
+@media screen and (max-width: 1201px) {
+  .tablist .nav {
+    flex-wrap: nowrap;
   }
-  .tablist .nav li a {
-    color: #343a40;
+  .tab-pane p {
+    padding-bottom: 56px;
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .pricing-forms {
+    display: none !important;
+  }
+}
+
+/* @media screen and (max-width: 450px) {
+  .pricing-forms {
+    display: none !important;
   }
 } */

@@ -20,7 +20,11 @@
   position: relative;
 }
 
-.services-icon:hover, .services-icons-container .active {
+.services-icon:hover {
+  color: black;
+}
+
+.active-service-icon {
   color: black;
 }
 
@@ -70,5 +74,11 @@
   }
   #services-carousel .carousel-inner {
     min-height: 330px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #services-carousel .carousel-inner {
+    min-height: 400px;
   }
 }
