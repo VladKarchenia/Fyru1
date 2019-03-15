@@ -78,7 +78,71 @@ blockquote p q {
 
 .black-bg {
   min-height: 200px;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: #343a40;
+}
+
+.team-icons a:hover {
+  color: #9966cc !important;
+}
+
+.skills .row .col-12 {
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.skills .row .col-12 .col-6 {
+  min-width: 360px;
+}
+
+.progress-bg {
+  background: linear-gradient(to left, #ff9523, #ae5eff);
+}
+
+.progress-80 {
+  left: calc(80% - 20px / 2);
+}
+
+.progress-97 {
+  left: calc(97% - 48px / 2);
+}
+
+.progress-65 {
+  left: calc(65% - 25px / 2);
+}
+
+.progress-72 {
+  left: calc(72% - 30px / 2);
+}
+
+.post-date, .post-comment {
+  font-size: 0.9rem;
+}
+
+.post-date::before {
+  content: "\f15b";
+  font-family: FontAwesome;
+  padding-right: 5px;
+}
+
+.post-comment::before {
+  content: "\f075";
+  font-family: FontAwesome;
+  padding-right: 5px;
+}
+
+textarea {
+  resize: none;
+}
+
+.send-btn {
+  color: #343a40;
+  border: 1px solid #9966cc;
+}
+
+.send-btn:hover {
+  background: #9966cc;
+  color: white;
 }
 
 @font-face {

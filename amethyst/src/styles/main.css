@@ -43,7 +43,7 @@
   font-family: FontAwesome;
 }
 
-.carousel-caption {
+#carousel .carousel-caption {
   position: initial;
   font-size: 0.9rem;
 }
@@ -65,7 +65,7 @@
   border: 2px solid white;
 }
 
-.carousel-control-next, .carousel-control-prev {
+#carousel .carousel-control-next, #carousel .carousel-control-prev {
   bottom: 170px;
 }
 

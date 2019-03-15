@@ -10,14 +10,17 @@
     <link rel="stylesheet" href="styles/aboutUs.css" />
     <link rel="stylesheet" href="styles/works.css" />
     <link rel="stylesheet" href="styles/testimonials.css" />
+    <link rel="stylesheet" href="styles/services.css" />
     <link rel="stylesheet" href="styles/benefits.css" />
     <link rel="stylesheet" href="styles/contactUs.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/pricingPlan.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <title>Amethyst</title>
   </head>
   <body>
-    <div class="container-fluid main text-center text-white">
+    <div class="container-fluid main text-center text-white p-0">
       <table class="table text-white">
         <thead>
           <tr>
@@ -27,7 +30,7 @@
               <a href="#" class="icon twitter"></a>
               <a href="#" class="icon google"></a>
             </th>
-            <th scope="col" class="p-0 border-right-col w-35 "></th>
+            <th scope="col" class="p-0 border-right-col w-35"></th>
             <th scope="col" class="p-0 border-right-col w-19 align-middle">E-mail: <a href="#" class="contacts">info@example.com</a></th>
             <th scope="col" class="p-0 w-23 text-left align-middle">Phone: <a href="#" class="contacts">+0012345678</a></th>
           </tr>
@@ -288,49 +291,67 @@
     <div class="container w-75 pt-5 text-center text-secondary text-dark">
       <h3>Testimonials</h3>
       <p class="pb-2 font-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quasi perferendis reiciendis!</p>
-      <p class="mb-5 font-italic">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique quos deleniti velit nostrum aut nihil ipsum quam neque fugit facere. Aliquam, ipsa quis. Culpa aliquam commodi vitae quaerat, voluptatibus provident ratione, praesentium corrupti est eum possimus, illo soluta labore? Totam odio nobis id pariatur commodi eum modi fugit quaerat, similique velit ea quos quae accusamus minus asperiores magni amet odit optio. Saepe iste consequatur deleniti temporibus sequi neque natus libero?</p>
-      <div id="testimonials-carousel" class="carousel slide carousel-fad w-75 m-auto" data-ride="carousel">
+      <div id="testimonials-carousel" class="carousel slide carousel-fad m-auto" data-ride="carousel">
         <div class="carousel-inner m-auto">
           <div class="carousel-item active testimonials-carousel-item">
+            <p class="mb-5 font-italic">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique quos deleniti velit nostrum aut nihil ipsum quam neque fugit facere. Aliquam, ipsa quis. Culpa aliquam commodi vitae quaerat, voluptatibus provident ratione, praesentium corrupti est eum possimus, illo soluta labore? Totam odio nobis id pariatur commodi eum modi fugit quaerat, similique velit ea quos quae accusamus minus asperiores magni amet odit optio. Saepe iste consequatur deleniti temporibus sequi neque natus libero?</p>
             <div class="card mb-3">
               <div class="row no-gutters align-items-center justify-content-center w-50 m-auto">
                 <picture>
-                  <img src="./images/harry.jpg" class="card-img hero-portrait img-thumbnail" alt="Harry Potter">
+                  <img src="./images/testimonial1.png" class="card-img hero-portrait img-thumbnail" alt="testimonial1">
                 </picture>
-                <div class="col">
+                <div>
                   <div class="card-body">
-                    <h5 class="card-title">Harry Potter</h5>
-                    <p class="card-text">Carry</p>
+                    <h5 class="card-title">Maria Harris</h5>
+                    <p class="card-text">Student</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="carousel-item testimonials-carousel-item">
+            <p class="mb-5 font-italic">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique quos deleniti velit nostrum aut nihil ipsum quam neque fugit facere. Aliquam, ipsa quis. Culpa aliquam commodi vitae quaerat, voluptatibus provident ratione, praesentium corrupti est eum possimus, illo soluta labore? Totam odio nobis id pariatur commodi eum modi fugit quaerat, similique velit ea quos quae accusamus minus asperiores magni amet odit optio. Saepe iste consequatur deleniti temporibus sequi neque natus libero?</p>
             <div class="card mb-3">
               <div class="row no-gutters align-items-center justify-content-center w-50 m-auto">
                   <picture>
-                    <img src="./images/ron.jpg" class="card-img hero-portrait img-thumbnail" alt="Ron Weasley">
+                    <img src="./images/testimonial2.png" class="card-img hero-portrait img-thumbnail" alt="testimonial2">
                   </picture>
-                  <div class="col">
+                  <div>
                     <div class="card-body">
-                      <h5 class="card-title">Ron Weasley</h5>
-                      <p class="card-text">Midlaner</p>
+                      <h5 class="card-title">Ron Miller</h5>
+                      <p class="card-text">Doctor</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           <div class="carousel-item testimonials-carousel-item">
+            <p class="mb-5 font-italic">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique quos deleniti velit nostrum aut nihil ipsum quam neque fugit facere. Aliquam, ipsa quis. Culpa aliquam commodi vitae quaerat, voluptatibus provident ratione, praesentium corrupti est eum possimus, illo soluta labore? Totam odio nobis id pariatur commodi eum modi fugit quaerat, similique velit ea quos quae accusamus minus asperiores magni amet odit optio. Saepe iste consequatur deleniti temporibus sequi neque natus libero?</p>
             <div class="card mb-3">
               <div class="row no-gutters align-items-center justify-content-center w-50 m-auto">
                 <picture>
-                  <img src="./images/neville.jpg" class="card-img hero-portrait img-thumbnail" alt="Neville Longbottom">
+                  <img src="./images/testimonial3.png" class="card-img hero-portrait img-thumbnail" alt="testimonial3">
                 </picture>
-                <div class="col">
+                <div>
                   <div class="card-body">
-                    <h5 class="card-title">Neville Longbottom</h5>
-                    <p class="card-text">Offlaner</p>
+                    <h5 class="card-title">Oksana Shevchenko</h5>
+                    <p class="card-text">Model</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item testimonials-carousel-item">
+            <p class="mb-5 font-italic">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique quos deleniti velit nostrum aut nihil ipsum quam neque fugit facere. Aliquam, ipsa quis. Culpa aliquam commodi vitae quaerat, voluptatibus provident ratione, praesentium corrupti est eum possimus, illo soluta labore? Totam odio nobis id pariatur commodi eum modi fugit quaerat, similique velit ea quos quae accusamus minus asperiores magni amet odit optio. Saepe iste consequatur deleniti temporibus sequi neque natus libero?</p>
+            <div class="card mb-3">
+              <div class="row no-gutters align-items-center justify-content-center w-50 m-auto">
+                <picture>
+                  <img src="./images/testimonial4.png" class="card-img hero-portrait img-thumbnail" alt="testimonial4">
+                </picture>
+                <div>
+                  <div class="card-body">
+                    <h5 class="card-title">Mike Lambert</h5>
+                    <p class="card-text">Streamer</p>
                   </div>
                 </div>
               </div>
@@ -338,29 +359,15 @@
           </div>
           <div class="carousel-item testimonials-carousel-item">
             <div class="card mb-3">
+              <p class="mb-5 font-italic">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique quos deleniti velit nostrum aut nihil ipsum quam neque fugit facere. Aliquam, ipsa quis. Culpa aliquam commodi vitae quaerat, voluptatibus provident ratione, praesentium corrupti est eum possimus, illo soluta labore? Totam odio nobis id pariatur commodi eum modi fugit quaerat, similique velit ea quos quae accusamus minus asperiores magni amet odit optio. Saepe iste consequatur deleniti temporibus sequi neque natus libero?</p>
               <div class="row no-gutters align-items-center justify-content-center w-50 m-auto">
                 <picture>
-                  <img src="./images/hermione.jpg" class="card-img hero-portrait img-thumbnail" alt="Hermione Granger">
+                  <img src="./images/testimonial5.png" class="card-img hero-portrait img-thumbnail" alt="testimonial5">
                 </picture>
-                <div class="col">
+                <div>
                   <div class="card-body">
-                    <h5 class="card-title">Hermione Granger</h5>
-                    <p class="card-text">Farming support</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item testimonials-carousel-item">
-            <div class="card mb-3">
-              <div class="row no-gutters align-items-center justify-content-center w-50 m-auto">
-                <picture>
-                  <img src="./images/ginny.jpg" class="card-img hero-portrait img-thumbnail" alt="Ginny Weasley">
-                </picture>
-                <div class="col">
-                  <div class="card-body">
-                    <h5 class="card-title">Ginny Weasley</h5>
-                    <p class="card-text">5 position support</p>
+                    <h5 class="card-title">Rose Barner</h5>
+                    <p class="card-text">Traider</p>
                   </div>
                 </div>
               </div>
@@ -375,28 +382,27 @@
           <li data-target="#testimonials-carousel" data-slide-to="4"></li>
         </ol>
       </div>
-      <div class="container text-center my-3">
-        <div class="row mx-auto my-5">
+      <!-- <div class="container my-3">
           <div id="carousel-logo" class="carousel slide w-100" data-ride="carousel">
-            <div class="carousel-inner" role="listbox">
-              <!-- <div class="carousel-item active">
+            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+              <div class="carousel-item col-md-3 active">
                 <img src="http://blog.operativnik.ru/wp-content/uploads/HLIC/6d4951f113cad41f79cb7dec6212d68a.jpg" class="d-block col-3 img-fluid" alt="logo1">
               </div>
-              <div class="carousel-item active">
+              <div class="carousel-item col-md-3">
                 <img src="http://blog.operativnik.ru/wp-content/uploads/HLIC/182f9d7ee4d25aa77b9e5f256c2dd5df.jpg" class="d-block col-3 img-fluid" alt="logo2">
               </div>
-              <div class="carousel-item active">
+              <div class="carousel-item col-md-3">
                 <img src="http://blog.operativnik.ru/wp-content/uploads/HLIC/79e49569befccfa2249c2fda0c133dbe.jpg" class="d-block col-3 img-fluid" alt="logo3">
               </div>
-              <div class="carousel-item active">
+              <div class="carousel-item col-md-3">
                 <img src="http://blog.operativnik.ru/wp-content/uploads/HLIC/af1ba36d9f9b256c5c42bb24b24baad1.jpg" class="d-block col-3 img-fluid" alt="logo4">
               </div>
-              <div class="carousel-item active">
+              <div class="carousel-item col-md-3">
                 <img src="http://blog.operativnik.ru/wp-content/uploads/HLIC/a3c2f6112a5bd68d2f4c4d10a5605251.jpg" class="d-block col-3 img-fluid" alt="logo5">
               </div>
-              <div class="carousel-item active">
+              <div class="carousel-item col-md-3">
                 <img src="http://blog.operativnik.ru/wp-content/uploads/HLIC/babc8834726480671d13ce482015d279.jpg" class="d-block col-3 img-fluid" alt="logo6">
-              </div> -->
+              </div>
               <div class="carousel-item active d-flex w-75">
                 <img src="http://blog.operativnik.ru/wp-content/uploads/HLIC/6d4951f113cad41f79cb7dec6212d68a.jpg" class="d-block col-3 img-fluid" alt="logo1">
                 <img src="http://blog.operativnik.ru/wp-content/uploads/HLIC/182f9d7ee4d25aa77b9e5f256c2dd5df.jpg" class="d-block col-3 img-fluid" alt="logo2">
@@ -415,8 +421,43 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
+      </div> -->
+      <div class="container">
+          <div class="row">
+            <div id="carousel-ec" class="carousel slide w-100" data-ride="carousel">
+              <div class="carousel-inner mb-4">
+                <div class="carousel-item active">
+                  <div class="d-block">
+                    <div class="slide-box d-flex justify-content-between">
+                      <img src="http://blog.operativnik.ru/wp-content/uploads/HLIC/6d4951f113cad41f79cb7dec6212d68a.jpg" alt="First slide">
+                      <img src="http://blog.operativnik.ru/wp-content/uploads/HLIC/182f9d7ee4d25aa77b9e5f256c2dd5df.jpg" alt="First slide">
+                      <img src="http://blog.operativnik.ru/wp-content/uploads/HLIC/79e49569befccfa2249c2fda0c133dbe.jpg" alt="First slide">
+                      <img src="http://blog.operativnik.ru/wp-content/uploads/HLIC/af1ba36d9f9b256c5c42bb24b24baad1.jpg" alt="First slide">
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-block">
+                    <div class="slide-box d-flex justify-content-between">
+                      <img src="http://blog.operativnik.ru/wp-content/uploads/HLIC/a3c2f6112a5bd68d2f4c4d10a5605251.jpg" alt="Second slide">
+                      <img src="http://blog.operativnik.ru/wp-content/uploads/HLIC/babc8834726480671d13ce482015d279.jpg" alt="Second slide">
+                      <img src="http://blog.operativnik.ru/wp-content/uploads/HLIC/79e49569befccfa2249c2fda0c133dbe.jpg" alt="Second slide">
+                      <img src="http://blog.operativnik.ru/wp-content/uploads/HLIC/6d4951f113cad41f79cb7dec6212d68a.jpg" alt="Second slide">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carousel-ec" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon carousel-logo-control" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carousel-ec" role="button" data-slide="next">
+                <span class="carousel-control-next-icon carousel-logo-control" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
     </div>
     <div class="container-fluid pt-5 text-center text-secondary facts text-light">
       <div class="container w-75">
@@ -462,43 +503,194 @@
       <p class="pb-2 font-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quasi perferendis reiciendis</p>
       <div class="row">
         <div class="col-6 bg-dark text-light">
-          Carousel
+          <div id="services-carousel" class="carousel slide carousel-fad h-100" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item pt-5 active">
+                <div class="carousel-caption d-md-block">
+                  <p class="h3 pb-3">Web Design</h3>
+                  <p class="pb-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio recusandae quam enim eos hic nesciunt et quia reiciendis, quaerat facilis quas asperiores saepe quis nisi temporibus est, cum vero repellat.</p>
+                  <button class="btn btn-outline-light text-uppercase rounded-pill px-4">view more</button>
+                </div>
+              </div>
+              <div class="carousel-item pt-5">
+                <div class="carousel-caption d-md-block">
+                  <p class="h3 pb-3">Graphic Design</h3>
+                  <p class="pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem perspiciatis temporibus, odio quos quam quis, magnam sit corporis eveniet non dicta fuga commodi tenetur eum voluptate saepe alias consequatur vitae!</p>
+                  <button class="btn btn-outline-light text-uppercase rounded-pill px-4">view more</button>
+                </div>
+              </div>
+              <div class="carousel-item pt-5">
+                <div class="carousel-caption d-md-block">
+                  <p class="h3 pb-3">Branding</h3>
+                  <p class="pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor optio laboriosam doloribus perferendis provident architecto libero. Nesciunt obcaecati exercitationem blanditiis dolorum qui alias quo</p>
+                  <button class="btn btn-outline-light text-uppercase rounded-pill px-4">view more</button>
+                </div>
+              </div>
+              <div class="carousel-item pt-5">
+                <div class="carousel-caption d-md-block">
+                  <p class="h3 pb-3">Marketing</h3>
+                  <p class="pb-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam aut dolore doloremque ullam nesciunt magni, quisquam consequatur a, aliquam, blanditiis quidem perspiciatis id quaerat.</p>
+                  <button class="btn btn-outline-light text-uppercase rounded-pill px-4">view more</button>
+                </div>
+              </div>
+              <div class="carousel-item pt-5">
+                <div class="carousel-caption d-md-block">
+                  <p class="h3 pb-3">Development</h3>
+                  <p class="pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit ab tempora aspernatur fuga porro voluptate ullam cumque incidunt doloremque vero?</p>
+                  <button class="btn btn-outline-light text-uppercase rounded-pill px-4">view more</button>
+                </div>
+              </div>
+              <div class="carousel-item pt-5">
+                <div class="carousel-caption d-md-block">
+                  <p class="h3 pb-3">SEO</h3>
+                  <p class="pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit ab tempora aspernatur fuga porro voluptate ullam cumque incidunt doloremque vero?</p>
+                  <button class="btn btn-outline-light text-uppercase rounded-pill px-4">view more</button>
+                </div>
+              </div>
+            </div>
+            <ol class="carousel-indicators align-items-center pb-4">
+              <li data-target="#services-carousel" data-slide-to="0" class="active"></li>
+              <li data-target="#services-carousel" data-slide-to="1"></li>
+              <li data-target="#services-carousel" data-slide-to="2"></li>
+              <li data-target="#services-carousel" data-slide-to="3"></li>
+              <li data-target="#services-carousel" data-slide-to="4"></li>
+              <li data-target="#services-carousel" data-slide-to="5"></li>
+            </ol>
+          </div>
         </div>
         <div class="col-6 bg-light">
-          icons
-          <div class="row">
-            <div class="col-6"></div>
-            <div class="col-6"></div>
-            <div class="col-6"></div>
-            <div class="col-6"></div>
-            <div class="col-6"></div>
-            <div class="col-6"></div>
-          </div>
+          <ul class="row p-0 mt-5 services-icons-container">
+            <li data-target="#services-carousel" data-slide-to="0" class="col-6 services-icon services-webDesign">Web Design</li>
+            <li data-target="#services-carousel" data-slide-to="1" class="col-6 services-icon services-graphDesign">Graphic Design</li>
+            <li data-target="#services-carousel" data-slide-to="2" class="col-6 services-icon services-branding">Branding</li>
+            <li data-target="#services-carousel" data-slide-to="3" class="col-6 services-icon services-marketing">Marketing</li>
+            <li data-target="#services-carousel" data-slide-to="4" class="col-6 services-icon services-development">Development</li>
+            <li data-target="#services-carousel" data-slide-to="5" class="col-6 services-icon services-seo">SEO</li>
+          </ul>
         </div>
       </div>
     </div>
     <div class="container-fluid pt-5 pb-4 text-center text-dark" id="team">
       <h3>Our Team</h3>
       <p class="pb-2 font-italic">Loremdolor sit amet consectetur adipisicing elit. Atque quasi perferendis reiciendis</p>
-      <div class="row">
-        <div class="col-3">1</div>
-        <div class="col-3">2</div>
-        <div class="col-3">3</div>
-        <div class="col-3">4</div>
+      <div class="card-deck w-75 m-auto">
+        <div class="card align-items-center">
+          <img src="./images/person1.png" class="card-img-top" alt="person1">
+          <div class="card-body">
+            <h5 class="card-title">Richard Jones</h5>
+            <p class="card-text text-black-50">Android developer</p>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis doloremque natus ex obcaecati iste sint ut culpa? Ea, aut porro.</p>
+            <div class="team-icons">
+              <a href="#" class="icon facebook text-dark"></a>
+              <a href="#" class="icon linkedIn text-dark"></a>
+              <a href="#" class="icon twitter text-dark"></a>
+              <a href="#" class="icon google text-dark"></a>
+            </div>
+          </div>
+        </div>
+        <div class="card align-items-center">
+          <img src="./images/person2.png" class="card-img-top" alt="person2">
+          <div class="card-body">
+            <h5 class="card-title">Megan Turner</h5>
+            <p class="card-text text-black-50">Print Designer</p>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis doloremque natus ex obcaecati iste sint ut culpa? Ea, aut porro.</p>
+            <div class="team-icons">
+              <a href="#" class="icon facebook text-dark"></a>
+              <a href="#" class="icon linkedIn text-dark"></a>
+              <a href="#" class="icon twitter text-dark"></a>
+              <a href="#" class="icon google text-dark"></a>
+            </div>
+          </div>
+        </div>
+        <div class="card align-items-center">
+          <img src="./images/person3.png" class="card-img-top" alt="person3">
+          <div class="card-body">
+            <h5 class="card-title">Viktor Green</h5>
+            <p class="card-text text-black-50">IT Programmer</p>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis doloremque natus ex obcaecati iste sint ut culpa? Ea, aut porro.</p>
+            <div class="team-icons">
+              <a href="#" class="icon facebook text-dark"></a>
+              <a href="#" class="icon linkedIn text-dark"></a>
+              <a href="#" class="icon twitter text-dark"></a>
+              <a href="#" class="icon google text-dark"></a>
+            </div>
+          </div>
+        </div>
+        <div class="card align-items-center">
+          <img src="./images/person4.png" class="card-img-top" alt="person4">
+          <div class="card-body">
+            <h5 class="card-title">Amy Watkins</h5>
+            <p class="card-text text-black-50">Marketing Specialist</p>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis doloremque natus ex obcaecati iste sint ut culpa? Ea, aut porro.</p>
+            <div class="team-icons">
+              <a href="#" class="icon facebook text-dark"></a>
+              <a href="#" class="icon linkedIn text-dark"></a>
+              <a href="#" class="icon twitter text-dark"></a>
+              <a href="#" class="icon google text-dark"></a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="container-fluid pt-5 pb-4 text-center text-dark">
+    <div class="container-fluid pt-5 pb-4 text-center text-dark skills">
       <h3>Our Skills</h3>
       <p class="pb-2 font-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque perferendis reiciendis</p>
-      <div class="row">
-        <div class="col-6 text-left">
-          <p class="pb-3 propressbar-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, deserunt atque ducimus fuga eos iusto. sicing elit. Esse labore cum similique i atus rem fugiat ducimus, facere suscipit voluptas.</p>
-          <p class="pb-3 propressbar-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse labore cum similique itaque et culpa nesciunt? amet consectetur adipisicing eli. Non sed unde tempora iusto archite.</p>
-          <p class="pb-3 propressbar-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non sed unde tempora iusto architecto eius facilis expedita? que natus rem fugiat d dipisicing elit. Non sed uucimus, facere.</p>
-          <p class="pb-3 propressbar-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum itaque natus rem fugiat ducimus, facere suscipit voluptas corrupti sectetur adipisicing elit. Eum itaque natus rem fugiat du.</p>
+      <div class="row w-75 m-auto">
+        <div class="col-12 d-flex">
+          <div class="col-6 text-left text-black-50">
+            <p class="propressbar-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, deserunt atque ducimus fuga eos iusto. sicing elit. Esse labore cum similique i atus rem fugiat ducimus, facere suscipit voluptas.</p>
+          </div>
+          <div class="col-6 font-weight-bold">
+            <div class="d-flex justify-content-between position-relative">
+              <p class="text-uppercase">lorem ipsum</p>
+              <p class="position-absolute progress-80">80</p>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bg" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
         </div>
-        <div class="col-6">
-
+        <div class="col-12 d-flex">
+          <div class="col-6 text-left text-black-50">
+            <p class="propressbar-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, deserunt atque ducimus fuga eos iusto. sicing elit. Esse labore cum similique i atus rem fugiat ducimus, facere suscipit voluptas.</p>
+          </div>
+          <div class="col-6 font-weight-bold">
+            <div class="d-flex justify-content-between">
+              <p class="text-uppercase">lorem ipsum</p>
+              <p class="position-absolute progress-97">97</p>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bg" role="progressbar" style="width: 97%;" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 d-flex">
+          <div class="col-6 text-left text-black-50">
+            <p class="propressbar-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, deserunt atque ducimus fuga eos iusto. sicing elit. Esse labore cum similique i atus rem fugiat ducimus, facere suscipit voluptas.</p>
+          </div>
+          <div class="col-6 font-weight-bold">
+            <div class="d-flex justify-content-between">
+              <p class="text-uppercase">lorem ipsum</p>
+              <p class="position-absolute progress-65">65</p>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bg" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 d-flex">
+          <div class="col-6 text-left text-black-50">
+            <p class="propressbar-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, deserunt atque ducimus fuga eos iusto. sicing elit. Esse labore cum similique i atus rem fugiat ducimus, facere suscipit voluptas.</p>
+          </div>
+          <div class="col-6 font-weight-bold">
+            <div class="d-flex justify-content-between">
+              <p class="text-uppercase">lorem ipsum</p>
+              <p class="position-absolute progress-72">72</p>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bg" role="progressbar" style="width: 72%;" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -541,18 +733,153 @@
       <div class="container">
         <h3>Pricing Plan Available</h3>
         <p class="pb-2 font-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quasi perferendis reiciendis!</p>
-        <div class="swich"></div>
-        <div class="row">
-          <div class="col-4">1</div>
-          <div class="col-4">2</div>
-          <div class="col-4">3</div>
+        <div class="cd-pricing-switcher">
+          <p class="fieldset">
+            <input type="radio" name="duration" value="monthly" id="monthly" checked>
+            <label for="monthly" class="text-uppercase">monthly</label>
+            <input type="radio" name="duration" value="yearly" id="yearly">
+            <label for="yearly" class="text-uppercase">yearly</label>
+            <span class="cd-switch"></span>
+          </p>
         </div>
-        <div class="row">
-          <div class="col-6">
-
+        <div class="row card-deck mb-5">
+          <div class="card d-flex price-basic-col align-items-center">
+            <p class="text-uppercase h3 my-4">basic</p>
+            <div class="w-75 mb-4 basic-price"><p class="h4">$10<small>/mo</small></p></div>
+            <p>24/7 Tech Support</p>
+            <p>Advanced Option</p>
+            <p>10GB Storage</p>
+            <p>1GB Bandwidth</p>
+            <p>512 Memory</p>
+            <p>10 Free Domain</p>
+            <button class="btn price-basic-btn px-3 my-4 text-uppercase rounded-pill font-weight-bold">purchase now</button>
           </div>
+          <div class="card d-flex price-popular-col align-items-center">
+            <p class="text-uppercase h3 my-4">popular</p>
+            <div class="w-75 mb-4 popular-price"><p class="h4">$40<small>/mo</small></p></div>
+            <p>24/7 Tech Support</p>
+            <p>Advanced Option</p>
+            <p>10GB Storage</p>
+            <p>1GB Bandwidth</p>
+            <p>512 Memory</p>
+            <p>10 Free Domain</p>
+            <button class="btn price-popular-btn px-3 my-4 text-uppercase rounded-pill font-weight-bold">purchase now</button>
+          </div>
+          <div class="card d-flex price-premium-col align-items-center">
+            <p class="text-uppercase h3 my-4">premier</p>
+            <div class="w-75 mb-4 premium-price"><p class="h4">$80<small>/mo</small></p></div>
+            <p>24/7 Tech Support</p>
+            <p>Advanced Option</p>
+            <p>10GB Storage</p>
+            <p>1GB Bandwidth</p>
+            <p>512 Memory</p>
+            <p>10 Free Domain</p>
+            <button class="btn price-premium-btn px-3 my-4 text-uppercase rounded-pill font-weight-bold">purchase now</button>
+          </div>
+        </div>
+        <div class="row d-flex">
           <div class="col-6">
-
+            <div class="accordion" id="accordion">
+              <div class="card mb-3">
+                <div class="card-header py-0" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link d-flex justify-content-between align-items-center w-100" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <span class="font-weight-bolder">Lorem ipsum dolor, sit amet consectetur adipisicing elit</span>
+                      <div class="accordPlus"></div>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                    Terry richardson ad assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-3">
+                <div class="card-header py-0" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link d-flex justify-content-between align-items-center w-100" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                      <span class="font-weight-bolder">Lorem ipsum dolor, sit amet consectetur adipisicing elit</span>
+                      <div class="accordPlus"></div>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+                    Terry richardson ad assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-3">
+                <div class="card-header py-0" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link d-flex justify-content-between align-items-center w-100" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                      <span class="font-weight-bolder">Lorem ipsum dolor, sit amet consectetur adipisicing elit</span>
+                      <div class="accordPlus"></div>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div class="card-body">
+                    Terry richardson ad assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-3">
+                <div class="card-header py-0" id="headingFour">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link d-flex justify-content-between align-items-center w-100" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                      <span class="font-weight-bolder">Lorem ipsum dolor, sit amet consectetur adipisicing elit</span>
+                      <div class="accordPlus"></div>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                  <div class="card-body">
+                    Terry richardson ad assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 tablist border-top-0">
+            <ul class="nav nav-tabs justify-content-between" role="tablist">
+              <li class="active"><a href="#lorem1" aria-controls="lorem1" role="tab" data-toggle="tab">Lorem Ipsum 1</a></li>
+              <li><a href="#lorem2" aria-controls="lorem2" role="tab" data-toggle="tab">Lorem Ipsum 2</a></li>
+              <li><a href="#lorem3" aria-controls="lorem3" role="tab" data-toggle="tab">Lorem Ipsum 3</a></li>
+            </ul>
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active text-left text-secondary" id="lorem1">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, quibusdam accusantium fugiat commodi odit magni illum rerum doloremque voluptate nisi?</p>
+                <ul>
+                  <li>Lorem ipsum dolor sit.</li>
+                  <li>Lorem ipsum dolor sit amet.</li>
+                  <li>Lorem ipsum dolor sit.</li>
+                  <li>Lorem ipsum dolor sit amet consectetur.</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia blanditiis quidem eaque! Deleniti architecto velit corrupti iure praesentium!</p>
+              </div>
+              <div role="tabpanel" class="tab-pane text-left text-secondary" id="lorem2">
+                <p>Lorem ipsum dolor sit amet consectetur ipsa facere incidunt doloremque, eius quia temporibus, fuga et natus, quo ut.</p>
+                <ul>
+                  <li>Lorem wdasd madjo</li>
+                  <li>Lorem, ipsum dolor.</li>
+                  <li>Lorem ipsum dolor sit amet consectetur.</li>
+                  <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis nihil libero totam! Repellat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam excepturi accusantium fugit eius sunt.</p>  
+              </div>
+              <div role="tabpanel" class="tab-pane text-left text-secondary" id="lorem3">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis magni ipsa quas natus voluptatum! Modi, nisi cumque. Voluptatibus debitis veniam quia accusamus.</p>
+                <ul>
+                  <li>Lorem, ipsum dolor.</li>
+                  <li>Lorem ipsum dolor sit amet.</li>
+                  <li>Lorem, ipsum dolor.</li>
+                  <li>Lorem ipsum dolor sit amet consectetur.</li>
+                </ul>
+                <p>Lorem ipsum dolor sit. Nihil voluptate voluptas tenetur! Corrupti iusto odio tempore minima expedita, commodi dignissimos voluptas architecto.</p>  
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -562,32 +889,48 @@
         <h3>Latest Blog Post</h3>
         <p class="pb-2 font-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quasi perferendis reiciendis!</p>
         <div class="row">
-          <div class="card-deck w-75 py-4 m-auto">
+          <div class="card-deck py-4 m-auto">
             <div class="card align-items-center">
-              <a href="" class="benefits-icon cup"></a>
+              <img src="./images/blog1.png" class="card-img-top pb-4" alt="blog1">
               <div class="card-body p-0">
-                <h5 class="card-title pb-2">Lorem, ipsum.</h5>
+                <h5 class="card-title pb-2 text-uppercase">simple blog post</h5>
+                <div class="d-flex text-secondary p-1 border-top border-bottom justify-content-center">
+                  <p class="post-date m-0 mr-2">Aprille 12, 2019</p>
+                  <p class="post-comment m-0">No comments</p>
+                </div>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus assumenda expedita delectus dicta quaerat explicabo tenetur provident impedit?</p>
               </div>
             </div>
             <div class="card align-items-center">
-              <a href="" class="benefits-icon rocket"></a>
+              <img src="./images/blog2.png" class="card-img-top pb-4" alt="blog2">
               <div class="card-body p-0">
-                <h5 class="card-title pb-2">Lorem, ipsum.</h5>
+                <h5 class="card-title pb-2 text-uppercase">simple blog post</h5>
+                <div class="d-flex text-secondary p-1 border-top border-bottom justify-content-center">
+                  <p class="post-date m-0 mr-2">Aprille 10, 2019</p>
+                  <p class="post-comment m-0">No comments</p>
+                </div>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus quia, omnis perspiciatis fuga voluptas commodi nisi?</p>
               </div>
             </div>
             <div class="card align-items-center">
-              <a href="" class="benefits-icon flag"></a>
+              <img src="./images/blog3.png" class="card-img-top pb-4" alt="blog3">
               <div class="card-body p-0">
-                <h5 class="card-title pb-2">Lorem, ipsum.</h5>
+                <h5 class="card-title pb-2 text-uppercase">simple blog post</h5>
+                <div class="d-flex text-secondary p-1 border-top border-bottom justify-content-center">
+                  <p class="post-date m-0 mr-2">March 22, 2019</p>
+                  <p class="post-comment m-0">No comments</p>
+                </div>
                 <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis quae reprehenderit similique impedit odit id incidunt quod corporis.</p>
               </div>
             </div>
             <div class="card align-items-center">
-              <a href="" class="benefits-icon cup"></a>
+              <img src="./images/blog4.png" class="card-img-top pb-4" alt="blog4">
               <div class="card-body p-0">
-                <h5 class="card-title pb-2">Lorem, ipsum.</h5>
+                <h5 class="card-title pb-2 text-uppercase">simple blog post</h5>
+                <div class="d-flex text-secondary p-1 border-top border-bottom justify-content-center">
+                  <p class="post-date m-0 mr-2">February 8, 2019</p>
+                  <p class="post-comment m-0">No comments</p>
+                </div>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus assumenda expedita delectus dicta quaerat explicabo tenetur provident impedit?</p>
               </div>
             </div>
@@ -614,21 +957,82 @@
         <a href="#" class="contactUs mail text-dark">info@example.com</a>
       </div>
     </div>
-    <div class="container-fluid black-bg"></div>
-    <div class="container-fluid form pt-5 pb-4 text-center bg-white text-dark">
-      <div class="container">
-        <p class="pb-3">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-        <div class="form"></div>
-        <button class="btn btn-outline-dark px-4 mt-4 text-uppercase rounded-pill">send</button>
+    <div class="container-fluid form p-0 pb-4 text-center bg-white text-dark">
+      <div class="container-fluid black-bg"></div>
+      <div class="container pt-5">
+        <p class="pb-3 font-weight-bold">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+        <form class="m-auto w-75">
+          <div class="form-row mb-2">
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" placeholder="First Name*">
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" placeholder="Last Name*">
+            </div>
+          </div>
+          <div class="form-group mb-4">
+            <input type="email" class="form-control" placeholder="Email*">
+          </div>
+          <div class="form-group mb-4">
+            <input type="text" class="form-control" placeholder="Subject">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+          </div>
+          <button class="btn send-btn px-5 mt-4 text-uppercase rounded-pill font-weight-bold">send</button>
+        </form>
       </div>
     </div>
     <footer>
-      <div class="container">
-        
+      <div class="container-fluid pt-4 m-auto">
+        <div class="row w-75 mx-auto my-3">
+          <div class="col-4 footer-about mb-3">
+            <h5 class="text-uppercase text-white mb-5 font-weight-bold">about us</h5>
+            <p class="mb-3 text-light">Lorem ipsum, dolor sit amet elit. Alias necessitatibus amet iure repellendus facilis esse voluptatibus. Sit, molestiae? Molestiae nam quia suscipit dicta!</p>
+            <p class="text-light">Lorem ipsum dolor sit amet, consectetur elit. Nam odio omnis optio consequatur? Labore magni voluptate, doloremque dolore facilis ipsum. Deleniti?</p>
+          </div>
+          <div class="col-4 mb-3">
+            <div class="d-flex text-white justify-content-between">
+              <h5 class="text-uppercase mb-5 font-weight-bold">recent tweets</h5>
+              <p class="twitter-acc">TwitterUserName</p>
+            </div>
+            <div class="mb-3 text-light twit-text">
+              <p class="m-0"><a class="colored-a">@Nullam</a> lorem ipsum, dolor sit. Adipisci yet a accusantium, harum atque unde quis <a class="colored-a">#fermentum</a> auctor. <a href="">http://example.com</a></p>
+              <small>about 2 hours ago</small>
+            </div>
+            <div class="text-light twit-text">
+              <p class="m-0"><a class="colored-a">@Nullam</a> lorem ipsum, dolor sit amet nut der consectetur adipisicing elit. tque unde quis <a class="colored-a">#fermentum</a> auctor. <a href="">http://example.com</a></p>
+              <small>about 2 hours ago</small>
+            </div>
+          </div>
+          <div class="col-4 mb-3">
+            <h5 class="text-uppercase text-white mb-5 font-weight-bold">subscribe</h5>
+            <p class="text-light subscribe-p mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa fugiat cumque distinctio.</p>
+            <form>
+              <div class="form-group my-4">
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+              <button class="btn subscribe-btn px-4 mt-2 text-uppercase rounded-pill">subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid border-top">
+        <div class="container w-75 d-flex justify-content-between py-3">
+          <p class="text-light copyright m-0">Copyright Amethyst</p>
+          <div class="team-icons">
+            <a href="#" class="facebook text-light pr-2"></a>
+            <a href="#" class="linkedIn text-light pr-2"></a>
+            <a href="#" class="twitter text-light pr-2"></a>
+            <a href="#" class="google text-light"></a>
+          </div>
+        </div>
       </div>
     </footer>
+    <a href="#" id="toTopBtn"></a>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
   </body>
 </html>
