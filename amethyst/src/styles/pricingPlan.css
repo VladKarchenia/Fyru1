@@ -109,7 +109,7 @@
   text-decoration: none;
 }
 
-#accordion .card button span {
+#accordion .card button {
   color: #343a40;
 }
 
@@ -125,32 +125,33 @@
   background: white;
 }
 
-.accordPlus::before {
+.accordPlus::after {
   content: "\f067";
   font-family: FontAwesome;
   color: #cdd1d3;
   font-size: 1.3rem;
 }
 
-#accordion .card button:hover > .accordPlus::before {
+#accordion .card button:hover, #accordion .card button:hover::after {
   color: #9966cc;
 }
 
 .displayed-card {
   background: #9966cc !important;
-}
-
-.displayed-card span {
   color: white !important;
 }
 
-.displayed-card .accordPlus::before {
+.displayed-card::after {
   content: "\f068";
-  color: white;
+  color: #343a40;
 }
 
-.displayed-card button:hover > .accordPlus::before {
+.displayed-card {
   color: #343a40 !important;
+}
+
+.displayed-card:hover, .displayed-card:hover::after {
+  color: white !important;
 }
 
 .tablist {
@@ -163,15 +164,20 @@
   border-bottom: none;
 }
 
-.tablist .nav li {
+.tablist div a {
   width: 188px;
   background: #9966cc;
+  color: #343a40;;
   border: 1px solid #9966cc;
   border-bottom: none;
   text-align: left;
   padding: 10px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+
+.tablist div a:hover {
+  color: white;
 }
 
 .tab-pane {
@@ -185,23 +191,24 @@
   padding-bottom: 23px;
 }
 
-.nav-tabs li a {
+.nav-tabs a {
   font-weight: 500;
 }
 
-.active-tadItem {
+.active-tabItem {
   background: white !important;
-}
-
-.active-tadItem a {
   color: #343a40;
 }
 
-.active-tadItem a:hover {
-  color: #9c9c9c;
+.active-tabItem:hover {
+  color: #9966cc !important;
 }
 
-@media screen and (max-width: 1201px) {
+.perYear {
+  display: none;
+}
+
+@media screen and (max-width: 1199px) {
   .tablist .nav {
     flex-wrap: nowrap;
   }
@@ -213,6 +220,12 @@
 @media screen and (max-width: 1040px) {
   .pricing-forms {
     display: none !important;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .tablist div a {
+    border-color: #484e53;
   }
 }
 
