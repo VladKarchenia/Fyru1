@@ -31,28 +31,28 @@
   background-color: rgb(255, 255, 255);
 }
 
+.works-icon::before {
+  line-height: 60px;
+}
+
 .computer::before {
   content: "\f109";
   font-family: FontAwesome;
-  vertical-align: text-top;
 }
 
 .optic::before {
   content: "\f06e";
   font-family: FontAwesome;
-  vertical-align: text-top;
 }
 
 .settings::before {
   content: "\f013";
   font-family: FontAwesome;
-  vertical-align: text-top;
 }
 
 .star::before {
   content: "\f005";
   font-family: FontAwesome;
-  vertical-align: text-top;
 }
 
 .list-group-item.active {
