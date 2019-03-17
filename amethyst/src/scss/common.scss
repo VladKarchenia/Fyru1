@@ -53,7 +53,6 @@ blockquote p q {
 
 .map {
   width: 100%;
-  /* margin-bottom: -4px; */
 }
 
 .map iframe {
@@ -171,9 +170,13 @@ textarea {
   max-width: 300px;
 }
 
+.noneDisplay {
+  display: none;
+}
+
 @font-face {
   font-family: "Astakhov";
-  src: local("Astakhov"), url(../fonts/11715.ttf);
+  // src: local("Astakhov"), url(../fonts/11715.ttf);
 }
 
 @media screen and (max-width: 450px) {
