@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 h1 {
   font-size: 10vw;
   padding-top: 50px;
@@ -176,7 +180,7 @@ textarea {
 
 @font-face {
   font-family: "Astakhov";
-  // src: local("Astakhov"), url(../fonts/11715.ttf);
+  src: local("Astakhov"), url(../fonts/11715.ttf);
 }
 
 @media screen and (max-width: 450px) {

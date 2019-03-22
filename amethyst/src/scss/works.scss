@@ -88,7 +88,12 @@ h6 {
   position: absolute;
   background-color: #9966cc;
   display: none;
-  animation: fade .5s linear forwards;
+  animation: showImgText .5s linear forwards;
+}
+
+.img-item:hover .img-200 {
+  opacity: 0;
+  animation: fadeImg .5s linear forwards;
 }
 
 .img-item:hover .hover-content {
@@ -100,12 +105,21 @@ h6 {
   width: 100%;
 }
 
-@keyframes fade {
+@keyframes showImgText {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes fadeImg {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
@@ -118,5 +132,20 @@ h6 {
 @media screen and (max-width: 630px) {
   #list-tab {
     flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .img-item {
+    display: flex;
+    justify-content: center;
+  }
+  .img-item img {
+    width: 80%;
+  }
+  .hover-content {
+    width: 75%;
+    height: 98%;
+    margin: 2px 0;
   }
 }
