@@ -1,0 +1,44 @@
+.about .btn {
+  border-color: #9966cc;
+}
+
+.about .btn:hover {
+  background-color: #9966cc;
+  color: white;
+}
+
+.eye::before {
+  content: "\f06e";
+  font-family: FontAwesome;
+  font-size: 2rem;
+  color: #9966cc;
+  padding-right: 20px;
+}
+
+.brush::before {
+  content: "\f1fc";
+  font-family: FontAwesome;
+  font-size: 2rem;
+  color: #9966cc;
+  padding-right: 20px;
+}
+
+.heart::before {
+  content: "\f004";
+  font-family: FontAwesome;
+  font-size: 2rem;
+  color: #9966cc;
+  padding-right: 20px;
+}
+
+@media screen and (max-width: 900px) {
+  #about ul {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #about ul {
+    width: 100% !important;
+  }
+}

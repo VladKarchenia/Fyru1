@@ -1,0 +1,99 @@
+.main {
+  background: linear-gradient(to top left, #ff9523, #ae5eff);
+}
+
+.table thead th {
+  padding: 5px 10px !important;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.6);
+  border-top: none;
+  font-size: 0.8rem;
+}
+
+.border-right-col {
+  border-right: 1px solid rgba(211, 211, 211, 0.6);
+}
+
+.icon {
+  padding: 0 3px;
+  filter: opacity(0.7);
+}
+
+.icon:hover {
+  color: white;
+  filter: opacity(1);
+}
+
+.facebook::before {
+  content: "\f09a";
+  font-family: FontAwesome;
+}
+
+.linkedIn::before {
+  content: "\f0e1";
+  font-family: FontAwesome;
+}
+
+.twitter::before {
+  content: "\f099";
+  font-family: FontAwesome;
+}
+
+.google::before {
+  content: "\f0d5";
+  font-family: FontAwesome;
+}
+
+#carousel .carousel-caption {
+  position: initial;
+  font-size: 0.9rem;
+}
+
+.carousel-indicators {
+  position: initial;
+}
+
+.carousel-indicators li {
+  width: 7px;
+  height: 7px;
+  border: none;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.carousel-indicators .active {
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+#carousel .carousel-control-next, #carousel .carousel-control-prev {
+  bottom: 170px;
+}
+
+#carousel .carousel-inner {
+  min-height: 290px;
+}
+
+.menu-nav div {
+  min-width: 80px;
+  max-width: 110px;
+  padding-top: 5px !important;
+}
+
+.menu-nav div a {
+  width: 100%;
+}
+
+@media screen and (max-width: 550px) {
+  .table {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  #carousel .carousel-inner {
+    min-height: 400px;
+  }
+  .main-menu {
+    width: 100% !important;
+  }
+}

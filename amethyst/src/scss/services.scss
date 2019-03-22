@@ -1,0 +1,84 @@
+#services-carousel ol {
+  position: absolute;
+}
+
+#services-carousel .carousel-caption {
+  position: initial;
+}
+
+.services-icons-container li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.services-icon {
+  min-width: 180px;
+  padding: 50px 0;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.services-icon:hover {
+  color: black;
+}
+
+.active-service-icon {
+  color: black;
+}
+
+.services-icon::before {
+  position: absolute;
+  top: 0;
+  font-size: 2rem;
+  font-family: FontAwesome;
+}
+
+.services-webDesign::before {
+  left: calc(50% - 34.3px / 2);
+  content: "\f108";
+}
+
+.services-graphDesign::before {
+  left: calc(50% - 32px / 2);
+  content: "\f1fc";
+}
+
+.services-branding::before {
+  left: calc(50% - 32px / 2);
+  content: "\f004";
+}
+
+.services-marketing::before {
+  left: calc(50% - 32px / 2);
+  content: "\f1e2";
+}
+
+.services-development::before {
+  left: calc(50% - 34.3px / 2);
+  content: "\f109";
+}
+
+.services-seo::before {
+  left: calc(50% - 36.6px / 2);
+  content: "\f201";
+}
+
+@media screen and (max-width: 600px) {
+  #features .row {
+    display: block;
+  }
+  #features .row .col-6 {
+    max-width: 100%;
+  }
+  #services-carousel .carousel-inner {
+    min-height: 330px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #services-carousel .carousel-inner {
+    min-height: 400px;
+  }
+}

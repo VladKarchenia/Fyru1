@@ -1,0 +1,236 @@
+.cd-pricing-switcher .fieldset {
+  display: inline-block;
+  position: relative;
+  padding: 2px;
+  border-radius: 50em;
+  border: 1px solid #bbbfc4;
+}
+.cd-pricing-switcher input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+.cd-pricing-switcher label {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin: 0;
+  float: left;
+  width: 90px;
+  height: 34px;
+  line-height: 34px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #9c9fa1;
+}
+.cd-pricing-switcher .cd-switch {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 34px;
+  width: 90px;
+  background-color: #9966cc;
+  border-radius: 50em;
+  -webkit-transition: -webkit-transform 0.5s;
+  -moz-transition: -moz-transform 0.5s;
+  transition: transform 0.5s;
+}
+.cd-pricing-switcher input[type="radio"]:checked + label + .cd-switch,
+.cd-pricing-switcher input[type="radio"]:checked + label:nth-of-type(n) + .cd-switch {
+  -webkit-transform: translateX(90px);
+  -moz-transform: translateX(90px);
+  -ms-transform: translateX(90px);
+  -o-transform: translateX(90px);
+  transform: translateX(90px);
+}
+
+.cd-pricing-switcher input[type="radio"]:checked + label {
+  color: white;
+}
+
+#prices .container .row .card {
+  flex-direction: column;
+  color: #9d9fa1;
+  border: 1px solid #cdd1d3;
+}
+
+.price-basic-col .h3, .price-basic-col .h4, .price-basic-btn {
+  color: #9966cc;
+}
+
+.basic-price {
+  border-bottom: 2px solid #9966cc;
+}
+
+.price-basic-btn {
+  border-color: #9966cc;
+}
+
+.price-basic-btn:hover {
+  color: white;
+  background: #9966cc;
+}
+
+.price-popular-col .h3, .price-popular-col .h4, .price-popular-btn {
+  color: #e03289;
+}
+
+.popular-price {
+  border-bottom: 2px solid #e03289;
+}
+
+.price-popular-btn {
+  border-color: #e03289;
+}
+
+.price-popular-btn:hover {
+  color: white;
+  background: #e03289;
+}
+
+.price-premium-col .h3, .price-premium-col .h4, .price-premium-btn {
+  color: #ff9523;
+}
+
+.premium-price {
+  border-bottom: 2px solid #ff9523;
+}
+
+.price-premium-btn {
+  border-color: #ff9523;
+}
+
+.price-premium-btn:hover {
+  color: white;
+  background: #ff9523;
+}
+
+#accordion .card button {
+  outline: none;
+  text-decoration: none;
+}
+
+#accordion .card button {
+  color: #343a40;
+}
+
+#accordion .card, #accordion .card .card-header {
+  border-color: #9966cc !important;
+}
+
+#accordion .card, #accordion .card .card-header {
+  border-radius: 5px;
+}
+
+#accordion .card .card-header {
+  background: white;
+}
+
+.accordPlus::after {
+  content: "\f067";
+  font-family: FontAwesome;
+  color: #cdd1d3;
+  font-size: 1.3rem;
+}
+
+#accordion .card button:hover, #accordion .card button:hover::after {
+  color: #9966cc;
+}
+
+.displayed-card {
+  background: #9966cc !important;
+  color: white !important;
+}
+
+.displayed-card::after {
+  content: "\f068";
+  color: #343a40;
+}
+
+.displayed-card {
+  color: #343a40 !important;
+}
+
+.displayed-card:hover, .displayed-card:hover::after {
+  color: white !important;
+}
+
+.tablist {
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 0;
+}
+
+.tablist .nav {
+  border-bottom: none;
+}
+
+.tablist div a {
+  width: 188px;
+  background: #9966cc;
+  color: #343a40;;
+  border: 1px solid #9966cc;
+  border-bottom: none;
+  text-align: left;
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.tablist div a:hover {
+  color: white;
+}
+
+.tab-pane {
+  border: 1px solid #9966cc;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.tab-pane p {
+  padding: 20px;
+  padding-bottom: 23px;
+}
+
+.nav-tabs a {
+  font-weight: 500;
+}
+
+.active-tabItem {
+  background: white !important;
+  color: #343a40;
+}
+
+.active-tabItem:hover {
+  color: #9966cc !important;
+}
+/* 
+.perYear {
+  display: none;
+} */
+
+@media screen and (max-width: 1199px) {
+  .tablist .nav {
+    flex-wrap: nowrap;
+  }
+  .tab-pane p {
+    padding-bottom: 56px;
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .pricing-forms {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .tablist div a {
+    border-color: #484e53;
+  }
+}
+
+/* @media screen and (max-width: 450px) {
+  .pricing-forms {
+    display: none !important;
+  }
+} */
