@@ -80,3 +80,10 @@ footer .container-fluid .row .col-4 {
     width: 100%!important;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .bottom-footer-container {
+    width: 100%!important;
+    margin: 0 auto;
+  }
+}
