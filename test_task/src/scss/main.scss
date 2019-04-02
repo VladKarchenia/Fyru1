@@ -1,0 +1,92 @@
+main {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to top left, #1ce6c6, #7b23d4);
+  a {
+    font-size: 1.25rem;
+    &:not([href]):not([tabindex]) {
+      color: #444857;
+    }
+    &:active {
+      color: #000000;
+    }
+  }
+}
+
+.main-content {
+  overflow: auto;
+  min-height: calc(100vh - 198px - 241px);
+  flex-grow: 1;
+}
+
+h1 {
+  color: #d2f9ff;
+  font-weight: 700;
+  font-size: 5rem;
+  letter-spacing: 5px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #444857;
+  &:hover {
+    color: #000000;
+    text-decoration: none;
+  }
+}
+
+.card .btn-link {
+  color: #5886b7;
+  font-weight: 600;
+  font-size: 1.25rem;
+  &:hover, &:focus {
+    color: #335b86;
+    text-decoration: none;
+  }
+  &:active {
+    color: #000000;
+  }
+}
+
+.toggle-menu {
+  display: none;
+}
+
+.navbar-toggler:hover, .navbar-toggler:active {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+#navbarToggleExternalContent a {
+  color: #444857;
+  font-weight: 600;
+  &:hover {
+    color: #000000;
+  }
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 700px) {
+  .accordion {
+    width: 100% !important;
+    padding: 30px !important;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .menu {
+    display: none;
+  }
+  .toggle-menu {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
