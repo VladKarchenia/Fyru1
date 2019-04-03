@@ -30,3 +30,15 @@
   color: #9966cc;
   padding-right: 20px;
 }
+
+@media screen and (max-width: 900px) {
+  #about ul {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #about ul {
+    width: 100% !important;
+  }
+}

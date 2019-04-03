@@ -370,9 +370,7 @@
 @media screen and (max-width: 414px) {
   .sortContainer {
     min-height: 40px;
-    flex-direction: row;
     padding: 0;
-    margin: 0;
   }
   .sortItem {
     margin: 0;
@@ -394,13 +392,6 @@
 @media screen and (max-width: 360px) {
   .sortItem {
     padding-left: 30px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .sortContainer {
-    flex-direction: column;
-    margin: 0 auto;
   }
 }
 

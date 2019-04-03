@@ -147,6 +147,19 @@
     line-height: 33px;
     margin: 5px 0;
   }
+  .btnLabel, .btn {
+    font-size: 14px;
+  }
+  .btn {
+    width: 120px;
+  }
+  .btnLabel {
+    padding: 10px 0px 10px 30px;
+    width: 88px;
+  }
+  .btn::before {
+    top: 13px;
+  }
 }
 
 @media screen and (max-width: 393px) {
